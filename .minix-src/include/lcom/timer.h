@@ -28,7 +28,7 @@ enum timer_status_field {
   tsf_initial, /*!< timer initialization mode */
   tsf_mode,    /*!< timer counting mode */
   tsf_base     /*!< timer counting base */
-};
+}; 
 
 /**
  * @brief Union for storing values of timer status fields, including the full status byte
