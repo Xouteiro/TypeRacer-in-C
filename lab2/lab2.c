@@ -1,5 +1,5 @@
-#include <lcom/lcf.h>
 #include <lcom/lab2.h>
+#include <lcom/lcf.h>
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -44,13 +44,15 @@ int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
 
 int(timer_test_int)(uint8_t time) {
   uint8_t timer_mask;
-  if(timer_sunscribe_int)
-  uint16_t n_interrupt = time*60;
+  if (timer_sunscribe_int)
+    uint16_t n_interrupt = time * 60;
   int i = 0;
-  while( i <= n_interrupt){
-    //copiar souto
-    if(IRQ_line & timer_mask) i++;
+  while (i <= n_interrupt) {
+    // copiar souto
+    if (IRQ_line & timer_mask)
+      i++;
   }
-  if(timer_unsubcribe_int()) return 1;
+  if (timer_unsubcribe_int())
+    return 1;
   return 0;
 }
