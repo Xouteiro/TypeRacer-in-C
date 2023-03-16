@@ -4,7 +4,10 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include "i8254.h"
 
+
+extern int timer_counter;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -48,6 +51,7 @@ int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
 
 int(timer_test_int)(uint8_t time) {
   uint8_t bit_no;
+
   timer_subscribe_int(&bit_no);
 
   uint32_t irq_set = BIT(bit_no);
@@ -82,5 +86,9 @@ int(timer_test_int)(uint8_t time) {
          /* no standard messages expected: do nothing */
      }
   }
-
+  return 0;
 }
+
+
+
+
