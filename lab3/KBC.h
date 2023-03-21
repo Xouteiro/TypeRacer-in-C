@@ -11,4 +11,6 @@ int (read_KBC_output)(uint8_t port, uint8_t *output);
 
 int (write_KBC_command)(uint8_t port, uint8_t commandByte);
 
+int(check_status)(uint8_t status);
+
 #endif

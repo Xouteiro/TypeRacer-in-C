@@ -4,11 +4,17 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include "KBC.h"
 
 int keyboard_hook_id = 1;
+bool ih_flag;
+uint8_t scancode[2];
+int i = 0;
+
+
 
 // subscribe interrupts
-int keyboard_subscribe_int (uint8_t *bit_no)
+int keyboard_subscribe_interrupts(uint8_t *bit_no)
 {
   if (bit_no == NULL)
     return 1;
@@ -20,13 +26,34 @@ int keyboard_subscribe_int (uint8_t *bit_no)
 }
 
 // unsubscribe interrupts
-int keyboard_unsubscribe_int ()
+int keyboard_unsubscribe_interrupts ()
 {
   return sys_irqrmpolicy(&keyboard_hook_id);
 }
 
 
-//void (kbc_ih)();
+void (kbc_ih)(){
+  
+  uint8_t output;
+  read_KBC_output(0x60, &output);
+
+  uint8_t st;
+  read_KBC_status(&st);
+
+  if (check_status(st) == 0) {
+
+    scancode[i] = output;
+
+    if (output != TWO_BYTES) {
+      if (output & MAKE_CODE) {
+        ih_flag = false;
+      } else {
+        ih_flag = true;
+      }
+    }
+
+  }
+}
 
 int kbc_restore()
 {
@@ -36,7 +63,7 @@ int kbc_restore()
   if (write_KBC_command(0x64, 0x20) != 0)
     return 1;  // notificar o i8042 da leitura
     
-  if (read_KBC_command(0x60, &commandWord) != 0)
+  if (read_KBC_output(0x60, &commandWord) != 0)
     return 1;  // ler a configuração
 
   // Activar o bit das interrupções
@@ -56,13 +83,6 @@ int kbc_restore()
 
 
 
-void evaluate_scancode(uint8_t scancode)
-{
-  if (scancode & BIT(7)) {
-    printf("%02x, breakcode!\n", scancode);
-  } else {
-    printf("%02x, makecode!\n", scancode);
-  }
-}
+
 
 

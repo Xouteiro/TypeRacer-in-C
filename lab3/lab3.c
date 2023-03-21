@@ -1,12 +1,19 @@
 #include <lcom/lcf.h>
 
 #include <lcom/lab3.h>
-#include "i8042.h"
+
 #include "keyboard.h"
-#include "KBC.h"
+#include "timer.c"
+
 
 #include <stdbool.h>
 #include <stdint.h>
+
+uint8_t scancode;
+extern int cnt;
+extern bool ih_flag;
+extern int timer_counter;
+
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -49,39 +56,110 @@ int (kbd_test_scan)()
 
     if (is_ipc_notify(ipc_status)) {
       switch(_ENDPOINT_P(msg.m_source)){
-        case HARDWARE:
+        case HARDWARE: {
           if (msg.m_notify.interrupts & irq_set) {
-            // TODO  
+            
+            kbc_ih();
+          
+          kbd_print_scancode(ih_flag,sizeof(scancode),&scancode);
           }
+          break;
         }
+
+          default: break;
+        }
+        
       }
+      
     }
 
   if (keyboard_unsubscribe_interrupts() != 0)
     return 1;
-  if (kbd_print_no_sysinb(counter_KBC) != 0)
+  if (kbd_print_no_sysinb(cnt) != 0)
     return 1;
 
   return 0;
 }
 
 int(kbd_test_poll)() {
-  while(scancode != BRAKE_ESC){
-    read_KBC_output(0x60,&scancode);
-    kbd_print_scancode(,,);
+
+
+  while(scancode != BREAK_ESC){
+    read_KBC_output(0x60, &scancode);
+    if (scancode & BIT(7)) {
+      kbd_print_scancode(0,sizeof(scancode),&scancode);
+    } else {
+      kbd_print_scancode(1,sizeof(scancode),&scancode);
+    }
+      
 
   }
 
-  if(kbc_restore()) return 1;
+  if(kbc_restore() != 0) return 1;
+
+  if (kbd_print_no_sysinb(cnt) != 0)
+    return 1;
 
   return 0;
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  uint8_t kbc_bit_no;
+  keyboard_subscribe_interrupts(&kbc_bit_no);
 
-  return 1;
+  uint8_t timer_bit_no;
+  timer_subscribe_int(&timer_bit_no);
+
+
+  uint32_t kbc_irq_set = BIT(kbc_bit_no);
+  uint32_t timer_irq_set = BIT(timer_bit_no);
+
+  message msg;
+  int ipc_status;
+
+  while (scancode != BREAK_ESC && (timer_counter/60.0) < n) {
+    
+    if ((driver_receive(ANY, &msg, &ipc_status)) != 0) {
+      printf("Error");
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source)) {
+
+        case HARDWARE: {
+          if (msg.m_notify.interrupts & kbc_irq_set) { // keyboard interrupt
+
+            kbc_ih();
+          
+            kbd_print_scancode(ih_flag, sizeof(scancode), &scancode);
+            
+
+          }
+
+          if (msg.m_notify.interrupts & timer_irq_set) { // timer interrupt
+            
+            timer_int_handler();
+            
+          }
+
+          break;
+        }
+
+        default: break;
+      }
+    }
+  }
+
+  if(kbc_restore()!=0)
+    return 1;
+  if (keyboard_unsubscribe_interrupts() != 0)
+    return 1;
+  if(timer_unsubscribe_int() != 0)
+    return 1;
+  if (kbd_print_no_sysinb(cnt) != 0)
+    return 1;
+
+  return 0;
 }
 
 

@@ -20,6 +20,8 @@ enum timer_init {
   MSB_after_LSB /*!< Initialization of LSB and MSB, in this order */
 };
 
+
+
 /**
  * @brief Enumerated type for identifying the timer status fields
  */

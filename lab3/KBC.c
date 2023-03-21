@@ -4,8 +4,12 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include "i8042.h"
+
+int cnt = 0;
 
 int read_KBC_status(uint8_t *status){
+  cnt++;
   return util_sys_inb(0x64, status);
 }
 
@@ -53,8 +57,10 @@ int read_KBC_output(uint8_t port, uint8_t *output)
 
     if ((status & BIT(0)) != 0) {
       // o output buffer está cheio, pode-se ler
+      cnt++;
       if (util_sys_inb(port, output) != 0) {
         // leitura do buffer de saída
+        cnt--;
         printf("Error: Could not read output!\n");
         return 1;
       }
@@ -74,9 +80,28 @@ int read_KBC_output(uint8_t port, uint8_t *output)
       return 0;
     }
    
-    tickdelay(micros_to_ticks(20000));
+    tickdelay(micros_to_ticks(WAIT_KBC));
     attemps--;
   }
  
   return 1; // se ultrapassar o número de tentativas lança um erro
 }
+
+
+int(check_status)(uint8_t st) {
+
+  if (st & PARITY_ERROR) {
+    return 1;
+  }
+
+  if (st & TIMEOUT_ERROR) {
+    return 1;
+  }
+
+  if (st & BIT(5)) {
+    return 1;
+  }
+
+  return 0;
+}
+
