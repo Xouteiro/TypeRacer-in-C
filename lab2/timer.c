@@ -5,59 +5,74 @@
 
 #include "i8254.h"
 
+static int hook_id = 0;
+int timer_counter = 0;
+
 int(timer_set_frequency)(uint8_t timer, uint32_t freq) {
-  if (freq < 19 || freq < TIMER_FREQ)
-    return 1;
-  uint16_t counter = TIMER_FREQ / freq;
-  uint8_t conf;
-  if (timer_get_conf(timer, &conf))
-    return 1;
-  conf = conf & 0xF;
-  conf = conf | BIT(5) | BIT(4);
-  sys_outb(0x43, conf);
-  uint8_t MSB, LSB;
-  util_get_LSB(counter, &LSB);
-  util_get_MSB(counter, &MSB);
-  sys_outb(0x40 + timer, LSB);
-  sys_outb(0x40 + timer, MSB);
+    if(freq > TIMER_FREQ || freq < 19 || timer < 0 || timer > 2) return 1;
+
+  uint32_t initialValue = TIMER_FREQ / freq;
+  uint8_t msb, lsb;
+  if(util_get_LSB(initialValue, &lsb)) return 1;
+  if(util_get_MSB(initialValue, &msb)) return 1;
+
+  uint8_t controlword;
+  if(timer_get_conf(timer, &controlword)) return 1;
+  controlword = (controlword & 0xF) | TIMER_LSB_MSB;
+
+  if(timer == 1) controlword = controlword | BIT(6);
+  else if(timer == 2) controlword = controlword | BIT(7);
+  
+
+  if(sys_outb(TIMER_CTRL, controlword)) return 1;
+  if(sys_outb(TIMER_0 + timer, lsb)) return 1;
+  if(sys_outb(TIMER_0 + timer, msb)) return 1;
+
+  return 0;
 }
 
 int(timer_subscribe_int)(uint8_t *bit_no) {
-  int hook_id = 0;
   if (bit_no == NULL)
     return 1;
-  if (sys_irqsetpolicy(TIMER0_IRQ, irq_penable, &hook_id))
+  if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id))
     return 1;
   *bit_no = BIT(hook_id);
   return 0;
 }
 
 int(timer_unsubscribe_int)() {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
-}
-
-void(timer_int_handler)() {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-}
-
-int(timer_get_conf)(uint8_t timer, uint8_t *st) {
-  if (timer < 0 || timer > 2)
-    return 1;
-  uint8_t controlword = BIT(7) | BIT(6) | BIT(5) | BIT(timer + 1);
-  sys_outb(0x43, controlword);
-  if (util_sys_inb(0x40, configuration))
+  if (sys_irqrmpolicy(&hook_id))
     return 1;
   return 0;
 }
 
-int(timer_display_conf)(uint8_t timer, uint8_t st,
-                        enum timer_status_field field) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+void(timer_int_handler)() {
+  timer_counter++;
+}
 
-  return 1;
+int(timer_get_conf)(uint8_t timer, uint8_t *st) {
+  if (st == NULL || timer < 0 || timer > 2) return 1;
+  uint8_t controlword = BIT(7) | BIT(6) | BIT(5) | BIT(timer + 1);
+  if(sys_outb(TIMER_CTRL, controlword)) return 1;
+  if (util_sys_inb(TIMER_0, st)) return 1;
+  return 0;
+}
+
+int(timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field field) {
+  union timer_status_field_val val;
+
+  switch (field) {
+    case tsf_all:
+      val.byte = st;
+      return timer_print_config(timer, field, val);
+    case tsf_initial:
+      val.in_mode = ((st & (BIT(5) | BIT(6))) >> 4);
+      return timer_print_config(timer, field, val);
+    case tsf_mode:
+      val.count_mode = ((st & (BIT(1) | BIT(2) | BIT(3))) >> 1);
+      return timer_print_config(timer, field, val);
+    case tsf_base:
+      val.bcd = (st & BIT(0));
+      return timer_print_config(timer, field, val);
+  }
 }
