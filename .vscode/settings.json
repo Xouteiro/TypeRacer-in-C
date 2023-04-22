@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "*.embeddedhtml": "html",
-        "__locale": "c"
+        "__locale": "c",
+        "mouse.h": "c",
+        "view.h": "c",
+        "model.h": "c",
+        "*.xpm": "c"
     }
 }
