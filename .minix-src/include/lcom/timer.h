@@ -20,6 +20,8 @@ enum timer_init {
   MSB_after_LSB /*!< Initialization of LSB and MSB, in this order */
 };
 
+
+
 /**
  * @brief Enumerated type for identifying the timer status fields
  */
@@ -28,7 +30,7 @@ enum timer_status_field {
   tsf_initial, /*!< timer initialization mode */
   tsf_mode,    /*!< timer counting mode */
   tsf_base     /*!< timer counting base */
-};
+}; 
 
 /**
  * @brief Union for storing values of timer status fields, including the full status byte
