@@ -25,7 +25,6 @@ int (set_frame_buffer)(uint16_t mode){
 
     frame_buffer = vm_map_phys(SELF, (void*) physic_addresses.mr_base, frame_size);
     if (frame_buffer == NULL) return 1;
-    
 
     return 0;
 }
@@ -41,4 +40,32 @@ int (set_graphic_mode)(uint16_t submode) {
     if (sys_int86(&reg86)) return 1;
     
     return 0;
+}
+
+int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
+    for (unsigned int i = 0; i < height; i++) {
+        for (unsigned int j = 0; j < width; j++) {
+            if (vg_draw_pixel(x + j, y + i, color)){
+                vg_exit();
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
+  if(x > mode_info.XResolution || y > mode_info.YResolution) return 1;
+  unsigned int offset = (mode_info.XResolution * y + x) * bytes_per_pixel;
+  if (memcpy(&frame_buffer[offset], &color, bytes_per_pixel) == NULL) return 1;
+  return 0;
+}
+
+int (normalize_color)(uint32_t color, uint32_t *new_color) {
+  if (mode_info.BitsPerPixel == 32) {
+    *new_color = color;
+  } else {
+    *new_color = color & (BIT(mode_info.BitsPerPixel) - 1);
+  }
+  return 0;
 }
