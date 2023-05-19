@@ -67,7 +67,7 @@ void draw_initial_menu() {
 
 void draw_game_menu() {
     draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, YELLOW, drawing_frame_buffer);
-    //draw_sprite_xpm(typo_button_test, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100); está a dar erro
+    //draw_sprite_xpm(typo_button_test, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100); 
     return;
 }
 

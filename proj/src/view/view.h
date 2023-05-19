@@ -7,7 +7,6 @@
 #include "controller/keyboard_mouse/mouse.h"
 #include "model/model.h"
 #include "model/sprite.h"
-#include "model/xpm/typo_button_test.xpm"
 
 void draw_new_frame();
 void draw_initial_menu();

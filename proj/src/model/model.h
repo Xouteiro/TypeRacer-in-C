@@ -7,6 +7,7 @@
 #include "controller/Keyboard_mouse/mouse.h"
 #include "controller/video/graphics.h"
 #include "view/view.h"
+#include "xpm/typo_button_test.xpm"
 
 typedef enum {
     RUNNING,
