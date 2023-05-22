@@ -8,6 +8,7 @@
 #include "model/model.h"
 #include "model/sprite.h"
 
+
 void draw_new_frame();
 void draw_initial_menu();
 void draw_game_menu();

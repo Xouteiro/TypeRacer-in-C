@@ -4,6 +4,7 @@
 
 
 extern SystemState systemState;
+extern MenuState menuState;
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
@@ -15,9 +16,10 @@ int (main)(int argc, char *argv[]) {
 }
 
 
-int proj_setup(){ 
+int setup(){ 
 
-    
+  setup_sprites();
+
   if (timer_set_frequency(TIMER, GAME_FREQ) != 0) return 1;
 
   // Inicialização dos buffers de vídeo (double buffering)
@@ -26,10 +28,17 @@ int proj_setup(){
   // Inicialização do modo gráfico
   if (set_graphic_mode(VIDEO_MODE) != 0) return 1;
 
-  if(subscribe_interrupts())return 1;
+   // Ativação das interrupções dos dispositivos
+  // Ativação das interrupções dos dispositivos
+  if (timer_subscribe_interrupts() != 0) return 1;
+  if (keyboard_subscribe_interrupts() != 0) return 1;
+  if (mouse_subscribe_interrupts() != 0) return 1;
+  if (rtc_subscribe_interrupts() != 0) return 1;
 
+  // Ativar stream-mode e report de dados do rato
   if (mouse_write(ENABLE_STREAM_MODE) != 0) return 1;
   if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
+
 
   return 0;
 
@@ -41,19 +50,42 @@ int proj_cleanup(){
 
   destroy_sprites();
 
-  // Desativa todas as interrupções
-  if (unsubscribe_interrupts()!= 0) return 1;
+  if (timer_unsubscribe_interrupts() != 0) return 1;
+  if (keyboard_unsubscribe_interrupts() != 0) return 1;
+  if (mouse_unsubscribe_interrupts() != 0) return 1;
+  if (rtc_unsubscribe_interrupts() != 0) return 1;
+
+  // Desativar o report de dados do rato
+  if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
 
   // Desativar o report de dados do rato
   if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
 
   return 0;
 }
+/*
+void proj_set_state(MenuState new_state) {
+  menuState = new_state;
+  switch (new_state) {
+    case GAME:
+      // develop game state
+      break;
+    case START:
+      proj_step_state = menu_step;
+      break;
+    case END:
+      proj_step_state = proj_step_game_over;
+      break;
+    default:
+      break;
+  }
+}
+*/
 
 
 int(proj_main_loop)(int argc, char* argv[]){
   
-  if (proj_setup()) return 1;
+  if (setup()) return 1;
   
   draw_new_frame();
 

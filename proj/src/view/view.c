@@ -10,7 +10,10 @@ extern MouseInfo mouse_info;
 extern MenuState menuState;
 
 // Objetos
-extern Sprite *typo_button_test;
+extern Sprite *typo_racer;
+extern Sprite *play_button;
+extern Sprite *play;
+extern Sprite *cursor;
 
 
 
@@ -59,15 +62,17 @@ void draw_new_frame() {
 }
 
 
-void draw_initial_menu() {
-    draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, RED, drawing_frame_buffer);
+void draw_initial_menu() { 
+    draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
+    draw_sprite_xpm(typo_racer, mode_info.XResolution/4 + 18, mode_info.YResolution/4);
+    draw_sprite_button(play_button, mode_info.XResolution/2 - 62, mode_info.YResolution/2);
+    draw_sprite_xpm(play, mode_info.XResolution/2 - 58 + 8, mode_info.YResolution/2 - 10);
     return;
 }
 
-
 void draw_game_menu() {
     draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, YELLOW, drawing_frame_buffer);
-    //draw_sprite_xpm(typo_button_test, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100); 
+    
     return;
 }
 
@@ -81,14 +86,7 @@ void draw_finish_menu() {
 // - "normal", quando está no menu de início ou de fim
 // - "mão", quando está no menu com os botões
 void draw_mouse() {
-    switch (menuState) {
-        case START: case END:
-
-            break;
-        case GAME:
-
-            break;
-    }
+    draw_sprite_xpm(cursor, mouse_info.x, mouse_info.y);
 }
 
 // A função recebe um objeto Sprite proveniente de um XPM e mostra-o nas coordenadas (x, y)
@@ -109,10 +107,6 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
     return 0; 
 }
 
-
-// A função recebe um objeto Sprite de cor constante e mostra-o nas coordenadas (x, y)
-// Usa apenas uma cor, alocada na altura da construção
-// A função ignora a cor transparente do XPM para não modificar o fundo quando não é preciso
 int draw_sprite_button(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
@@ -124,5 +118,6 @@ int draw_sprite_button(Sprite *sprite, int x, int y) {
     }
     return 0; 
 }
+
 
 

@@ -7,7 +7,10 @@
 #include "controller/Keyboard_mouse/mouse.h"
 #include "controller/video/graphics.h"
 #include "view/view.h"
-#include "xpm/typo_button_test.xpm"
+#include "xpm/typo_racer.xpm"
+#include "xpm/play_button.xpm"
+#include "xpm/mouse.xpm"
+
 
 typedef enum {
     RUNNING,

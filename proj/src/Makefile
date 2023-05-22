@@ -14,7 +14,7 @@ PROG=proj
 
 
 # Ficheiros ".c" a compilar. Têm de estar contidos nas pastas indicadas no passo anterior.
-SRCS = 	proj.c timer.c utils.c graphics.c KBC.c keyboard.c mouse.c rtc.c driver.c model.c view.c sprite.c
+SRCS = 	proj.c timer.c utils.c graphics.c KBC.c keyboard.c mouse.c rtc.c model.c view.c sprite.c
 
 # Flags de compilação
 CFLAGS += -pedantic -D_LCOM_OPTIMIZED_ -O2

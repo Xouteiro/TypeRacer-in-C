@@ -4,3 +4,5 @@ a.exe
 .idea
 .vscode
 *.o
+output.txt
+trace.txt

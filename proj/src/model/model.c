@@ -9,17 +9,26 @@ extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;
 
 // Objetos a construir e manipular com a mudança de estados
-Sprite *typo_button_test;
+Sprite *typo_racer;
+Sprite *play_button;
+Sprite *play;
+Sprite *cursor;
 
 
 // Criação dos objetos via XPM e via comum
 void setup_sprites() {
-   typo_button_test = create_sprite_xpm((xpm_map_t) smile_xpm);
+   typo_racer = create_sprite_xpm((xpm_map_t) typo_racer_xpm);
+   play_button =  create_sprite_button(105, 40, DARKBLUE); 
+   play = create_sprite_xpm((xpm_map_t) play_button_xpm);
+   cursor = create_sprite_xpm((xpm_map_t) mouse_xpm);
 }
 
 // É boa prática antes de acabar o programa libertar a memória alocada
 void destroy_sprites() {
-    destroy_sprite(typo_button_test);
+    destroy_sprite(typo_racer);
+    destroy_sprite(play_button);
+    destroy_sprite(play);
+    destroy_sprite(cursor);
 }
 
 // Na altura da interrupção há troca dos buffers
@@ -56,13 +65,13 @@ void update_mouse_state() {
     mouse_sync_bytes();
     if (byte_index == 3) {
         mouse_sync_info();
-        //update_buttons_state();
+        update_buttons_state();
         draw_new_frame();
         byte_index = 0;
     }
 }
 
-/*
+
 // Se o rato tiver o botão esquerdo pressionado (mouse_info.left_click) então
 // muda o estado do botão no mesmo quadrante
 // Senão, todos os botões voltam a não estar pressionados (buttonX->pressed = 0;)
@@ -70,23 +79,13 @@ void update_buttons_state() {
 
     if (mouse_info.left_click) {
 
-        if (mouse_info.x < mode_info.XResolution/2 && mouse_info.y < mode_info.YResolution/2)
-            button1->pressed = 1;
-
-        if (mouse_info.x >= mode_info.XResolution/2 && mouse_info.y <= mode_info.YResolution/2)
-            button2->pressed = 1;
-
-        if (mouse_info.x < mode_info.XResolution/2 && mouse_info.y >= mode_info.YResolution/2)
-            button3->pressed = 1;
-
-        if (mouse_info.x >= mode_info.XResolution/2 && mouse_info.y > mode_info.YResolution/2)
-            button4->pressed = 1;
+        if (mouse_info.x > mode_info.XResolution/2 - 62 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 && mouse_info.y < mode_info.YResolution/2 +40 )
+            play_button->pressed = 1;
+            menuState = GAME;
+            draw_new_frame();
 
     } else {
-        button1->pressed = 0;
-        button2->pressed = 0;
-        button3->pressed = 0;
-        button4->pressed = 0;
+        play_button->pressed = 0;
     }
 }
-*/
+

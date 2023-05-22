@@ -22,8 +22,10 @@
 #define BLUE 0x19DBF0
 #define GREEN 0x2FF019
 #define YELLOW 0xF5DA2A
-#define DARKBLUE 0x0000ff
+#define DARKBLUE 0x0047C1
 #define PRESSED 0x333FFF
+#define GOLD 0xFFBF00
 #define TRANSPARENT 0xFFFFFE
+
 
 #endif

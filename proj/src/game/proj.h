@@ -11,7 +11,7 @@
 #include "controller/video/graphics.h"
 #include "controller/keyboard_mouse/keyboard.h"
 #include "controller/keyboard_mouse/mouse.h"
-#include "controller/driver/driver.h"
+#include "controller/rtc/rtc.h"
 #include "model/model.h"
 #include "view/view.h"
 
@@ -20,7 +20,7 @@
  * 
  * @return int 0 upon success, non-zero otherwise.
  */
-int proj_setup(void);
+int setup(void);
 
 /**
  * @brief Runs a step of the program.
