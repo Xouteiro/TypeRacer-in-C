@@ -63,24 +63,7 @@ int proj_cleanup(){
 
   return 0;
 }
-/*
-void proj_set_state(MenuState new_state) {
-  menuState = new_state;
-  switch (new_state) {
-    case GAME:
-      // develop game state
-      break;
-    case START:
-      proj_step_state = menu_step;
-      break;
-    case END:
-      proj_step_state = proj_step_game_over;
-      break;
-    default:
-      break;
-  }
-}
-*/
+
 
 
 int(proj_main_loop)(int argc, char* argv[]){

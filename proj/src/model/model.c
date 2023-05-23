@@ -13,6 +13,8 @@ Sprite *typo_racer;
 Sprite *play_button;
 Sprite *play;
 Sprite *cursor;
+Sprite *quit;
+Sprite *exit_button;
 
 
 // Criação dos objetos via XPM e via comum
@@ -21,6 +23,8 @@ void setup_sprites() {
    play_button =  create_sprite_button(105, 40, DARKBLUE); 
    play = create_sprite_xpm((xpm_map_t) play_button_xpm);
    cursor = create_sprite_xpm((xpm_map_t) mouse_xpm);
+   quit = create_sprite_xpm((xpm_map_t) exit_xpm);
+   exit_button = create_sprite_button(105, 40, DARKBLUE);
 }
 
 // É boa prática antes de acabar o programa libertar a memória alocada
@@ -29,6 +33,8 @@ void destroy_sprites() {
     destroy_sprite(play_button);
     destroy_sprite(play);
     destroy_sprite(cursor);
+    destroy_sprite(quit);
+    destroy_sprite(exit_button);
 }
 
 // Na altura da interrupção há troca dos buffers
@@ -77,15 +83,20 @@ void update_mouse_state() {
 // Senão, todos os botões voltam a não estar pressionados (buttonX->pressed = 0;)
 void update_buttons_state() {
 
-    if (mouse_info.left_click) {
-
-        if (mouse_info.x > mode_info.XResolution/2 - 62 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 && mouse_info.y < mode_info.YResolution/2 +40 )
-            play_button->pressed = 1;
+    if (mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 && mouse_info.y < mode_info.YResolution/2 +40 ){
+        play_button->pressed = 1;
+        if (mouse_info.left_click) {
             menuState = GAME;
             draw_new_frame();
-
+        }
+    } else if(mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 + 50 && mouse_info.y < mode_info.YResolution/2 + 90 ){
+        exit_button->pressed = 1;
+        if (mouse_info.left_click) {
+            systemState = OVER;
+        }
     } else {
         play_button->pressed = 0;
+        exit_button->pressed = 0;
     }
 }
 

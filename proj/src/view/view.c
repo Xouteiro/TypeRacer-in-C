@@ -14,7 +14,8 @@ extern Sprite *typo_racer;
 extern Sprite *play_button;
 extern Sprite *play;
 extern Sprite *cursor;
-
+extern Sprite *quit;
+extern Sprite *exit_button;
 
 
 
@@ -65,8 +66,11 @@ void draw_new_frame() {
 void draw_initial_menu() { 
     draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
     draw_sprite_xpm(typo_racer, mode_info.XResolution/4 + 18, mode_info.YResolution/4);
-    draw_sprite_button(play_button, mode_info.XResolution/2 - 62, mode_info.YResolution/2);
-    draw_sprite_xpm(play, mode_info.XResolution/2 - 58 + 8, mode_info.YResolution/2 - 10);
+    draw_sprite_button(play_button, mode_info.XResolution/2 - 65, mode_info.YResolution/2);
+    draw_sprite_xpm(play, mode_info.XResolution/2 - 58 + 5, mode_info.YResolution/2 - 10);
+    draw_sprite_button(exit_button, mode_info.XResolution/2 - 65, mode_info.YResolution/2 + 70);
+    draw_sprite_xpm(quit, mode_info.XResolution/2 - 58 + 10, mode_info.YResolution/2 + 60);
+   
     return;
 }
 

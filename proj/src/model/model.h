@@ -10,6 +10,7 @@
 #include "xpm/typo_racer.xpm"
 #include "xpm/play_button.xpm"
 #include "xpm/mouse.xpm"
+#include "xpm/exit_button.xpm"
 
 
 typedef enum {
