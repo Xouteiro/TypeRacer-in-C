@@ -16,7 +16,7 @@ extern Sprite *play;
 extern Sprite *cursor;
 extern Sprite *quit;
 extern Sprite *exit_button;
-
+extern Sprite *esc;
 
 
 
@@ -75,10 +75,12 @@ void draw_initial_menu() {
 }
 
 void draw_game_menu() {
-    draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, YELLOW, drawing_frame_buffer);
+    draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
+    draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
+
     
     return;
-}
+} 
 
 
 void draw_finish_menu() {

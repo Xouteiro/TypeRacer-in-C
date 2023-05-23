@@ -11,6 +11,7 @@
 #include "xpm/play_button.xpm"
 #include "xpm/mouse.xpm"
 #include "xpm/exit_button.xpm"
+#include "xpm/esc_menu.xpm"
 
 
 typedef enum {

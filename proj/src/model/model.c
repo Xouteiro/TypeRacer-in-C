@@ -15,6 +15,7 @@ Sprite *play;
 Sprite *cursor;
 Sprite *quit;
 Sprite *exit_button;
+Sprite *esc;
 
 
 // Criação dos objetos via XPM e via comum
@@ -25,6 +26,7 @@ void setup_sprites() {
    cursor = create_sprite_xpm((xpm_map_t) mouse_xpm);
    quit = create_sprite_xpm((xpm_map_t) exit_xpm);
    exit_button = create_sprite_button(105, 40, DARKBLUE);
+   esc = create_sprite_xpm((xpm_map_t) esc_xpm);
 }
 
 // É boa prática antes de acabar o programa libertar a memória alocada
@@ -35,6 +37,7 @@ void destroy_sprites() {
     destroy_sprite(cursor);
     destroy_sprite(quit);
     destroy_sprite(exit_button);
+    destroy_sprite(esc);
 }
 
 // Na altura da interrupção há troca dos buffers
@@ -47,9 +50,6 @@ void update_keyboard_state() {
     (kbc_ih)();
     switch (scancode) {
         case BREAK_ESC:
-            systemState = OVER;
-            break;
-        case S_KEY:
             menuState = START;
             break;
         case G_KEY:
