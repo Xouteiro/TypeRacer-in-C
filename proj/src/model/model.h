@@ -6,6 +6,7 @@
 #include "controller/keyboard_mouse/KBC.h"
 #include "controller/Keyboard_mouse/mouse.h"
 #include "controller/video/graphics.h"
+#include "controller/rtc/rtc.h"
 #include "view/view.h"
 #include "xpm/typo_racer.xpm"
 #include "xpm/play_button.xpm"
@@ -28,8 +29,9 @@ typedef enum {
 void (timer_update_state)();
 void (keyboard_update_state)();
 void (mouse_update_state)();
-void (buttons_update_state)();
+void (menu_buttons_update)();
 void (sprites_setup)();
 void (sprites_destroy)();
+void update_rtc_state();
 
 #endif

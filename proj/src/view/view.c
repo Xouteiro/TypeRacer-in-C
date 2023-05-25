@@ -42,7 +42,6 @@ void (view_draw_new_frame)() {
             view_draw_finish_menu();
             break;
     }
-    view_draw_mouse();
 }
 
 void (view_draw_initial_menu)() { 
@@ -96,3 +95,5 @@ int (view_draw_sprite_button)(Sprite *sprite, int x, int y) {
     }
     return 0; 
 }
+
+

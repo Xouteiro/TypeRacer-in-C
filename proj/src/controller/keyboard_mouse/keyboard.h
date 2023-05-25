@@ -12,5 +12,6 @@ int (keyboard_interrupts_subscription)(uint8_t *bit_no);
 int (keyboard_interrupts_unsubscription)();
 void (KBC_interrupt_handler)();
 // int (keyboard_restore)();
+void (kbc_ih)();
 
 #endif

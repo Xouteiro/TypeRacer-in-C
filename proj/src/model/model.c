@@ -15,6 +15,7 @@ Sprite *quit;
 Sprite *exit_button;
 Sprite *esc;
 
+int timer_interrupts = 0;
 
 void (sprites_setup)() {
    typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
@@ -37,45 +38,52 @@ void (sprites_destroy)() {
 }
 
 void (timer_update_state)() {
+    view_draw_new_frame();
+    view_draw_mouse();
     view_swap_buffers();
+    timer_interrupts++;
 }
 
 void (keyboard_update_state)() {
-    (kbc_ih)();
-    switch (scancode) {
-        case BREAK_ESC:
-            menuState = START;
+    kbc_ih();
+    switch (menuState) {
+        case START:
+            if(scancode == BREAK_ESC) systemState = OVER;
             break;
-        case G_KEY:
-            menuState = GAME;
+        case GAME:
+            //gameControls(scancode);
+            if(scancode == BREAK_ESC) menuState = START;
             break;
-        case E_KEY:
-            menuState = END;
+        case END:
+            if(scancode == BREAK_ESC) systemState = OVER;
         default:
             break;
     }
-    view_draw_new_frame();
 }
 
 void (mouse_update_state)() {
     (mouse_ih)();
     mouse_get_bytes();
     if (byte_index == 3) {
-        mouse_get_info();
-        buttons_update_state();
-        view_draw_new_frame();
         byte_index = 0;
+        mouse_get_info();
+        if(menuState == START){
+            menu_buttons_update();
+        }
     }
 }
+void update_rtc_state() {
+    if (timer_interrupts % 60 == 0) rtc_update_time_info();
+}
 
-void (buttons_update_state)() {
+void (menu_buttons_update)() {
     if (mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 && mouse_info.y < mode_info.YResolution/2 +40 ){
         play_button->pressed = 1;
         if (mouse_info.left_click) {
             menuState = GAME;
-            view_draw_new_frame();
+            //createGame();
         }
-    } else if(mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 + 50 && mouse_info.y < mode_info.YResolution/2 + 90 ){
+    } else if(mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 + 50 && mouse_info.y < mode_info.YResolution/2 + 100 ){
         exit_button->pressed = 1;
         if (mouse_info.left_click) {
             systemState = OVER;

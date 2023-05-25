@@ -14,6 +14,7 @@
 #include "controller/rtc/rtc.h"
 #include "model/model.h"
 #include "view/view.h"
+#include "game/game.h"
 
 /**
  * @brief Initializes everything needed for the program.
