@@ -9,14 +9,14 @@
 #include "model/sprite.h"
 
 
-void draw_new_frame();
-void draw_initial_menu();
-void draw_game_menu();
-void draw_finish_menu();
-void draw_mouse();
-void swap_buffers();
-int draw_sprite_xpm(Sprite *sprite, int x, int y);
-int draw_sprite_button(Sprite *sprite, int x, int y);
-int set_frame_buffers(uint16_t mode);
+void (view_draw_new_frame)();
+void (view_draw_initial_menu)();
+void (view_draw_game_menu)();
+void (view_draw_finish_menu)();
+void (view_draw_mouse)();
+void (view_swap_buffers)();
+int (view_draw_sprite_xpm)(Sprite *sprite, int x, int y);
+int (view_draw_sprite_button)(Sprite *sprite, int x, int y);
+int (view_set_frame_buffers)(uint16_t mode);
 
 #endif

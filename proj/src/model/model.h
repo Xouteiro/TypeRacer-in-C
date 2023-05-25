@@ -25,11 +25,11 @@ typedef enum {
     END
 } MenuState;
 
-void update_timer_state();
-void update_keyboard_state();
-void update_mouse_state();
-void update_buttons_state();
-void setup_sprites();
-void destroy_sprites();
+void (timer_update_state)();
+void (keyboard_update_state)();
+void (mouse_update_state)();
+void (buttons_update_state)();
+void (sprites_setup)();
+void (sprites_destroy)();
 
 #endif

@@ -16,16 +16,11 @@ typedef struct {
     int16_t y;
 } MouseInfo;   
 
-int (mouse_subscribe_interrupts)();
-
-int (mouse_unsubscribe_interrupts)();
-
+int (mouse_interrupts_subscription)(uint8_t *bit_no);
+int (mouse_interrupts_unsubscription)();
 void (mouse_ih)();
-
-void (mouse_sync_bytes)();
-
-void (mouse_sync_info)();
-
-int (mouse_write)(uint8_t command);
+void (mouse_get_bytes)();
+void (mouse_get_info)();
+int (mouse_write_command)(uint8_t command);
 
 #endif

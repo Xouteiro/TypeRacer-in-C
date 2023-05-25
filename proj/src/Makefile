@@ -1,7 +1,7 @@
-# Nome do binário. Tem de ser "proj".
+# name of the program (Minix service)
 PROG=proj
 
-# Indicar as pastas de todos os ficheiros a compilar.
+# Directories with the files to be compiled
 .PATH: ${.CURDIR}/controller/
 .PATH: ${.CURDIR}/controller/keyboard_mouse
 .PATH: ${.CURDIR}/controller/timer
@@ -12,14 +12,16 @@ PROG=proj
 .PATH: ${.CURDIR}/view/
 .PATH: ${.CURDIR}/game/
 
+# source code files to be compiled
+SRCS = proj.c timer.c utils.c graphics.c KBC.c keyboard.c mouse.c rtc.c model.c view.c sprite.c
 
-# Ficheiros ".c" a compilar. Têm de estar contidos nas pastas indicadas no passo anterior.
-SRCS = 	proj.c timer.c utils.c graphics.c KBC.c keyboard.c mouse.c rtc.c model.c view.c sprite.c
-
-# Flags de compilação
+# additional compilation flags
+# "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
 CFLAGS += -pedantic -D_LCOM_OPTIMIZED_ -O2
 
-# Dependências
+# list of library dependencies (for Lab 2, only LCF library)
 DPADD += ${LIBLCF}
 LDADD += -Wall -llcf -lxpm -llm
+
+# include LCOM's makefile that does all the "heavy lifting"
 .include <minix.lcom.mk>

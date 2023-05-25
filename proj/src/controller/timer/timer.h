@@ -8,11 +8,8 @@
 #include "i8254.h"
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq);
-
-int (timer_subscribe_interrupts)();
-
-int (timer_unsubscribe_interrupts)();
-
+int (timer_interrupts_subscription)(uint8_t *bit_no);
+int (timer_interrupts_unsubscription)();
 int (timer_get_conf)(uint8_t timer, uint8_t *st);
 
 #endif

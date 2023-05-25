@@ -1,6 +1,5 @@
 #include "model.h"
 
-// Variáveis externas importantes à construção e manipulação do modelo
 extern uint8_t scancode;
 extern uint8_t byte_index;
 SystemState systemState = RUNNING;
@@ -8,7 +7,6 @@ MenuState menuState = START;
 extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;
 
-// Objetos a construir e manipular com a mudança de estados
 Sprite *typo_racer;
 Sprite *play_button;
 Sprite *play;
@@ -18,35 +16,31 @@ Sprite *exit_button;
 Sprite *esc;
 
 
-// Criação dos objetos via XPM e via comum
-void setup_sprites() {
-   typo_racer = create_sprite_xpm((xpm_map_t) typo_racer_xpm);
-   play_button =  create_sprite_button(105, 40, DARKBLUE); 
-   play = create_sprite_xpm((xpm_map_t) play_button_xpm);
-   cursor = create_sprite_xpm((xpm_map_t) mouse_xpm);
-   quit = create_sprite_xpm((xpm_map_t) exit_xpm);
-   exit_button = create_sprite_button(105, 40, DARKBLUE);
-   esc = create_sprite_xpm((xpm_map_t) esc_xpm);
+void (sprites_setup)() {
+   typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
+   play_button =  sprite_create_button(105, 40, DARKBLUE); 
+   play = sprite_create_xpm((xpm_map_t) play_button_xpm);
+   cursor = sprite_create_xpm((xpm_map_t) mouse_xpm);
+   quit = sprite_create_xpm((xpm_map_t) exit_xpm);
+   exit_button = sprite_create_button(105, 40, DARKBLUE);
+   esc = sprite_create_xpm((xpm_map_t) esc_xpm);
 }
 
-// É boa prática antes de acabar o programa libertar a memória alocada
-void destroy_sprites() {
-    destroy_sprite(typo_racer);
-    destroy_sprite(play_button);
-    destroy_sprite(play);
-    destroy_sprite(cursor);
-    destroy_sprite(quit);
-    destroy_sprite(exit_button);
-    destroy_sprite(esc);
+void (sprites_destroy)() {
+    sprites_destroy(typo_racer);
+    sprites_destroy(play_button);
+    sprites_destroy(play);
+    sprites_destroy(cursor);
+    sprites_destroy(quit);
+    sprites_destroy(exit_button);
+    sprites_destroy(esc);
 }
 
-// Na altura da interrupção há troca dos buffers
-void update_timer_state() {
-    swap_buffers();
+void (timer_update_state)() {
+    view_swap_buffers();
 }
 
-
-void update_keyboard_state() {
+void (keyboard_update_state)() {
     (kbc_ih)();
     switch (scancode) {
         case BREAK_ESC:
@@ -60,34 +54,26 @@ void update_keyboard_state() {
         default:
             break;
     }
-    draw_new_frame();
+    view_draw_new_frame();
 }
 
-// Sempre que há um novo pacote completo do rato
-// - muda o seu estado interno (x, y, left_pressed, right_pressed) - mouse_sync_info();
-// - pode mudar o estado do botão por baixo dele - update_buttons_state();
-void update_mouse_state() {
+void (mouse_update_state)() {
     (mouse_ih)();
-    mouse_sync_bytes();
+    mouse_get_bytes();
     if (byte_index == 3) {
-        mouse_sync_info();
-        update_buttons_state();
-        draw_new_frame();
+        mouse_get_info();
+        buttons_update_state();
+        view_draw_new_frame();
         byte_index = 0;
     }
 }
 
-
-// Se o rato tiver o botão esquerdo pressionado (mouse_info.left_click) então
-// muda o estado do botão no mesmo quadrante
-// Senão, todos os botões voltam a não estar pressionados (buttonX->pressed = 0;)
-void update_buttons_state() {
-
+void (buttons_update_state)() {
     if (mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 && mouse_info.y < mode_info.YResolution/2 +40 ){
         play_button->pressed = 1;
         if (mouse_info.left_click) {
             menuState = GAME;
-            draw_new_frame();
+            view_draw_new_frame();
         }
     } else if(mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 + 50 && mouse_info.y < mode_info.YResolution/2 + 90 ){
         exit_button->pressed = 1;
@@ -99,4 +85,3 @@ void update_buttons_state() {
         exit_button->pressed = 0;
     }
 }
-

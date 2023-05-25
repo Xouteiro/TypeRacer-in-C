@@ -8,12 +8,9 @@
 #include "i8042.h"
 #include "KBC.h"
 
-int (keyboard_subscribe_interrupts)();
-
-int (keyboard_unsubscribe_interrupts)();
-
-void (kbc_ih)();
-
-int (keyboard_restore)();
+int (keyboard_interrupts_subscription)(uint8_t *bit_no);
+int (keyboard_interrupts_unsubscription)();
+void (KBC_interrupt_handler)();
+// int (keyboard_restore)();
 
 #endif
