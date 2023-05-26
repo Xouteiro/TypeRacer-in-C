@@ -9,7 +9,6 @@
 #include "model/sprite.h"
 
 
-
 void (view_draw_new_frame)();
 void (view_draw_initial_menu)();
 void (view_draw_game_menu)();
@@ -20,5 +19,8 @@ int (view_draw_sprite_xpm)(Sprite *sprite, int x, int y);
 int (view_draw_sprite_button)(Sprite *sprite, int x, int y);
 int (view_set_frame_buffers)(uint16_t mode);
 int (phrase_writer)(char* word, int y_line);
+int (is_lower)(char letter);
+int (is_upper)(char letter);
+int (is_number)(char letter);
 
 #endif

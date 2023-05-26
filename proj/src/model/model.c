@@ -14,108 +14,58 @@ Sprite *cursor;
 Sprite *quit;
 Sprite *exit_button;
 Sprite *esc;
-Sprite *letter_a;
-Sprite *letter_b;
-Sprite *letter_c;
-Sprite *letter_d;
-Sprite *letter_e;
-Sprite *letter_f;
-Sprite *letter_g;
-Sprite *letter_h;
-Sprite *letter_i;
-Sprite *letter_j;
-Sprite *letter_k;
-Sprite *letter_l;
-Sprite *letter_m;
-Sprite *letter_n;
-Sprite *letter_o;
-Sprite *letter_p;
-Sprite *letter_q;
-Sprite *letter_r;  
-Sprite *letter_s;
-Sprite *letter_t;
-Sprite *letter_u;
-Sprite *letter_v;
-Sprite *letter_w;
-Sprite *letter_x;
-Sprite *letter_y;
-Sprite *letter_z;
-
+Sprite *letters[26];
 
 int timer_interrupts = 0;
 
 void (sprites_setup)() {
-   typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
-   play_button =  sprite_create_button(105, 40, DARKBLUE); 
-   play = sprite_create_xpm((xpm_map_t) play_button_xpm);
-   cursor = sprite_create_xpm((xpm_map_t) mouse_xpm);
-   quit = sprite_create_xpm((xpm_map_t) exit_xpm);
-   exit_button = sprite_create_button(105, 40, DARKBLUE);
-   esc = sprite_create_xpm((xpm_map_t) esc_xpm);
-    letter_a = sprite_create_xpm((xpm_map_t) a_xpm);
-    letter_b = sprite_create_xpm((xpm_map_t) b_xpm);
-    letter_c = sprite_create_xpm((xpm_map_t) c_xpm);
-    letter_d = sprite_create_xpm((xpm_map_t) d_xpm);
-    letter_e = sprite_create_xpm((xpm_map_t) e_xpm);
-    letter_f = sprite_create_xpm((xpm_map_t) f_xpm);
-    letter_g = sprite_create_xpm((xpm_map_t) g_xpm);
-    letter_h = sprite_create_xpm((xpm_map_t) h_xpm);
-    letter_i = sprite_create_xpm((xpm_map_t) i_xpm);
-    letter_j = sprite_create_xpm((xpm_map_t) j_xpm);
-    letter_k = sprite_create_xpm((xpm_map_t) k_xpm);
-    letter_l = sprite_create_xpm((xpm_map_t) l_xpm);   
-    letter_m = sprite_create_xpm((xpm_map_t) m_xpm);
-    letter_n = sprite_create_xpm((xpm_map_t) n_xpm);
-    letter_o = sprite_create_xpm((xpm_map_t) o_xpm);
-    letter_p = sprite_create_xpm((xpm_map_t) p_xpm);
-    letter_q = sprite_create_xpm((xpm_map_t) q_xpm);
-    letter_r = sprite_create_xpm((xpm_map_t) r_xpm);
-    letter_s = sprite_create_xpm((xpm_map_t) s_xpm);
-    letter_t = sprite_create_xpm((xpm_map_t) t_xpm);
-    letter_u = sprite_create_xpm((xpm_map_t) u_xpm);
-    letter_v = sprite_create_xpm((xpm_map_t) v_xpm);
-    letter_w = sprite_create_xpm((xpm_map_t) w_xpm);
-    letter_x = sprite_create_xpm((xpm_map_t) x_xpm);
-    /*
-    letter_y = sprite_create_xpm((xpm_map_t) y_xpm);
-    letter_z = sprite_create_xpm((xpm_map_t) z_xpm);
-    */
+    typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
+    play_button =  sprite_create_button(105, 40, DARKBLUE); 
+    play = sprite_create_xpm((xpm_map_t) play_button_xpm);
+    cursor = sprite_create_xpm((xpm_map_t) mouse_xpm);
+    quit = sprite_create_xpm((xpm_map_t) exit_xpm);
+    exit_button = sprite_create_button(105, 40, DARKBLUE);
+    esc = sprite_create_xpm((xpm_map_t) esc_xpm);
+    letters[0] = sprite_create_xpm((xpm_map_t) xpm_a);
+    letters[1] = sprite_create_xpm((xpm_map_t) xpm_b);
+    letters[2] = sprite_create_xpm((xpm_map_t) xpm_c);
+    letters[3] = sprite_create_xpm((xpm_map_t) xpm_d);
+    letters[4] = sprite_create_xpm((xpm_map_t) xpm_e);
+    letters[5] = sprite_create_xpm((xpm_map_t) xpm_f);
+    letters[6] = sprite_create_xpm((xpm_map_t) xpm_g);
+    letters[7] = sprite_create_xpm((xpm_map_t) xpm_h);
+    letters[8] = sprite_create_xpm((xpm_map_t) xpm_i);
+    letters[9] = sprite_create_xpm((xpm_map_t) xpm_j);
+    letters[10] = sprite_create_xpm((xpm_map_t) xpm_k);
+    letters[11] = sprite_create_xpm((xpm_map_t) xpm_l);   
+    letters[12] = sprite_create_xpm((xpm_map_t) xpm_m);
+    letters[13] = sprite_create_xpm((xpm_map_t) xpm_n);
+    letters[14] = sprite_create_xpm((xpm_map_t) xpm_o);
+    letters[15] = sprite_create_xpm((xpm_map_t) xpm_p);
+    letters[16] = sprite_create_xpm((xpm_map_t) xpm_q);
+    letters[17] = sprite_create_xpm((xpm_map_t) xpm_r);
+    letters[18] = sprite_create_xpm((xpm_map_t) xpm_s);
+    letters[19] = sprite_create_xpm((xpm_map_t) xpm_t);
+    letters[20] = sprite_create_xpm((xpm_map_t) xpm_u);
+    letters[21] = sprite_create_xpm((xpm_map_t) xpm_v);
+    letters[22] = sprite_create_xpm((xpm_map_t) xpm_w);
+    letters[23] = sprite_create_xpm((xpm_map_t) xpm_x);
+    letters[24] = sprite_create_xpm((xpm_map_t) xpm_y);
+    letters[25] = sprite_create_xpm((xpm_map_t) xpm_z);
+    
 }
 
 void (sprites_destroy)() {
-    sprites_destroy(typo_racer);
-    sprites_destroy(play_button);
-    sprites_destroy(play);
-    sprites_destroy(cursor);
-    sprites_destroy(quit);
-    sprites_destroy(exit_button);
-    sprites_destroy(esc);
-    sprites_destroy(letter_a);
-    sprites_destroy(letter_b);
-    sprites_destroy(letter_c);
-    sprites_destroy(letter_d);
-    sprites_destroy(letter_e);
-    sprites_destroy(letter_f);
-    sprites_destroy(letter_g);
-    sprites_destroy(letter_h);
-    sprites_destroy(letter_i);
-    sprites_destroy(letter_j);
-    sprites_destroy(letter_k);
-    sprites_destroy(letter_l);
-    sprites_destroy(letter_m);
-    sprites_destroy(letter_n);
-    sprites_destroy(letter_o);
-    sprites_destroy(letter_p);
-    sprites_destroy(letter_q);
-    sprites_destroy(letter_r);
-    sprites_destroy(letter_s);
-    sprites_destroy(letter_t);
-    sprites_destroy(letter_u);
-    sprites_destroy(letter_v);
-    sprites_destroy(letter_w);
-    sprites_destroy(letter_x);
-    sprites_destroy(letter_y);
-    sprites_destroy(letter_z);
+    sprite_destroy(typo_racer);
+    sprite_destroy(play_button);
+    sprite_destroy(play);
+    sprite_destroy(cursor);
+    sprite_destroy(quit);
+    sprite_destroy(exit_button);
+    sprite_destroy(esc);
+    for(int i = 0 ; i < 26 ; i++){
+        sprite_destroy(letters[i]);
+    }
 }
 
 void (timer_update_state)() {
