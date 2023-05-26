@@ -5,7 +5,23 @@
         "mouse.h": "c",
         "view.h": "c",
         "model.h": "c",
-        "*.xpm": "c"
+        "*.xpm": "c",
+        "__config": "c",
+        "__tree": "c",
+        "algorithm": "c",
+        "atomic": "c",
+        "chrono": "c",
+        "functional": "c",
+        "iterator": "c",
+        "locale": "c",
+        "map": "c",
+        "memory": "c",
+        "string": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "vector": "c",
+        "__tuple": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
