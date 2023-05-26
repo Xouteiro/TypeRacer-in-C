@@ -1,5 +1,5 @@
 /* XPM */
-static char *a[] = {
+static char *a_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
 "  c None",
@@ -71,7 +71,7 @@ static char *a[] = {
 };
 
 /* XPM */
-static char *b[] = {
+static char *b_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
 "  c None",
@@ -143,7 +143,7 @@ static char *b[] = {
 };
 
 /* XPM */
-static char *c[] = {
+static char *c_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
 "  c None",
@@ -215,7 +215,7 @@ static char *c[] = {
 };
 
 /* XPM */
-static char *d[] = {
+static char *d_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
 "  c None",
@@ -287,7 +287,7 @@ static char *d[] = {
 };
 
 /* XPM */
-static char *e[] = {
+static char *e_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
 "  c None",
@@ -359,7 +359,7 @@ static char *e[] = {
 };
 
 /* XPM */
-static char *f[] = {
+static char *f_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
 "  c None",
@@ -431,7 +431,7 @@ static char *f[] = {
 };
 
 /* XPM */
-static char *g[] = {
+static char *g_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
 "  c None",
