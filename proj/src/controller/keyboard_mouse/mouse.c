@@ -4,7 +4,7 @@ int hook_id_mouse = 2;        // any value between [0..7], as long it's differen
 uint8_t byte_index = 0;       // between [0..2]
 uint8_t mouse_bytes[3];       // caught bytes from the mouse
 uint8_t current_byte;         // most recent byte caught from the mouse
-MouseInfo mouse_info = {0, 0, 100, 100};
+MouseInfo mouse_info = {0, 0, 370, 310};
 extern vbe_mode_info_t mode_info;
 
 // interrupt subscription

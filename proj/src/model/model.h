@@ -14,7 +14,8 @@
 #include "xpm/exit_button.xpm"
 #include "xpm/esc_menu.xpm"
 #include "xpm/letters.xpm"
-#include "model/sprite.h"
+#include "xpm/numbers.xpm"
+#include "game/game.h"
 
 
 typedef enum {

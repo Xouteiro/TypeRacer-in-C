@@ -1,16 +1,16 @@
 /* XPM */
-static char *a_xpm[] = {
+static char *xpm_a[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -71,18 +71,18 @@ static char *a_xpm[] = {
 };
 
 /* XPM */
-static char *b_xpm[] = {
+static char *xpm_b[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -143,18 +143,18 @@ static char *b_xpm[] = {
 };
 
 /* XPM */
-static char *c_xpm[] = {
+static char *xpm_c[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -215,18 +215,18 @@ static char *c_xpm[] = {
 };
 
 /* XPM */
-static char *d_xpm[] = {
+static char *xpm_d[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -287,90 +287,90 @@ static char *d_xpm[] = {
 };
 
 /* XPM */
-static char *e_xpm[] = {
-/* columns rows colors chars-per-pixel */
-"23 56 9 1 ",
-"  c None",
-". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
-/* pixels */
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"  #o.......o           ",
-" @.........o           ",
-"$X.........o           ",
-"@...#                  ",
-"+..X                   ",
-"O..o                   ",
-"O..........o           ",
-"O..........o           ",
-"O..........o           ",
-"O..o                   ",
-"+..X                   ",
-"@...#                  ",
-"$X.........o           ",
-" @.........o           ",
-"  #o.......o           ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       ",
-"                       "
-};
-
-/* XPM */
-static char *f_xpm[] = {
+static char *xpm_e[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
 "  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
+/* pixels */
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"  #o.......o           ",
+" @.........o           ",
+"$X.........o           ",
+"@...#                  ",
+"+..X                   ",
+"O..o                   ",
+"O..........o           ",
+"O..........o           ",
+"O..........o           ",
+"O..o                   ",
+"+..X                   ",
+"@...#                  ",
+"$X.........o           ",
+" @.........o           ",
+"  #o.......o           ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       ",
+"                       "
+};
+
+/* XPM */
+static char *xpm_f[] = {
+/* columns rows colors chars-per-pixel */
+"23 56 9 1 ",
+"  c #FFFFFE",
+". c #FFBF00",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -431,18 +431,18 @@ static char *f_xpm[] = {
 };
 
 /* XPM */
-static char *g_xpm[] = {
+static char *xpm_g[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -503,13 +503,13 @@ static char *g_xpm[] = {
 };
 
 /* XPM */
-static char *h_xpm[] = {
+static char *xpm_h[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 4 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFCF3F",
-"o c #FFD75F",
+"X c #FFBF00",
+"o c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -570,13 +570,13 @@ static char *h_xpm[] = {
 };
 
 /* XPM */
-static char *i_xpm[] = {
+static char *xpm_i[] = {
 /* columns rows colors chars-per-pixel */
 "15 56 4 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFCF3F",
-"o c #FFD75F",
+"X c #FFBF00",
+"o c #FFBF00",
 /* pixels */
 "               ",
 "               ",
@@ -637,17 +637,17 @@ static char *i_xpm[] = {
 };
 
 /* XPM */
-static char *j_xpm[] = {
+static char *xpm_j[] = {
 /* columns rows colors chars-per-pixel */
 "16 56 8 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
 /* pixels */
 "                ",
 "                ",
@@ -708,18 +708,18 @@ static char *j_xpm[] = {
 };
 
 /* XPM */
-static char *k_xpm[] = {
+static char *xpm_k[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -780,18 +780,18 @@ static char *k_xpm[] = {
 };
 
 /* XPM */
-static char *l_xpm[] = {
+static char *xpm_l[] = {
 /* columns rows colors chars-per-pixel */
 "20 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                    ",
 "                    ",
@@ -852,18 +852,18 @@ static char *l_xpm[] = {
 };
 
 /* XPM */
-static char *m_xpm[] = {
+static char *xpm_m[] = {
 /* columns rows colors chars-per-pixel */
 "27 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                           ",
 "                           ",
@@ -924,18 +924,18 @@ static char *m_xpm[] = {
 };
 
 /* XPM */
-static char *n_xpm[] = {
+static char *xpm_n[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -996,18 +996,18 @@ static char *n_xpm[] = {
 };
 
 /* XPM */
-static char *o_xpm[] = {
+static char *xpm_o[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -1068,18 +1068,18 @@ static char *o_xpm[] = {
 };
 
 /* XPM */
-static char *p_xpm[] = {
+static char *xpm_p[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -1140,18 +1140,18 @@ static char *p_xpm[] = {
 };
 
 /* XPM */
-static char *q_xpm[] = {
+static char *xpm_q[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -1212,18 +1212,18 @@ static char *q_xpm[] = {
 };
 
 /* XPM */
-static char *r_xpm[] = {
+static char *xpm_r[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -1284,18 +1284,18 @@ static char *r_xpm[] = {
 };
 
 /* XPM */
-static char *s_xpm[] = {
+static char *xpm_s[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -1356,14 +1356,14 @@ static char *s_xpm[] = {
 };
 
 /* XPM */
-static char *t_xpm[] = {
+static char *xpm_t[] = {
 /* columns rows colors chars-per-pixel */
 "22 56 5 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFD75F",
-"o c #FFEFBF",
-"O c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
 /* pixels */
 "                      ",
 "                      ",
@@ -1424,18 +1424,18 @@ static char *t_xpm[] = {
 };
 
 /* XPM */
-static char *u_xpm[] = {
+static char *xpm_u[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -1496,18 +1496,18 @@ static char *u_xpm[] = {
 };
 
 /* XPM */
-static char *v_xpm[] = {
+static char *xpm_v[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -1568,18 +1568,18 @@ static char *v_xpm[] = {
 };
 
 /* XPM */
-static char *w_xpm[] = {
+static char *xpm_w[] = {
 /* columns rows colors chars-per-pixel */
 "27 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                           ",
 "                           ",
@@ -1640,18 +1640,18 @@ static char *w_xpm[] = {
 };
 
 /* XPM */
-static char *x_xpm[] = {
+static char *xpm_x[] = {
 /* columns rows colors chars-per-pixel */
 "23 56 9 1 ",
-"  c None",
+"  c #FFFFFE",
 ". c #FFBF00",
-"X c #FFC71F",
-"o c #FFCF3F",
-"O c #FFD75F",
-"+ c #FFDF7F",
-"@ c #FFE79F",
-"# c #FFEFBF",
-"$ c #FFF7DF",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
 /* pixels */
 "                       ",
 "                       ",
@@ -1709,4 +1709,148 @@ static char *x_xpm[] = {
 "                       ",
 "                       ",
 "                       "
+};
+
+/* XPM */
+static char *xpm_y[] = {
+/* columns rows colors chars-per-pixel */
+"22 56 9 1 ",
+"  c #FFFFFE",
+". c #FFBF00",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
+/* pixels */
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"@...$ $...@           ",
+" X..@ @...            ",
+" +..o o..+            ",
+" $...#...$            ",
+"  O..X..o             ",
+"  #.....#             ",
+"   X...X              ",
+"   @...+              ",
+"   $...#              ",
+"   $...#              ",
+"   $...#              ",
+"   $...#              ",
+"   $...#              ",
+"   $...#              ",
+"   $...#              ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      ",
+"                      "
+};
+
+/* XPM */
+static char *xpm_z[] = {
+/* columns rows colors chars-per-pixel */
+"21 56 9 1 ",
+"  c #FFFFFE",
+". c #FFBF00",
+"X c #FFBF00",
+"o c #FFBF00",
+"O c #FFBF00",
+"+ c #FFBF00",
+"@ c #FFBF00",
+"# c #FFBF00",
+"$ c #FFBF00",
+/* pixels */
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"O........+           ",
+"O........+           ",
+"O........+           ",
+"     #...@           ",
+"     X..X            ",
+"    O...#            ",
+"   #...+             ",
+"  $X..o              ",
+"  O...$              ",
+" #...+               ",
+"$X..o                ",
+"+...$                ",
+"O........+           ",
+"O........+           ",
+"O........+           ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     ",
+"                     "
 };
