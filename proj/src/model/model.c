@@ -1,85 +1,104 @@
 #include "model.h"
+#include "sprite.h"
 
 extern uint8_t scancode;
 extern uint8_t byte_index;
 SystemState systemState = RUNNING;
 MenuState menuState = START;
 extern MouseInfo mouse_info;
-extern vbe_mode_info_t mode_info;   
-
-Sprite *typo_racer;
-Sprite *play_button;
-Sprite *play;
-Sprite *cursor;
-Sprite *quit;
-Sprite *exit_button;
-Sprite *esc;
-Sprite *a;
-Sprite *b;
-Sprite *c;
-Sprite *d;
-Sprite *e;
-Sprite *f;
-Sprite *g;
-Sprite *h;
-Sprite *letter_i;
-Sprite *letter_j;
-Sprite *k;
-Sprite *l;
-Sprite *m;
-Sprite *n;
-Sprite *o;
-Sprite *p;
-Sprite *q;
-Sprite *r;  
-Sprite *s;
-Sprite *t;
-Sprite *u;
-Sprite *v;
-Sprite *w;
-Sprite *x;
-Sprite *y;
-Sprite *z;
-
+extern vbe_mode_info_t mode_info; 
+extern Sprite *Sprites[MAX_SPRITES];
 
 int timer_interrupts = 0;
+// enum sprites_letters_t sprites_letters;
+
+typedef enum {
+    a = 0,
+    b,
+    c,
+    d,
+    e,
+    f,
+    g,
+    h,
+    letter_i,
+    letter_j,
+    k,
+    l,
+    m,
+    n,
+    o,
+    p,
+    q,
+    r,
+    s,
+    t,
+    u,
+    v,
+    w,
+    x,
+    y,
+    z,
+} sprites_letters_t;
+
+typedef struct {
+    Sprite *typo_racer,
+    Sprite *play_button,
+    Sprite *play,
+    Sprite *cursor,
+    Sprite *quit,
+    Sprite *exit_button,
+    Sprite *esc,
+    Sprite Sprites[26],  // passar as sprites para este array
+    enum sprites_letters_t sprites_letters,
+} sprites_t;
+
+
+
+
+
 
 void (sprites_setup)() {
-   typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
-   play_button =  sprite_create_button(105, 40, DARKBLUE); 
-   play = sprite_create_xpm((xpm_map_t) play_button_xpm);
-   cursor = sprite_create_xpm((xpm_map_t) mouse_xpm);
-   quit = sprite_create_xpm((xpm_map_t) exit_xpm);
-   exit_button = sprite_create_button(105, 40, DARKBLUE);
-   esc = sprite_create_xpm((xpm_map_t) esc_xpm);
+    sprites.typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
+    sprites.play_button =  sprite_create_button(105, 40, DARKBLUE); 
+    sprites.play = sprite_create_xpm((xpm_map_t) play_button_xpm);
+    sprites.cursor = sprite_create_xpm((xpm_map_t) mouse_xpm);
+    sprites.quit = sprite_create_xpm((xpm_map_t) exit_xpm);
+    sprites.exit_button = sprite_create_button(105, 40, DARKBLUE);
+    sprites.esc = sprite_create_xpm((xpm_map_t) esc_xpm);
+
+    for (int i = 0; i < MAX_SPRITES; i++) {
+        sprites_letters = i;
+        Sprites[i] = sprites_letters;
+    }
+    
     a = sprite_create_xpm((xpm_map_t) a_xpm);
-    b = sprite_create_xpm((xpm_map_t) b_xpm);
-    c = sprite_create_xpm((xpm_map_t) c_xpm);
-    d = sprite_create_xpm((xpm_map_t) d_xpm);
-    e = sprite_create_xpm((xpm_map_t) e_xpm);
-    f = sprite_create_xpm((xpm_map_t) f_xpm);
-    g = sprite_create_xpm((xpm_map_t) g_xpm);
-    //h = sprite_create_xpm((xpm_map_t) h_xpm);
-    /*
-    letter_i = sprite_create_xpm((xpm_map_t) i_xpm);
-    letter_j = sprite_create_xpm((xpm_map_t) j_xpm);
-    k = sprite_create_xpm((xpm_map_t) k_xpm);
-    l = sprite_create_xpm((xpm_map_t) l_xpm);   
-    m = sprite_create_xpm((xpm_map_t) m_xpm);
-    n = sprite_create_xpm((xpm_map_t) n_xpm);
-    o = sprite_create_xpm((xpm_map_t) o_xpm);
-    p = sprite_create_xpm((xpm_map_t) p_xpm);
-    q = sprite_create_xpm((xpm_map_t) q_xpm);
-    r = sprite_create_xpm((xpm_map_t) r_xpm);
-    s = sprite_create_xpm((xpm_map_t) s_xpm);
-    t = sprite_create_xpm((xpm_map_t) t_xpm);
-    u = sprite_create_xpm((xpm_map_t) u_xpm);
-    v = sprite_create_xpm((xpm_map_t) v_xpm);
-    w = sprite_create_xpm((xpm_map_t) w_xpm);
-    x = sprite_create_xpm((xpm_map_t) x_xpm);
-    y = sprite_create_xpm((xpm_map_t) y_xpm);
-    z = sprite_create_xpm((xpm_map_t) z_xpm);
-    */
+    // b = sprite_create_xpm((xpm_map_t) b_xpm);
+    // c = sprite_create_xpm((xpm_map_t) c_xpm);
+    // d = sprite_create_xpm((xpm_map_t) d_xpm);
+    // e = sprite_create_xpm((xpm_map_t) e_xpm);
+    // f = sprite_create_xpm((xpm_map_t) f_xpm);
+    // g = sprite_create_xpm((xpm_map_t) g_xpm);
+    // h = sprite_create_xpm((xpm_map_t) h_xpm);
+    // letter_i = sprite_create_xpm((xpm_map_t) i_xpm);
+    // letter_j = sprite_create_xpm((xpm_map_t) j_xpm);
+    // k = sprite_create_xpm((xpm_map_t) k_xpm);
+    // l = sprite_create_xpm((xpm_map_t) l_xpm);   
+    // m = sprite_create_xpm((xpm_map_t) m_xpm);
+    // n = sprite_create_xpm((xpm_map_t) n_xpm);
+    // o = sprite_create_xpm((xpm_map_t) o_xpm);
+    // p = sprite_create_xpm((xpm_map_t) p_xpm);
+    // q = sprite_create_xpm((xpm_map_t) q_xpm);
+    // r = sprite_create_xpm((xpm_map_t) r_xpm);
+    // s = sprite_create_xpm((xpm_map_t) s_xpm);
+    // t = sprite_create_xpm((xpm_map_t) t_xpm);
+    // u = sprite_create_xpm((xpm_map_t) u_xpm);
+    // v = sprite_create_xpm((xpm_map_t) v_xpm);
+    // w = sprite_create_xpm((xpm_map_t) w_xpm);
+    // x = sprite_create_xpm((xpm_map_t) x_xpm);
+    // y = sprite_create_xpm((xpm_map_t) y_xpm);
+    // z = sprite_create_xpm((xpm_map_t) z_xpm);
+    
 }
 
 void (sprites_destroy)() {
