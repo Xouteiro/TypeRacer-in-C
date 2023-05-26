@@ -94,7 +94,11 @@ void (keyboard_update_state)() {
     switch (menuState) {
         case START:
             if(scancode == BREAK_ESC) systemState = OVER;
-            if(scancode == KEY_1) menuState = GAME;
+            if(scancode == KEY_1){
+                menuState = GAME;
+                create_game(&game);
+
+            } 
             break;
         case GAME:
             //gameControls(scancode);
