@@ -7,7 +7,7 @@
 #include "controller/keyboard_mouse/mouse.h"
 #include "model/model.h"
 #include "model/sprite.h"
-
+#include "game/game.h"
 
 
 void (view_draw_new_frame)();

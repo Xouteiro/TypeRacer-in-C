@@ -7,7 +7,7 @@ uint32_t frame_buffer_size;
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
 extern MenuState menuState;
-Game *game;
+extern Game game;
 
 
 extern Sprite *typo_racer;
@@ -88,7 +88,7 @@ void (view_draw_initial_menu)() {
 void (view_draw_game_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
     view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
-    phrase_writer( "sdfghjkkjhgfdsdfghjklkjhgf" , 100);
+    phrase_writer( game.phrase , 100);
 
     return;
 } 
@@ -189,12 +189,10 @@ int (phrase_writer)(char* word, int y_line){
             case 'x': case 'X':
                 view_draw_sprite_xpm(x, x_pos, y_line); break;
             case 'y': case 'Y':
-                view_draw_sprite_xpm(y, x_pos, y_line); break;
+                view_draw_sprite_xpm(a, x_pos, y_line); break;
             case 'z': case 'Z':
                 view_draw_sprite_xpm(a, x_pos, y_line); break;
-            case '.': case ',':
-                view_draw_sprite_xpm(a, x_pos, y_line); break;
-            case ' ':
+            case '.': case ',': case ' ':
                 x_pos+=10;
                 safe_x += 15;
                 break;

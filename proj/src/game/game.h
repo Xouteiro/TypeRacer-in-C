@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "view/view.h"
+#include "model/model.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -20,7 +21,7 @@ void create_game(Game *game);
 
 void game_controls(int scancode);
 
-char* get_random_phrase(char* file);
+int get_random_phrase();
 
 
 #endif

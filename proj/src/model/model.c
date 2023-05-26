@@ -4,6 +4,7 @@ extern uint8_t scancode;
 extern uint8_t byte_index;
 SystemState systemState = RUNNING;
 MenuState menuState = START;
+Game game;
 extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;   
 

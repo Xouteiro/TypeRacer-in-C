@@ -1,13 +1,12 @@
 #include "game.h"
 
-static char phrases[3000];
-
+char *sentence;
 
 
 void create_game(Game *game){
-    char * text = get_random_phrase("/home/lcom/labs/g3/proj/src/xpm/phrases.txt");
-    game->phrase = text;
-    game->phrase_size = strlen(text);
+    get_random_phrase();    
+    game->phrase = sentence;
+    game->phrase_size = strlen(sentence) - 1;
     return;
 }
 
@@ -15,32 +14,20 @@ void game_controls(int scancode){
 return;
 }
 
-char* get_random_phrase(char* file){
-    FILE *infile;
-    if((infile = fopen(file,"r"))== NULL){
-        perror("cannot open file");
-        return NULL;
+int get_random_phrase(){
+    FILE *textfile;
+    char line[1000];
+     
+    textfile = fopen("/home/lcom/labs/g3/proj/src/xpm/phrases.txt", "r");
+    if(textfile == NULL)
+        return 1;
+     
+    while(fgets(line, 1000, textfile)){
+        sentence = line;
     }
-    int r = rand() % 10;
-    size_t string_size = 0;
-    char* string = NULL;
-    int i = 0;
-    while(getline(&string, &string_size, infile)> 0){
-        if(i == r){
-            for (size_t j = 0;j<string_size;j++){
-                if(string[j]=='\n'){
-                    phrases[j] = '\0';
-                    break;
-                }
-                phrases[j] = string[j];
-            }
-            break;
-        }
-        i++;
-    }
-    fclose(infile);
-    return phrases;
-
+     
+    fclose(textfile);
+    return 0;
 }
 
 

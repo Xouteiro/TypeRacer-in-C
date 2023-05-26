@@ -4,6 +4,7 @@
 extern SystemState systemState;
 extern MenuState menuState;
 
+
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
   lcf_trace_calls("/home/lcom/labs/g3/proj/src/trace.txt");
