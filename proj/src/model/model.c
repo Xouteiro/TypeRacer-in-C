@@ -59,8 +59,7 @@ void (sprites_setup)() {
     e = sprite_create_xpm((xpm_map_t) e_xpm);
     f = sprite_create_xpm((xpm_map_t) f_xpm);
     g = sprite_create_xpm((xpm_map_t) g_xpm);
-    //h = sprite_create_xpm((xpm_map_t) h_xpm);
-    /*
+    h = sprite_create_xpm((xpm_map_t) h_xpm);
     letter_i = sprite_create_xpm((xpm_map_t) i_xpm);
     letter_j = sprite_create_xpm((xpm_map_t) j_xpm);
     k = sprite_create_xpm((xpm_map_t) k_xpm);
@@ -77,6 +76,7 @@ void (sprites_setup)() {
     v = sprite_create_xpm((xpm_map_t) v_xpm);
     w = sprite_create_xpm((xpm_map_t) w_xpm);
     x = sprite_create_xpm((xpm_map_t) x_xpm);
+    /*
     y = sprite_create_xpm((xpm_map_t) y_xpm);
     z = sprite_create_xpm((xpm_map_t) z_xpm);
     */
@@ -162,7 +162,7 @@ void (menu_buttons_update)() {
         play_button->pressed = 1;
         if (mouse_info.left_click) {
             menuState = GAME;
-            //create_game(&game);
+            create_game(&game);
         }
     } else if(mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 + 50 && mouse_info.y < mode_info.YResolution/2 + 100 ){
         exit_button->pressed = 1;
