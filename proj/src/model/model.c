@@ -15,6 +15,7 @@ Sprite *quit;
 Sprite *exit_button;
 Sprite *esc;
 Sprite *letters[26];
+Sprite *numbers[10];
 
 int timer_interrupts = 0;
 
@@ -52,7 +53,16 @@ void (sprites_setup)() {
     letters[23] = sprite_create_xpm((xpm_map_t) xpm_x);
     letters[24] = sprite_create_xpm((xpm_map_t) xpm_y);
     letters[25] = sprite_create_xpm((xpm_map_t) xpm_z);
-    
+    numbers[0] = sprite_create_xpm((xpm_map_t) xpm_o);
+    numbers[1] = sprite_create_xpm((xpm_map_t) xpm_1);
+    numbers[2] = sprite_create_xpm((xpm_map_t) xpm_2);
+    numbers[3] = sprite_create_xpm((xpm_map_t) xpm_3);
+    numbers[4] = sprite_create_xpm((xpm_map_t) xpm_4);
+    numbers[5] = sprite_create_xpm((xpm_map_t) xpm_5);
+    numbers[6] = sprite_create_xpm((xpm_map_t) xpm_6);
+    numbers[7] = sprite_create_xpm((xpm_map_t) xpm_7);
+    numbers[8] = sprite_create_xpm((xpm_map_t) xpm_8);
+    numbers[9] = sprite_create_xpm((xpm_map_t) xpm_9);
 }
 
 void (sprites_destroy)() {
@@ -65,6 +75,9 @@ void (sprites_destroy)() {
     sprite_destroy(esc);
     for(int i = 0 ; i < 26 ; i++){
         sprite_destroy(letters[i]);
+    }
+    for(int i = 0 ; i < 10 ; i++){
+        sprite_destroy(numbers[i]);
     }
 }
 

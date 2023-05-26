@@ -9,7 +9,6 @@ extern MouseInfo mouse_info;
 extern MenuState menuState;
 Game *game;
 
-
 extern Sprite *typo_racer;
 extern Sprite *play_button;
 extern Sprite *play;
@@ -18,40 +17,14 @@ extern Sprite *quit;
 extern Sprite *exit_button;
 extern Sprite *esc;
 extern Sprite *letters[26];
-/*
-extern Sprite *letter_a;
-extern Sprite *letter_b;
-extern Sprite *letter_c;
-extern Sprite *letter_d;
-extern Sprite *letter_e;
-extern Sprite *letter_f;
-extern Sprite *letter_g;
-extern Sprite *letter_h;
-extern Sprite *letter_i;
-extern Sprite *letter_j;
-extern Sprite *letter_k;
-extern Sprite *letter_l;
-extern Sprite *letter_m;
-extern Sprite *letter_n;
-extern Sprite *letter_o;
-extern Sprite *letter_p;
-extern Sprite *letter_q;
-extern Sprite *letter_r;
-extern Sprite *letter_s;
-extern Sprite *letter_t;
-extern Sprite *letter_u;
-extern Sprite *letter_v;
-extern Sprite *letter_w;
-extern Sprite *letter_x;
-extern Sprite *letter_y;
-*/
+extern Sprite *numbers[10];
+
 
 int (view_set_frame_buffers)(uint16_t mode) {
     if (graphics_set_frame_buffer(mode, &main_frame_buffer)) return 1;
     frame_buffer_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
     secondary_frame_buffer = (uint8_t *) malloc(frame_buffer_size);
     drawing_frame_buffer = secondary_frame_buffer;
-
     return 0;
 }
 
@@ -88,6 +61,7 @@ void (view_draw_game_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
     view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
     phrase_writer( "pe pe pelele" , 100);
+    phrase_writer( "t10 g3" , 400);
 
     return;
 } 
@@ -145,6 +119,9 @@ int (phrase_writer)(char* word, int y_line){
         }
         else if(is_upper(letter)){
             view_draw_sprite_xpm(letters[letter - 'A'], x_pos, y_line);
+        }
+        else if(is_number(letter)){
+            view_draw_sprite_xpm(numbers[letter - '0'], x_pos, y_line);
         }
         else if(letter == '.' || letter == ','){
             view_draw_sprite_xpm(letters[0], x_pos, y_line);
