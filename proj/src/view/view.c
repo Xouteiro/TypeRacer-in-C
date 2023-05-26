@@ -17,32 +17,32 @@ extern Sprite *cursor;
 extern Sprite *quit;
 extern Sprite *exit_button;
 extern Sprite *esc;
-extern Sprite *a;
-extern Sprite *b;
-extern Sprite *c;
-extern Sprite *d;
-extern Sprite *e;
-extern Sprite *f;
-extern Sprite *g;
-extern Sprite *h;
+extern Sprite *letter_a;
+extern Sprite *letter_b;
+extern Sprite *letter_c;
+extern Sprite *letter_d;
+extern Sprite *letter_e;
+extern Sprite *letter_f;
+extern Sprite *letter_g;
+extern Sprite *letter_h;
 extern Sprite *letter_i;
 extern Sprite *letter_j;
-extern Sprite *k;
-extern Sprite *l;
-extern Sprite *m;
-extern Sprite *n;
-extern Sprite *o;
-extern Sprite *p;
-extern Sprite *q;
-extern Sprite *r;
-extern Sprite *s;
-extern Sprite *t;
-extern Sprite *u;
-extern Sprite *v;
-extern Sprite *w;
-extern Sprite *x;
-extern Sprite *y;
-
+extern Sprite *letter_k;
+extern Sprite *letter_l;
+extern Sprite *letter_m;
+extern Sprite *letter_n;
+extern Sprite *letter_o;
+extern Sprite *letter_p;
+extern Sprite *letter_q;
+extern Sprite *letter_r;
+extern Sprite *letter_s;
+extern Sprite *letter_t;
+extern Sprite *letter_u;
+extern Sprite *letter_v;
+extern Sprite *letter_w;
+extern Sprite *letter_x;
+extern Sprite *letter_y;
+letter_
 
 
 
@@ -141,59 +141,59 @@ int (phrase_writer)(char* word, int y_line){
         if( *(word+i) == '\0') break;
         switch( *(word+i) ){
             case 'a': case 'A':
-                view_draw_sprite_xpm(a, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_a, x_pos, y_line); break;
             case 'b': case 'B':
-                view_draw_sprite_xpm(b, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_b, x_pos, y_line); break;
             case 'c': case 'C':
-                view_draw_sprite_xpm(c, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_c, x_pos, y_line); break;
             case 'd': case 'D':
-                view_draw_sprite_xpm(d, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_d, x_pos, y_line); break;
             case 'e': case 'E':
-                view_draw_sprite_xpm(e, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_e, x_pos, y_line); break;
             case 'f': case 'F':
-                view_draw_sprite_xpm(f, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_f, x_pos, y_line); break;
             case 'g': case 'G':
-                view_draw_sprite_xpm(g, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_g, x_pos, y_line); break;
             case 'h': case 'H':
-                view_draw_sprite_xpm(h, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_h, x_pos, y_line); break;
             case 'i': case 'I':
                 view_draw_sprite_xpm(letter_i, x_pos, y_line); break;
             case 'j': case 'J':
                 view_draw_sprite_xpm(letter_j, x_pos, y_line); break;
             case 'k': case 'K':
-                view_draw_sprite_xpm(k, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_k, x_pos, y_line); break;
             case 'l': case 'L':
-                view_draw_sprite_xpm(l, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_l, x_pos, y_line); break;
             case 'm': case 'M':
-                view_draw_sprite_xpm(m, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_m, x_pos, y_line); break;
             case 'n': case 'N':
-                view_draw_sprite_xpm(n, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_n, x_pos, y_line); break;
             case 'o': case 'O':
-                view_draw_sprite_xpm(o, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_o, x_pos, y_line); break;
             case 'p': case 'P':
-                view_draw_sprite_xpm(p, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_p, x_pos, y_line); break;
             case 'q': case 'Q':
-                view_draw_sprite_xpm(q, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_q, x_pos, y_line); break;
             case 'r': case 'R':
-                view_draw_sprite_xpm(r, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_r, x_pos, y_line); break;
             case 's': case 'S':
-                view_draw_sprite_xpm(s, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_s, x_pos, y_line); break;
             case 't': case 'T':
-                view_draw_sprite_xpm(t, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_t, x_pos, y_line); break;
             case 'u': case 'U':
-                view_draw_sprite_xpm(u, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_u, x_pos, y_line); break;
             case 'v': case 'V':
-                view_draw_sprite_xpm(v, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_v, x_pos, y_line); break;
             case 'w': case 'W':
-                view_draw_sprite_xpm(w, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_w, x_pos, y_line); break;
             case 'x': case 'X':
-                view_draw_sprite_xpm(x, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_x, x_pos, y_line); break;
             case 'y': case 'Y':
-                view_draw_sprite_xpm(y, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_y, x_pos, y_line); break;
             case 'z': case 'Z':
-                view_draw_sprite_xpm(a, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_a, x_pos, y_line); break;
             case '.': case ',':
-                view_draw_sprite_xpm(a, x_pos, y_line); break;
+                view_draw_sprite_xpm(letter_a, x_pos, y_line); break;
             case ' ':
                 x_pos+=10;
                 safe_x += 15;
