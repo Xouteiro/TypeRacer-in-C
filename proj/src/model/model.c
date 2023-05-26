@@ -15,108 +15,71 @@ Sprite *cursor;
 Sprite *quit;
 Sprite *exit_button;
 Sprite *esc;
-Sprite *a;
-Sprite *b;
-Sprite *c;
-Sprite *d;
-Sprite *e;
-Sprite *f;
-Sprite *g;
-Sprite *h;
-Sprite *letter_i;
-Sprite *letter_j;
-Sprite *k;
-Sprite *l;
-Sprite *m;
-Sprite *n;
-Sprite *o;
-Sprite *p;
-Sprite *q;
-Sprite *r;  
-Sprite *s;
-Sprite *t;
-Sprite *u;
-Sprite *v;
-Sprite *w;
-Sprite *x;
-Sprite *y;
-Sprite *z;
-
+Sprite *letters[26];
+Sprite *numbers[10];
 
 int timer_interrupts = 0;
 
 void (sprites_setup)() {
-   typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
-   play_button =  sprite_create_button(105, 40, DARKBLUE); 
-   play = sprite_create_xpm((xpm_map_t) play_button_xpm);
-   cursor = sprite_create_xpm((xpm_map_t) mouse_xpm);
-   quit = sprite_create_xpm((xpm_map_t) exit_xpm);
-   exit_button = sprite_create_button(105, 40, DARKBLUE);
-   esc = sprite_create_xpm((xpm_map_t) esc_xpm);
-    a = sprite_create_xpm((xpm_map_t) a_xpm);
-    b = sprite_create_xpm((xpm_map_t) b_xpm);
-    c = sprite_create_xpm((xpm_map_t) c_xpm);
-    d = sprite_create_xpm((xpm_map_t) d_xpm);
-    e = sprite_create_xpm((xpm_map_t) e_xpm);
-    f = sprite_create_xpm((xpm_map_t) f_xpm);
-    g = sprite_create_xpm((xpm_map_t) g_xpm);
-    h = sprite_create_xpm((xpm_map_t) h_xpm);
-    letter_i = sprite_create_xpm((xpm_map_t) i_xpm);
-    letter_j = sprite_create_xpm((xpm_map_t) j_xpm);
-    k = sprite_create_xpm((xpm_map_t) k_xpm);
-    l = sprite_create_xpm((xpm_map_t) l_xpm);   
-    m = sprite_create_xpm((xpm_map_t) m_xpm);
-    n = sprite_create_xpm((xpm_map_t) n_xpm);
-    o = sprite_create_xpm((xpm_map_t) o_xpm);
-    p = sprite_create_xpm((xpm_map_t) p_xpm);
-    q = sprite_create_xpm((xpm_map_t) q_xpm);
-    r = sprite_create_xpm((xpm_map_t) r_xpm);
-    s = sprite_create_xpm((xpm_map_t) s_xpm);
-    t = sprite_create_xpm((xpm_map_t) t_xpm);
-    u = sprite_create_xpm((xpm_map_t) u_xpm);
-    v = sprite_create_xpm((xpm_map_t) v_xpm);
-    w = sprite_create_xpm((xpm_map_t) w_xpm);
-    x = sprite_create_xpm((xpm_map_t) x_xpm);
-    /*
-    y = sprite_create_xpm((xpm_map_t) y_xpm);
-    z = sprite_create_xpm((xpm_map_t) z_xpm);
-    */
+    typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
+    play_button =  sprite_create_button(105, 40, DARKBLUE); 
+    play = sprite_create_xpm((xpm_map_t) play_button_xpm);
+    cursor = sprite_create_xpm((xpm_map_t) mouse_xpm);
+    quit = sprite_create_xpm((xpm_map_t) exit_xpm);
+    exit_button = sprite_create_button(105, 40, DARKBLUE);
+    esc = sprite_create_xpm((xpm_map_t) esc_xpm);
+    letters[0] = sprite_create_xpm((xpm_map_t) xpm_a);
+    letters[1] = sprite_create_xpm((xpm_map_t) xpm_b);
+    letters[2] = sprite_create_xpm((xpm_map_t) xpm_c);
+    letters[3] = sprite_create_xpm((xpm_map_t) xpm_d);
+    letters[4] = sprite_create_xpm((xpm_map_t) xpm_e);
+    letters[5] = sprite_create_xpm((xpm_map_t) xpm_f);
+    letters[6] = sprite_create_xpm((xpm_map_t) xpm_g);
+    letters[7] = sprite_create_xpm((xpm_map_t) xpm_h);
+    letters[8] = sprite_create_xpm((xpm_map_t) xpm_i);
+    letters[9] = sprite_create_xpm((xpm_map_t) xpm_j);
+    letters[10] = sprite_create_xpm((xpm_map_t) xpm_k);
+    letters[11] = sprite_create_xpm((xpm_map_t) xpm_l);   
+    letters[12] = sprite_create_xpm((xpm_map_t) xpm_m);
+    letters[13] = sprite_create_xpm((xpm_map_t) xpm_n);
+    letters[14] = sprite_create_xpm((xpm_map_t) xpm_o);
+    letters[15] = sprite_create_xpm((xpm_map_t) xpm_p);
+    letters[16] = sprite_create_xpm((xpm_map_t) xpm_q);
+    letters[17] = sprite_create_xpm((xpm_map_t) xpm_r);
+    letters[18] = sprite_create_xpm((xpm_map_t) xpm_s);
+    letters[19] = sprite_create_xpm((xpm_map_t) xpm_t);
+    letters[20] = sprite_create_xpm((xpm_map_t) xpm_u);
+    letters[21] = sprite_create_xpm((xpm_map_t) xpm_v);
+    letters[22] = sprite_create_xpm((xpm_map_t) xpm_w);
+    letters[23] = sprite_create_xpm((xpm_map_t) xpm_x);
+    letters[24] = sprite_create_xpm((xpm_map_t) xpm_y);
+    letters[25] = sprite_create_xpm((xpm_map_t) xpm_z);
+    numbers[0] = sprite_create_xpm((xpm_map_t) xpm_o);
+    numbers[1] = sprite_create_xpm((xpm_map_t) xpm_1);
+    numbers[2] = sprite_create_xpm((xpm_map_t) xpm_2);
+    numbers[3] = sprite_create_xpm((xpm_map_t) xpm_3);
+    numbers[4] = sprite_create_xpm((xpm_map_t) xpm_4);
+    numbers[5] = sprite_create_xpm((xpm_map_t) xpm_5);
+    numbers[6] = sprite_create_xpm((xpm_map_t) xpm_6);
+    numbers[7] = sprite_create_xpm((xpm_map_t) xpm_7);
+    numbers[8] = sprite_create_xpm((xpm_map_t) xpm_8);
+    numbers[9] = sprite_create_xpm((xpm_map_t) xpm_9);
 }
 
 void (sprites_destroy)() {
-    sprites_destroy(typo_racer);
-    sprites_destroy(play_button);
-    sprites_destroy(play);
-    sprites_destroy(cursor);
-    sprites_destroy(quit);
-    sprites_destroy(exit_button);
-    sprites_destroy(esc);
-    sprites_destroy(a);
-    sprites_destroy(b);
-    sprites_destroy(c);
-    sprites_destroy(d);
-    sprites_destroy(e);
-    sprites_destroy(f);
-    sprites_destroy(g);
-    sprites_destroy(h);
-    sprites_destroy(letter_i);
-    sprites_destroy(letter_j);
-    sprites_destroy(k);
-    sprites_destroy(l);
-    sprites_destroy(m);
-    sprites_destroy(n);
-    sprites_destroy(o);
-    sprites_destroy(p);
-    sprites_destroy(q);
-    sprites_destroy(r);
-    sprites_destroy(s);
-    sprites_destroy(t);
-    sprites_destroy(u);
-    sprites_destroy(v);
-    sprites_destroy(w);
-    sprites_destroy(x);
-    sprites_destroy(y);
-    sprites_destroy(z);
+    sprite_destroy(typo_racer);
+    sprite_destroy(play_button);
+    sprite_destroy(play);
+    sprite_destroy(cursor);
+    sprite_destroy(quit);
+    sprite_destroy(exit_button);
+    sprite_destroy(esc);
+    for(int i = 0 ; i < 26 ; i++){
+        sprite_destroy(letters[i]);
+    }
+    for(int i = 0 ; i < 10 ; i++){
+        sprite_destroy(numbers[i]);
+    }
 }
 
 void (timer_update_state)() {
@@ -163,7 +126,7 @@ void (menu_buttons_update)() {
         play_button->pressed = 1;
         if (mouse_info.left_click) {
             menuState = GAME;
-            create_game(&game);
+            //create_game(&game);
         }
     } else if(mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 + 50 && mouse_info.y < mode_info.YResolution/2 + 100 ){
         exit_button->pressed = 1;

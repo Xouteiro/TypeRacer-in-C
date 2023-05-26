@@ -14,6 +14,7 @@
 #include "xpm/exit_button.xpm"
 #include "xpm/esc_menu.xpm"
 #include "xpm/letters.xpm"
+#include "xpm/numbers.xpm"
 #include "game/game.h"
 
 
