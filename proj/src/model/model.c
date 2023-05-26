@@ -94,6 +94,7 @@ void (keyboard_update_state)() {
     switch (menuState) {
         case START:
             if(scancode == BREAK_ESC) systemState = OVER;
+            if(scancode == KEY_1) menuState = GAME;
             break;
         case GAME:
             //gameControls(scancode);
@@ -126,7 +127,7 @@ void (menu_buttons_update)() {
         play_button->pressed = 1;
         if (mouse_info.left_click) {
             menuState = GAME;
-            //create_game(&game);
+            create_game(&game);
         }
     } else if(mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 + 50 && mouse_info.y < mode_info.YResolution/2 + 100 ){
         exit_button->pressed = 1;

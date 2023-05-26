@@ -28,6 +28,7 @@
 #define G_KEY           34
 #define E_KEY           18
 #define Q_KEY           16
+#define KEY_1           2
 
 #define MOUSE_LB            BIT(0)
 #define MOUSE_RB            BIT(1)
