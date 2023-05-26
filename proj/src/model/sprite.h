@@ -3,9 +3,8 @@
 
 #include "controller/video/graphics.h"
 
-#define LETTERS_SPRITES     26     // 26 letters of the alphabet
-#define OTHER_SPRITES       5     
-#define MAX_SPRITES         (LETTERS_SPRITES + OTHER_SPRITES)
+#define LETTERS    26     // 26 letters of the alphabet
+#define NUMBERS    10     
 
 typedef struct {
     uint16_t height;

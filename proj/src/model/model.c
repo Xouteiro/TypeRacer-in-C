@@ -1,5 +1,4 @@
 #include "model.h"
-#include "sprite.h"
 
 extern uint8_t scancode;
 extern uint8_t byte_index;
@@ -20,53 +19,6 @@ Sprite *letters[26];
 Sprite *numbers[10];
 
 int timer_interrupts = 0;
-// enum sprites_letters_t sprites_letters;
-
-typedef enum {
-    a = 0,
-    b,
-    c,
-    d,
-    e,
-    f,
-    g,
-    h,
-    letter_i,
-    letter_j,
-    k,
-    l,
-    m,
-    n,
-    o,
-    p,
-    q,
-    r,
-    s,
-    t,
-    u,
-    v,
-    w,
-    x,
-    y,
-    z,
-} sprites_letters_t;
-
-typedef struct {
-    Sprite *typo_racer,
-    Sprite *play_button,
-    Sprite *play,
-    Sprite *cursor,
-    Sprite *quit,
-    Sprite *exit_button,
-    Sprite *esc,
-    Sprite Sprites[26],  // passar as sprites para este array
-    enum sprites_letters_t sprites_letters,
-} sprites_t;
-
-
-
-
-
 
 void (sprites_setup)() {
     typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
