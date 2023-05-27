@@ -4,6 +4,7 @@
 int rtc_hook_id = RTC_MASK;
 real_time_info time_info;
 uint8_t binary_mode;
+static int count_interrupts = 0;
 
 int (rtc_setup)() {
     binary_mode = rtc_is_binary();
@@ -27,6 +28,12 @@ int (rtc_interrupts_unsubscription)() {
 int (rtc_output_read)(uint8_t command, uint8_t *output) {
     if (sys_outb(REGISTER_INPUT, command)) return 1;
 	if (util_sys_inb(REGISTER_OUTPUT, output)) return 1;
+    return 0;
+}
+
+int (rtc_write)(uint8_t command, uint8_t output) {
+    if (sys_outb(REGISTER_INPUT, command)) return 1;
+	if (sys_outb(REGISTER_OUTPUT, output)) return 1;
     return 0;
 }
 
@@ -77,4 +84,22 @@ int (rtc_update_time_info)() {
 
 uint8_t (to_binary)(uint8_t bcd_number) {
     return ((bcd_number >> 4) * 10) + (bcd_number & 0xF);
+}
+
+int rtc_start_counter(void) {
+  uint8_t reg = 0;
+  do {
+    if (rtc_output_read(0xA, &reg)) return 1;
+  } while(reg & UPDATING);
+  count_interrupts = 0;
+  return rtc_write(0xA, reg | RATE);
+}
+
+
+void rtc_handle_period(void) {
+  count_interrupts++;
+}
+
+int rtc_get_time_elapsed(void) {
+  return count_interrupts / 2;
 }

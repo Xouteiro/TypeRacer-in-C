@@ -24,10 +24,42 @@
 #define WAIT_KBC        20000
 #define MAX_ATTEMPS     10
 
-#define S_KEY           31
-#define G_KEY           34
-#define E_KEY           18
+
+
 #define Q_KEY           16
+#define W_KEY           17
+#define E_KEY           18
+#define R_KEY           19
+#define T_KEY           20
+#define Y_KEY           21
+#define U_KEY           22
+#define I_KEY           23
+#define O_KEY           24
+#define P_KEY           25
+#define A_KEY           30
+#define S_KEY           31
+#define D_KEY           32
+#define F_KEY           33
+#define G_KEY           34
+#define H_KEY           35
+#define J_KEY           36
+#define K_KEY           37
+#define L_KEY           38
+#define Z_KEY           44
+#define X_KEY           45
+#define C_KEY           46
+#define V_KEY           47
+#define B_KEY           48
+#define N_KEY           49
+#define M_KEY           50
+#define COMMA_KEY       51
+#define DOT_KEY         52
+
+#define ESC_KEY         0x81
+#define SPACE_KEY       57
+#define ENTER_KEY       28
+#define BACKSPACE_KEY   14
+
 #define KEY_1           2
 
 #define MOUSE_LB            BIT(0)
