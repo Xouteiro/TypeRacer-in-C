@@ -1,21 +1,13 @@
 #include "view.h"
 
-uint8_t *main_frame_buffer;
-uint8_t *secondary_frame_buffer;
-uint8_t *drawing_frame_buffer;
+uint8_t *main_frame_buffer, *secondary_frame_buffer, *drawing_frame_buffer;
 uint32_t frame_buffer_size;
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
 extern MenuState menuState;
 extern Game game;
 
-extern Sprite *typo_racer;
-extern Sprite *play_button;
-extern Sprite *play;
-extern Sprite *cursor;
-extern Sprite *quit;
-extern Sprite *exit_button;
-extern Sprite *esc;
+extern Sprite *typo_racer, *play_button, *play, *cursor, *quit, *exit_button, *esc, *dot, *comma;
 extern Sprite *letters[26];
 extern Sprite *numbers[10];
 
@@ -53,7 +45,6 @@ void (view_draw_initial_menu)() {
     view_draw_sprite_xpm(play, mode_info.XResolution/2 - 58 + 5, mode_info.YResolution/2 - 10);
     view_draw_sprite_button(exit_button, mode_info.XResolution/2 - 65, mode_info.YResolution/2 + 70);
     view_draw_sprite_xpm(quit, mode_info.XResolution/2 - 58 + 10, mode_info.YResolution/2 + 60);
-   
     return;
 }
 
@@ -61,7 +52,6 @@ void (view_draw_game_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
     view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
     phrase_writer( game.phrase , 100);
-
     return;
 } 
 
@@ -102,6 +92,7 @@ int (view_draw_sprite_xpm_green)(Sprite *sprite, int x, int y) {
     }
     return 0; 
 }
+
 int (view_draw_sprite_xpm_red)(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
@@ -152,16 +143,25 @@ int (phrase_writer)(char* word, int y_line){
         else if(is_number(letter)){
             view_draw_sprite_xpm(numbers[letter - '0'], x_pos, y_line);
         }
-        else if(letter == '.' || letter == ','){
-            view_draw_sprite_xpm(letters[0], x_pos, y_line);
+        else if(letter == '.'){
+            view_draw_sprite_xpm(dot, x_pos, y_line);
+            safe_x += 10;
+            x_pos += 10;
+            continue;
+        }
+        else if(letter == ','){
+            view_draw_sprite_xpm(comma, x_pos, y_line);
+            safe_x += 10;
+            x_pos += 10;
+            continue;
         }
         else if(letter == ' '){
-            x_pos+=10;
-            safe_x += 15;
+            safe_x += 1;
+            x_pos += 1;
         }
         else return 1;
-        safe_x += 15;
-        x_pos+=15;
+        safe_x += 18;
+        x_pos += 18;
     }
 
 return 0;

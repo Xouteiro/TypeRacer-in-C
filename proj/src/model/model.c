@@ -8,13 +8,7 @@ Game game;
 extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;   
 
-Sprite *typo_racer;
-Sprite *play_button;
-Sprite *play;
-Sprite *cursor;
-Sprite *quit;
-Sprite *exit_button;
-Sprite *esc;
+Sprite *typo_racer, *play_button, *play, *cursor, *quit, *exit_button, *esc, *dot, *comma;
 Sprite *letters[LETTERS];
 Sprite *numbers[NUMBERS];
 
@@ -64,6 +58,8 @@ void (sprites_setup)() {
     numbers[7] = sprite_create_xpm((xpm_map_t) xpm_7);
     numbers[8] = sprite_create_xpm((xpm_map_t) xpm_8);
     numbers[9] = sprite_create_xpm((xpm_map_t) xpm_9);
+    dot = sprite_create_xpm((xpm_map_t) xpm_dot);
+    comma = sprite_create_xpm((xpm_map_t) xpm_comma);
 }
 
 void (sprites_destroy)() {
@@ -80,6 +76,8 @@ void (sprites_destroy)() {
     for(int i = 0 ; i < 10 ; i++){
         sprite_destroy(numbers[i]);
     }
+    sprite_destroy(dot);
+    sprite_destroy(comma);
 }
 
 void (timer_update_state)() {
