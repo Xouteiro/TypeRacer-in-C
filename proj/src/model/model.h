@@ -15,6 +15,8 @@
 #include "xpm/esc_menu.xpm"
 #include "xpm/letters.xpm"
 #include "xpm/numbers.xpm"
+#include "xpm/you_win.xpm"
+#include "xpm/play_again.xpm"
 #include "game/game.h"
 
 
@@ -35,7 +37,8 @@ void (mouse_update_state)();
 void (menu_buttons_update)();
 void (sprites_setup)();
 void (sprites_destroy)();
-void update_rtc_state();
+void (update_rtc_state)();
+void (end_menu_buttons_update)();
 
 
 

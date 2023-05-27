@@ -7,7 +7,7 @@ extern MouseInfo mouse_info;
 extern MenuState menuState;
 extern Game game;
 
-extern Sprite *typo_racer, *play_button, *play, *cursor, *quit, *exit_button, *esc;
+extern Sprite *typo_racer, *play_button, *play, *cursor, *quit, *exit_button, *esc, *you_win, *play_again, *play_again_button;
 extern Sprite *letters[26];
 extern Sprite *numbers[10];
 
@@ -56,7 +56,11 @@ void (view_draw_game_menu)() {
 } 
 
 void (view_draw_finish_menu)() {
-    graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, BLUE, drawing_frame_buffer);
+    graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
+    view_draw_sprite_xpm(you_win, mode_info.XResolution/2 - 80, mode_info.YResolution/2 - 100);
+    view_draw_sprite_button(play_again_button, mode_info.XResolution/2 - 112, mode_info.YResolution/2);
+    view_draw_sprite_xpm(play_again, mode_info.XResolution/2 - 105 + 5, mode_info.YResolution/2 - 10);
+    view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
     return;
 }
 
