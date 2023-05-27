@@ -9,7 +9,7 @@ extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;   
 extern bool ih_flag;
 
-Sprite *typo_racer, *play_button, *play, *cursor, *quit, *exit_button, *esc, *you_win, *play_again, *play_again_button;
+Sprite *typo_racer, *play_button, *play, *cursor, *quit, *exit_button, *esc, *you_win, *play_again, *play_again_button, *accuracy;
 Sprite *letters[LETTERS];
 Sprite *numbers[NUMBERS];
 
@@ -26,6 +26,7 @@ void (sprites_setup)() {
     you_win = sprite_create_xpm((xpm_map_t) you_win_xpm);
     play_again_button = sprite_create_button(212, 40, DARKBLUE); 
     play_again = sprite_create_xpm((xpm_map_t) play_again_xpm);
+    accuracy = sprite_create_xpm((xpm_map_t) accuracy_xpm);
     letters[0] = sprite_create_xpm((xpm_map_t) xpm_a);
     letters[1] = sprite_create_xpm((xpm_map_t) xpm_b);
     letters[2] = sprite_create_xpm((xpm_map_t) xpm_c);
@@ -75,6 +76,7 @@ void (sprites_destroy)() {
     sprite_destroy(you_win);
     sprite_destroy(play_again);
     sprite_destroy(play_again_button);
+    sprite_destroy(accuracy);
     for(int i = 0 ; i < 26 ; i++){
         sprite_destroy(letters[i]);
     }

@@ -20,6 +20,7 @@ int (view_draw_sprite_button)(Sprite *sprite, int x, int y);
 int (view_set_frame_buffers)(uint16_t mode);
 int (phrase_writer)(char* word, int y_line);
 int (wpm_writer)(int wpm);
+int (accuracy_writer)(int acc);
 int (is_lower)(char letter);
 int (is_upper)(char letter);
 int (is_number)(char letter);

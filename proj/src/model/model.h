@@ -17,6 +17,7 @@
 #include "xpm/numbers.xpm"
 #include "xpm/you_win.xpm"
 #include "xpm/play_again.xpm"
+#include "xpm/accuracy.xpm"
 #include "game/game.h"
 
 
