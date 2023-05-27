@@ -7,6 +7,7 @@ MenuState menuState = START;
 Game game;
 extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;   
+extern bool ih_flag;
 
 Sprite *typo_racer;
 Sprite *play_button;
@@ -102,7 +103,8 @@ void (keyboard_update_state)() {
             break;
         case GAME:
             if(scancode == BREAK_ESC) menuState = START;
-            if(game_controls(scancode, &game) == 0)  menuState = END;
+                if(game_controls(scancode, &game) == 0)  menuState = END;
+            
             break;
             
         case END:

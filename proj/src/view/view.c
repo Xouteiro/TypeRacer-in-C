@@ -142,12 +142,14 @@ int (phrase_writer)(char* word, int y_line){
         }
         if(letter == '\0') break;
         else if(is_lower(letter)){
-            if(i <= game.pos_player) view_draw_sprite_xpm_green(letters[letter - 'a'], x_pos, y_line);
-            if(i > game.pos_player && i < game.pos_player + game.misses_after_hit) view_draw_sprite_xpm_red(letters[letter - 'a'], x_pos, y_line);
+            if(i < game.pos_player) view_draw_sprite_xpm_green(letters[letter - 'a'], x_pos, y_line);
+            else if(i > game.pos_player && i < game.pos_player + game.misses_after_hit) view_draw_sprite_xpm_red(letters[letter - 'a'], x_pos, y_line);
             else view_draw_sprite_xpm(letters[letter - 'a'], x_pos, y_line);
         }
         else if(is_upper(letter)){
-            view_draw_sprite_xpm(letters[letter - 'A'], x_pos, y_line);
+            if(i <= game.pos_player) view_draw_sprite_xpm_green(letters[letter - 'A'], x_pos, y_line);
+            else if(i > game.pos_player && i < game.pos_player + game.misses_after_hit) view_draw_sprite_xpm_red(letters[letter - 'A'], x_pos, y_line);
+            else view_draw_sprite_xpm(letters[letter - 'A'], x_pos, y_line);
         }
         else if(is_number(letter)){
             view_draw_sprite_xpm(numbers[letter - '0'], x_pos, y_line);

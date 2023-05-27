@@ -61,6 +61,7 @@ int proj_cleanup(){
 
 int(proj_main_loop)(int argc, char* argv[]){
   
+  
   if (setup()) return 1;
   
   view_draw_new_frame();

@@ -18,7 +18,7 @@ typedef struct Game {
   
 } Game;
 
-char get_letter_from_keyboard(int scancode);
+
 
 void create_game(Game *game);
 

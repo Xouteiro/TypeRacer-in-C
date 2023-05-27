@@ -1,6 +1,6 @@
 #include "game.h"
 
-char *sentence;
+char sentence[300];
 
 
 void create_game(Game *game){
@@ -55,20 +55,30 @@ char get_letter_from_keyboard(int scancode){
 
 int game_controls(int scancode, Game* game){
     char letter = get_letter_from_keyboard(scancode);
+    if(letter == '\0') return 1;
+    printf("LETTER%c\n", letter);
+    printf("SENTENCE%c\n", sentence[game->pos_player]);
+    printf("POS%d\n", game->pos_player);
+    printf("misses %d\n", game->misses_after_hit);
     if(letter == sentence[game->pos_player] && game->misses_after_hit == 0){
         if(game->pos_player == 0){
             rtc_start_counter();
+            game->pos_player++;
+            printf("POS aum%d\n", game->pos_player);
             return 1;
         }
-        game->pos_player++;
-        
+                
         if(game->pos_player == game->phrase_size){
             game->elapsed_time = rtc_get_time_elapsed();
             return 0;
         }
-        return 1;
+        else{
+            game->pos_player++;
+            printf("POS aum%d\n", game->pos_player);
+            return 1;
+        }
     }
-    if((letter >= 'a' && letter <='z') || letter == ' ' ){
+    if(((letter >= 'a' && letter <='z') || letter == ' ' )){
         game->misses_after_hit++;
         game->typo_overall_count++;
         return 1;
@@ -90,7 +100,7 @@ return 1;
 
 int get_random_phrase(){
     FILE *textfile;
-    char line[1000];
+    char line[300];
     int random_line;
     int i = 0;
 
@@ -101,9 +111,9 @@ int get_random_phrase(){
         return 1;
     }
      
-    while(fgets(line, 1000, textfile)){
+    while(fgets(line, 300, textfile)){
         if(i == random_line){
-            sentence = line;
+            strcpy(sentence, line);
             return 0;
         }
         else
