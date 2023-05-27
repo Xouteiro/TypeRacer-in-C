@@ -15,14 +15,14 @@ Sprite *cursor;
 Sprite *quit;
 Sprite *exit_button;
 Sprite *esc;
-Sprite *letters[26];
-Sprite *numbers[10];
+Sprite *letters[LETTERS];
+Sprite *numbers[NUMBERS];
 
 int timer_interrupts = 0;
 
 void (sprites_setup)() {
     typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
-    play_button =  sprite_create_button(105, 40, DARKBLUE); 
+    play_button = sprite_create_button(105, 40, DARKBLUE); 
     play = sprite_create_xpm((xpm_map_t) play_button_xpm);
     cursor = sprite_create_xpm((xpm_map_t) mouse_xpm);
     quit = sprite_create_xpm((xpm_map_t) exit_xpm);

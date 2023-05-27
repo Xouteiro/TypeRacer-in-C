@@ -28,9 +28,9 @@ int get_random_phrase(){
 
     random_line = rand() % 10;
      
-    textfile = fopen("/home/lcom/labs/g3/proj/src/xpm/phrases.txt", "r");
+    textfile = fopen("/home/lcom/labs/g3/proj/src/xpm/phrass.txt", "r");
     if(textfile == NULL) {
-        printf("Cannot read file\n");
+        printf("Cannot read textfile in file %s, line %d\n", __FILE__, __LINE__);
         return 1;
     }
      
