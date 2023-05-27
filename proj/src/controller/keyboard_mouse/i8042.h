@@ -61,6 +61,7 @@
 #define BACKSPACE_KEY   14
 
 #define KEY_1           2
+#define KEY_2           3
 
 #define MOUSE_LB            BIT(0)
 #define MOUSE_RB            BIT(1)
