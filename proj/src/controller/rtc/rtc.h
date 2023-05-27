@@ -21,6 +21,7 @@
 
 #define BINARY              BIT(2)
 #define UPDATING            BIT(7)
+#define RATE (BIT(0) | BIT(1) | BIT(2) | BIT(3))
 
 typedef struct {
     uint8_t year;
@@ -35,6 +36,10 @@ int (rtc_setup)();
 int (rtc_interrupts_subscription)(uint8_t *bit_no);
 int (rtc_interrupts_unsubscription)();
 int (rtc_output_read)(uint8_t command, uint8_t *output);
+int (rtc_write)(uint8_t command, uint8_t output);
+void rtc_handle_period(void);
+int rtc_get_time_elapsed(void);
+int rtc_start_counter(void);
 int (rtc_is_updating)();
 int (rtc_is_binary)();
 int (rtc_is_bcd)();

@@ -101,9 +101,10 @@ void (keyboard_update_state)() {
             } 
             break;
         case GAME:
-            //gameControls(scancode);
             if(scancode == BREAK_ESC) menuState = START;
+            if(game_controls(scancode, &game) == 0)  menuState = END;
             break;
+            
         case END:
             if(scancode == BREAK_ESC) systemState = OVER;
         default:

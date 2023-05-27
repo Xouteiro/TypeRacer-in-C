@@ -3,6 +3,7 @@
 
 #include "view/view.h"
 #include "model/model.h"
+#include "controller/rtc/rtc.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -17,9 +18,11 @@ typedef struct Game {
   
 } Game;
 
+char get_letter_from_keyboard(int scancode);
+
 void create_game(Game *game);
 
-void game_controls(int scancode);
+int game_controls(int scancode, Game* game);
 
 int get_random_phrase();
 

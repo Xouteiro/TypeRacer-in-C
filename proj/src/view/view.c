@@ -88,6 +88,35 @@ int (view_draw_sprite_xpm)(Sprite *sprite, int x, int y) {
     return 0; 
 }
 
+int (view_draw_sprite_xpm_green)(Sprite *sprite, int x, int y) { 
+    uint16_t height = sprite->height;
+    uint16_t width = sprite->width;
+    uint32_t current_color;
+    for (int h = 0 ; h < height ; h++) {
+      for (int w = 0 ; w < width ; w++) {
+        current_color = sprite->colors[w + h*width];
+        if (current_color == TRANSPARENT) continue;
+        if(current_color == GOLD) current_color = GREEN;
+        if (graphics_draw_pixel(x + w, y + h, current_color, drawing_frame_buffer)) return 1;
+      }
+    }
+    return 0; 
+}
+int (view_draw_sprite_xpm_red)(Sprite *sprite, int x, int y) { 
+    uint16_t height = sprite->height;
+    uint16_t width = sprite->width;
+    uint32_t current_color;
+    for (int h = 0 ; h < height ; h++) {
+      for (int w = 0 ; w < width ; w++) {
+        current_color = sprite->colors[w + h*width];
+        if (current_color == TRANSPARENT) continue;
+        if(current_color == GOLD) current_color = RED;
+        if (graphics_draw_pixel(x + w, y + h, current_color, drawing_frame_buffer)) return 1;
+      }
+    }
+    return 0; 
+}
+
 int (view_draw_sprite_button)(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
@@ -105,13 +134,69 @@ int (phrase_writer)(char* word, int y_line){
     int safe_x = x_pos;
     size_t size = strlen(word);
     for(int i=0; i<(int)size; i++){
+        if(i<game.pos_player){
+            char letter = *(word+i);
+            if((safe_x >= mode_info.XResolution - 170 && letter == ' ') || safe_x >= mode_info.XResolution - 50){
+                y_line += 30;
+                x_pos = 15;
+                safe_x = x_pos;
+            }
+            if(letter == '\0') break;
+            else if(is_lower(letter)){
+                view_draw_sprite_xpm_green(letters[letter - 'a'], x_pos, y_line);
+            }
+            else if(is_upper(letter)){
+                view_draw_sprite_xpm_green(letters[letter - 'A'], x_pos, y_line);
+            }
+            else if(is_number(letter)){
+                view_draw_sprite_xpm_green(numbers[letter - '0'], x_pos, y_line);
+            }
+            else if(letter == '.' || letter == ','){
+                view_draw_sprite_xpm_green(letters[0], x_pos, y_line);
+            }
+            else if(letter == ' '){
+                x_pos+=10;
+                safe_x += 15;
+            }
+            else return 1;
+            safe_x += 15;
+            x_pos+=15;
+    }
+    else if(i < game.pos_player + game.misses_after_hit){
+        char letter = *(word+i);
+            if((safe_x >= mode_info.XResolution - 170 && letter == ' ') || safe_x >= mode_info.XResolution - 50){
+                y_line += 30;
+                x_pos = 15;
+                safe_x = x_pos;
+            }
+            if(letter == '\0') break;
+            else if(is_lower(letter)){
+                view_draw_sprite_xpm_red(letters[letter - 'a'], x_pos, y_line);
+            }
+            else if(is_upper(letter)){
+                view_draw_sprite_xpm_red(letters[letter - 'A'], x_pos, y_line);
+            }
+            else if(is_number(letter)){
+                view_draw_sprite_xpm_red(numbers[letter - '0'], x_pos, y_line);
+            }
+            else if(letter == '.' || letter == ','){
+                view_draw_sprite_xpm_red(letters[0], x_pos, y_line);
+            }
+            else if(letter == ' '){
+                x_pos+=10;
+                safe_x += 15;
+            }
+            else return 1;
+            safe_x += 15;
+            x_pos+=15;
+    }
+    else{
         char letter = *(word+i);
         if((safe_x >= mode_info.XResolution - 170 && letter == ' ') || safe_x >= mode_info.XResolution - 50){
             y_line += 30;
             x_pos = 15;
             safe_x = x_pos;
         }
-
         if(letter == '\0') break;
         else if(is_lower(letter)){
             view_draw_sprite_xpm(letters[letter - 'a'], x_pos, y_line);
@@ -130,12 +215,11 @@ int (phrase_writer)(char* word, int y_line){
             safe_x += 15;
         }
         else return 1;
-        
         safe_x += 15;
         x_pos+=15;
     }
-
-    return 0;
+}
+return 0;
 }
 
 int (is_lower)(char letter){
