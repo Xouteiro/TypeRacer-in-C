@@ -24,7 +24,7 @@ void (sprites_setup)() {
     exit_button = sprite_create_button(105, 40, DARKBLUE);
     esc = sprite_create_xpm((xpm_map_t) esc_xpm);
     you_win = sprite_create_xpm((xpm_map_t) you_win_xpm);
-    play_again_button = sprite_create_button(192, 40, DARKBLUE); 
+    play_again_button = sprite_create_button(212, 40, DARKBLUE); 
     play_again = sprite_create_xpm((xpm_map_t) play_again_xpm);
     letters[0] = sprite_create_xpm((xpm_map_t) xpm_a);
     letters[1] = sprite_create_xpm((xpm_map_t) xpm_b);
@@ -106,7 +106,7 @@ void (keyboard_update_state)() {
             if(scancode == KEY_2) menuState = END;
             break;
         case END:
-            if(scancode == BREAK_ESC) systemState = OVER;
+            if(scancode == BREAK_ESC) menuState = START;
         default:
             break;
     }
@@ -150,13 +150,12 @@ void (menu_buttons_update)() {
 
 void (end_menu_buttons_update)() {
     if (mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 && mouse_info.y < mode_info.YResolution/2 +40 ){
-        play_button->pressed = 1;
+        play_again_button->pressed = 1;
         if (mouse_info.left_click) {
             menuState = GAME;
             create_game(&game);
         }
     } else {
-        play_button->pressed = 0;
-        exit_button->pressed = 0;
+        play_again_button->pressed = 0;
     }
 }
