@@ -41,8 +41,6 @@ char get_letter_from_keyboard(int scancode){
     if(scancode == X_KEY) return 'x';
     if(scancode == Y_KEY) return 'y';
     if(scancode == Z_KEY) return 'z';
-    if(scancode == COMMA_KEY) return ',';
-    if(scancode == DOT_KEY) return '.';
     if(scancode == SPACE_KEY) return ' ';
     if(scancode == BACKSPACE_KEY) return '\b';
     else {
@@ -56,10 +54,11 @@ char get_letter_from_keyboard(int scancode){
 int game_controls(int scancode, Game* game){
     char letter = get_letter_from_keyboard(scancode);
     if(letter == '\0') return 1;
-    printf("LETTER%c\n", letter);
-    printf("SENTENCE%c\n", sentence[game->pos_player]);
-    printf("POS%d\n", game->pos_player);
+    printf("LETTER %c\n", letter);
+    printf("SENTENCE %c\n", sentence[game->pos_player]);
+    printf("POS %d\n", game->pos_player);
     printf("misses %d\n", game->misses_after_hit);
+    printf("size %d\n", game->phrase_size);
     if(letter == sentence[game->pos_player] && game->misses_after_hit == 0){
         if(game->pos_player == 0){
             rtc_start_counter();
@@ -67,8 +66,9 @@ int game_controls(int scancode, Game* game){
             printf("POS aum%d\n", game->pos_player);
             return 1;
         }
-                
-        if(game->pos_player == game->phrase_size){
+         
+        else if(game->pos_player + 2  == game->phrase_size){
+            printf("FIM\n");
             game->elapsed_time = rtc_get_time_elapsed();
             return 0;
         }

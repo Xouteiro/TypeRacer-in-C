@@ -7,7 +7,7 @@ extern MouseInfo mouse_info;
 extern MenuState menuState;
 extern Game game;
 
-extern Sprite *typo_racer, *play_button, *play, *cursor, *quit, *exit_button, *esc, *dot, *comma;
+extern Sprite *typo_racer, *play_button, *play, *cursor, *quit, *exit_button, *esc;
 extern Sprite *letters[26];
 extern Sprite *numbers[10];
 
@@ -51,7 +51,7 @@ void (view_draw_initial_menu)() {
 void (view_draw_game_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
     view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
-    phrase_writer( game.phrase , 100);
+    phrase_writer( game.phrase , 170);
     return;
 } 
 
@@ -121,41 +121,31 @@ int (view_draw_sprite_button)(Sprite *sprite, int x, int y) {
 }
 
 int (phrase_writer)(char* word, int y_line){
-    int x_pos =40;
+    int x_pos = 60;
     int safe_x = x_pos;
     size_t size = strlen(word);
     for(int i=0; i<(int)size; i++){
         char letter = *(word+i);
-        if((safe_x >= mode_info.XResolution - 170 && letter == ' ') || safe_x >= mode_info.XResolution - 50){
+        if((safe_x >= mode_info.XResolution - 190 && letter == ' ') || safe_x >= mode_info.XResolution - 50){
             y_line += 30;
-            x_pos = 15;
+            x_pos = 40;
             safe_x = x_pos;
         }
         if(letter == '\0') break;
         else if(is_lower(letter)){
             if(i < game.pos_player) view_draw_sprite_xpm_green(letters[letter - 'a'], x_pos, y_line);
-            else if(i > game.pos_player && i < game.pos_player + game.misses_after_hit) view_draw_sprite_xpm_red(letters[letter - 'a'], x_pos, y_line);
+            else if( i < game.pos_player + game.misses_after_hit) view_draw_sprite_xpm_red(letters[letter - 'a'], x_pos, y_line);
             else view_draw_sprite_xpm(letters[letter - 'a'], x_pos, y_line);
         }
         else if(is_upper(letter)){
             if(i <= game.pos_player) view_draw_sprite_xpm_green(letters[letter - 'A'], x_pos, y_line);
-            else if(i > game.pos_player && i < game.pos_player + game.misses_after_hit) view_draw_sprite_xpm_red(letters[letter - 'A'], x_pos, y_line);
+            else if(i < game.pos_player + game.misses_after_hit) view_draw_sprite_xpm_red(letters[letter - 'A'], x_pos, y_line);
             else view_draw_sprite_xpm(letters[letter - 'A'], x_pos, y_line);
         }
         else if(is_number(letter)){
-            view_draw_sprite_xpm(numbers[letter - '0'], x_pos, y_line);
-        }
-        else if(letter == '.'){
-            view_draw_sprite_xpm(dot, x_pos, y_line);
-            safe_x += 10;
-            x_pos += 10;
-            continue;
-        }
-        else if(letter == ','){
-            view_draw_sprite_xpm(comma, x_pos, y_line);
-            safe_x += 10;
-            x_pos += 10;
-            continue;
+            if(i <= game.pos_player) view_draw_sprite_xpm_green(letters[letter - '0'], x_pos, y_line);
+            else if(i < game.pos_player + game.misses_after_hit) view_draw_sprite_xpm_red(letters[letter - '0'], x_pos, y_line);
+            else view_draw_sprite_xpm(letters[letter - '0'], x_pos, y_line);
         }
         else if(letter == ' '){
             safe_x += 1;

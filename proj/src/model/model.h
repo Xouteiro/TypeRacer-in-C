@@ -15,7 +15,6 @@
 #include "xpm/esc_menu.xpm"
 #include "xpm/letters.xpm"
 #include "xpm/numbers.xpm"
-#include "xpm/chars.xpm"
 #include "game/game.h"
 
 

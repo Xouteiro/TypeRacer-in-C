@@ -9,3 +9,4 @@ trace.txt
 proj.o-*
 .o-*
 core.*
+game.o-*
