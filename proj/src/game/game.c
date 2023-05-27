@@ -44,6 +44,7 @@ char get_letter_from_keyboard(int scancode){
     if(scancode == COMMA_KEY) return ',';
     if(scancode == DOT_KEY) return '.';
     if(scancode == SPACE_KEY) return ' ';
+    if(scancode == BACKSPACE_KEY) return '\b';
     else {
       return '\0';
     }
@@ -54,24 +55,25 @@ char get_letter_from_keyboard(int scancode){
 
 int game_controls(int scancode, Game* game){
     char letter = get_letter_from_keyboard(scancode);
-    if(letter == sentence[game->pos_player] && !game->misses_after_hit){
+    if(letter == sentence[game->pos_player] && game->misses_after_hit == 0){
         if(game->pos_player == 0){
             rtc_start_counter();
             return 1;
         }
         game->pos_player++;
+        
         if(game->pos_player == game->phrase_size){
             game->elapsed_time = rtc_get_time_elapsed();
             return 0;
         }
         return 1;
     }
-    if(letter == '\0' && scancode != BACKSPACE_KEY){
+    if((letter >= 'a' && letter <='z') || letter == ' ' ){
         game->misses_after_hit++;
         game->typo_overall_count++;
         return 1;
     }
-    if( scancode == BACKSPACE_KEY){
+    if(letter == '\b'){
         game->misses_after_hit--;
         if(game->misses_after_hit < 0){
             game->misses_after_hit = 0;
