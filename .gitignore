@@ -6,3 +6,6 @@ a.exe
 *.o
 output.txt
 trace.txt
+proj.o-*
+.o-*
+core.*
