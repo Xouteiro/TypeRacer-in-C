@@ -95,17 +95,18 @@ int get_random_phrase(){
     random_line = rand() % 10;
      
     textfile = fopen("/home/lcom/labs/g3/proj/src/xpm/phrases.txt", "r");
-    if(textfile == NULL)
+    if(textfile == NULL) {
+        printf("Cannot read file\n");
         return 1;
+    }
      
     while(fgets(line, 1000, textfile)){
         if(i == random_line){
             sentence = line;
             return 0;
         }
-        else{
-        i++;
-        }
+        else
+            i++;
     }
      
     fclose(textfile);

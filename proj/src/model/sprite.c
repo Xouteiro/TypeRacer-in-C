@@ -1,5 +1,7 @@
 #include "sprite.h"
 
+Sprite *Sprites[MAX_SPRITES]; 
+
 Sprite* (sprite_create_xpm)(xpm_map_t sprite){
   Sprite *sp = (Sprite *) malloc (sizeof(Sprite));
   if( sp == NULL ) return NULL;
