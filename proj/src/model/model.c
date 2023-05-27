@@ -120,7 +120,7 @@ void (mouse_update_state)() {
     }
 }
 void update_rtc_state() {
-    if (timer_interrupts % 60 == 0) rtc_update_time_info();
+     rtc_ih();
 }
 
 void (menu_buttons_update)() {

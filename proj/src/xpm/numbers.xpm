@@ -606,7 +606,7 @@ static char *xpm_8[] = {
 static char *xpm_9[] = {
 /* columns rows colors chars-per-pixel */
 "27 60 9 1 ",
-"  c #",
+"  c #FFFFFE",
 ". c #FFBF00",
 "X c #FFBF00",
 "o c #FFBF00",

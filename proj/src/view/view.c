@@ -52,11 +52,25 @@ void (view_draw_game_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
     view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
     phrase_writer( game.phrase , 170);
+    if(game.pos_player >=1){
+    game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(rtc_get_time_elapsed()) / 60) );
+    printf("wpm %d\n", game.wpm);
+    if(wpm_writer(game.wpm))return;
+    }else{
+        if(wpm_writer(0))return;
+    }
     return;
 } 
 
 void (view_draw_finish_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, BLUE, drawing_frame_buffer);
+    view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
+    if(game.pos_player >=1){
+    game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(game.elapsed_time) / 60) );;
+    if(wpm_writer(game.wpm))return;
+    }else{
+        if(wpm_writer(0))return;
+    }
     return;
 }
 
@@ -171,5 +185,27 @@ int (is_upper)(char letter){
 
 int (is_number)(char letter){
     if(letter >= '0' && letter <= '9') return 1;
+    return 0;
+}
+
+int wpm_writer(int wpm){
+    int digit1;
+    int digit2;
+
+    if(wpm >= 10){
+        digit1 = wpm % 10;  // Extract the rightmost digit
+        wpm /= 10;         // Remove the rightmost digit
+        digit2 = wpm % 10;
+    }
+    else{
+        digit1 = wpm;
+        digit2 = 0;
+    }
+
+    view_draw_sprite_xpm(numbers[digit2], 340, 70);
+    view_draw_sprite_xpm(numbers[digit1], 355, 70);
+    view_draw_sprite_xpm(letters['w' -'a'], 380, 70);
+    view_draw_sprite_xpm(letters['p' -'a'], 400, 70);
+    view_draw_sprite_xpm(letters['m' -'a'], 415, 70);
     return 0;
 }
