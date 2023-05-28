@@ -229,7 +229,7 @@ int (accuracy_writer)(int acc){
     }
     
     view_draw_sprite_xpm(numbers[digit2], 550, 70);
-    view_draw_sprite_xpm(numbers[digit1], 570, 70);
-    view_draw_sprite_xpm(accuracy, 600, 70);
+    view_draw_sprite_xpm(numbers[digit1], 565, 70);
+    view_draw_sprite_xpm(accuracy, 590, 70);
     return 0;
 }

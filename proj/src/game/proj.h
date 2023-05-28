@@ -2,8 +2,7 @@
 #define PROJ_H
 
 
-#define VIDEO_MODE 0x115
-#define GAME_FREQ 60
+
 
 
 #include <lcom/lcf.h>

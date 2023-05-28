@@ -4,7 +4,7 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 
-#define TIMER      0
+#define TIMER      1
 #define TIMER_FREQ 1193182 
 #define TIMER0_IRQ 0
 

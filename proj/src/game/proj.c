@@ -19,13 +19,13 @@ int setup(){
 
   sprites_setup();
 
-  if (timer_set_frequency(TIMER, GAME_FREQ)) return 1;
+  if (timer_set_frequency(TIMER, 60)) return 1;
 
   // video buffer initialization (double buffering)
-  if (view_set_frame_buffers(VIDEO_MODE)) return 1;
+  if (view_set_frame_buffers(0x115)) return 1;
 
   // graphics mode initialization
-  if (graphics_set_mode(VIDEO_MODE)) return 1;
+  if (graphics_set_mode(0x115)) return 1;
 
   // device's interrupts initialization
   if (timer_interrupts_subscription(&bit_no)) return 1;

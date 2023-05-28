@@ -13,7 +13,6 @@ Sprite *typo_racer, *play_button, *play, *cursor, *quit, *exit_button, *esc, *yo
 Sprite *letters[LETTERS];
 Sprite *numbers[NUMBERS];
 
-int timer_interrupts = 0;
 
 void (sprites_setup)() {
     typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
@@ -89,7 +88,6 @@ void (timer_update_state)() {
     view_draw_new_frame();
     view_draw_mouse();
     view_swap_buffers();
-    timer_interrupts++;
 }
 
 void (keyboard_update_state)() {
