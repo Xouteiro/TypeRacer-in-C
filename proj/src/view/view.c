@@ -64,9 +64,9 @@ void (view_draw_game_menu)() {
 
 void (view_draw_finish_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
-    view_draw_sprite_xpm(you_win, mode_info.XResolution/2 - 80, mode_info.YResolution/2 - 100);
-    view_draw_sprite_button(play_again_button, mode_info.XResolution/2 - 112, mode_info.YResolution/2);
-    view_draw_sprite_xpm(play_again, mode_info.XResolution/2 - 105 + 5, mode_info.YResolution/2 - 10);
+    view_draw_sprite_xpm(you_win, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
+    view_draw_sprite_button(play_again_button, mode_info.XResolution/2 - 132, mode_info.YResolution/2);
+    view_draw_sprite_xpm(play_again, mode_info.XResolution/2 - 125 + 5, mode_info.YResolution/2 - 10);
     view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
     if (game.pos_player >=1) {
         game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(game.elapsed_time) / 60));
@@ -207,11 +207,11 @@ int (wpm_writer)(int wpm){
         digit2 = 0;
     }
 
-    view_draw_sprite_xpm(numbers[digit2], 100, 70);
-    view_draw_sprite_xpm(numbers[digit1], 115, 70);
-    view_draw_sprite_xpm(letters['w' -'a'], 150, 70);
-    view_draw_sprite_xpm(letters['p' -'a'], 170, 70);
-    view_draw_sprite_xpm(letters['m' -'a'], 185, 70);
+    view_draw_sprite_xpm(numbers[digit2], 60, 70);
+    view_draw_sprite_xpm(numbers[digit1], 75, 70);
+    view_draw_sprite_xpm(letters['w' -'a'], 100, 70);
+    view_draw_sprite_xpm(letters['p' -'a'], 120, 70);
+    view_draw_sprite_xpm(letters['m' -'a'], 135, 70);
     return 0;
 }
 

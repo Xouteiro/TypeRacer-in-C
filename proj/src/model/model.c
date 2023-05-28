@@ -151,7 +151,7 @@ void (menu_buttons_update)() {
 }
 
 void (end_menu_buttons_update)() {
-    if (mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 134 && mouse_info.y > mode_info.YResolution/2 && mouse_info.y < mode_info.YResolution/2 +40 ){
+    if (mouse_info.x > mode_info.XResolution/2 - 140 && mouse_info.x < mode_info.XResolution/2 + 60 && mouse_info.y > mode_info.YResolution/2 && mouse_info.y < mode_info.YResolution/2 +40 ){
         play_again_button->pressed = 1;
         if (mouse_info.left_click) {
             menuState = GAME;
