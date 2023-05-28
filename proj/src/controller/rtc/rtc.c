@@ -5,43 +5,44 @@ static uint8_t day, month, year;
 static uint8_t second, minute, hour;
 static int count_interrupts = 0;
 
-int rtc_interrupts_subscription(uint8_t *bit_no) {
+int (rtc_interrupts_subscription)(uint8_t *bit_no) {
+  if(bit_no == NULL) return 1;
   hook_rtc = RTC_IRQ;
   *bit_no = RTC_IRQ;
   return sys_irqsetpolicy(RTC_IRQ, IRQ_REENABLE, &hook_rtc);
 }
 
-int rtc_interrupts_unsubscription() {
+int (rtc_interrupts_unsubscription)() {
   return sys_irqrmpolicy(&hook_rtc);
 }
 
-int rtc_init() {
+int (rtc_initialize)() {
   uint8_t reg_b = 0;
   if (rtc_read_register(0xB, &reg_b)) return 1;
   reg_b |= UIE | PIE;
   if (rtc_write_register(0xB, reg_b)) return 1;
-  if (rtc_read_date_reg()) return 1;
-  if (rtc_read_hour_reg()) return 1;
+  if (rtc_update_date()) return 1;
+  if (rtc_update_hour()) return 1;
   return 0;
 }
 
-void rtc_ih() {
+void (rtc_ih)() {
   uint8_t reg = 0;
   do {
     if (rtc_read_register(0xA, &reg)) return;
   } while(reg & UIP);
   if (rtc_read_register(0xC, &reg)) return;
   if (!(reg & IRQF)) return;
-  if (reg & UF) { // update
-    if (rtc_read_date_reg()) return;
-    if (rtc_read_hour_reg()) return;
+  if (reg & UF) {
+    if (rtc_update_date()) return;
+    if (rtc_update_hour()) return;
   }
   if (reg & PF) {
-    rtc_handle_period();
+    rtc_interrupt_counter();
   }
 }
 
-int rtc_start_counter(void) {
+int (rtc_counter_start)(void) {
   uint8_t reg = 0;
   do {
     if (rtc_read_register(0xA, &reg)) return 1;
@@ -50,38 +51,26 @@ int rtc_start_counter(void) {
   return rtc_write_register(0xA, reg | RATE);
 }
 
-void rtc_handle_period(void) {
+void (rtc_interrupt_counter)(void) {
   count_interrupts++;
 }
 
-int rtc_get_time_elapsed(void) {
+int (rtc_get_elapsed_time)(void) {
   return count_interrupts / 2;
 }
 
-int rtc_read_date_reg(void) {
+int (rtc_update_date)(void) {
   if (rtc_read_register(DAY_REG, &day)) return 0;
   if (rtc_read_register(MONTH_REG, &month)) return 0;
   if (rtc_read_register(YEAR_REG, &year)) return 0;
   return 0;
 }
 
-int rtc_read_hour_reg(void) {
+int (rtc_update_hour)(void) {
   if (rtc_read_register(SECOND_REG, &second)) return 0;
   if (rtc_read_register(MINUTE_REG, &minute)) return 0;
   if (rtc_read_register(HOUR_REG, &hour)) return 0;
   return 0;
-}
-
-char* rtc_get_date_str(void) {
-  char* date = malloc(DATE_STR_SIZE * sizeof(char));
-  sprintf(date, "%02x/%02x/%02x", day, month, year);
-  return date;
-}
-
-char* rtc_get_hour_str(void) {
-  char* hours = malloc(HOUR_STR_SIZE * sizeof(char));
-  sprintf(hours, "%02x:%02x:%02x", hour, minute, second);
-  return hours;
 }
 
 int (rtc_read_register)(uint8_t reg, uint8_t* byte) {

@@ -22,7 +22,7 @@ int setup(){
   if (timer_set_frequency(TIMER, 60)) return 1;
 
   // video buffer initialization (double buffering)
-  if (view_set_frame_buffers(0x115)) return 1;
+  if (design_set_frame_buffers(0x115)) return 1;
 
   // graphics mode initialization
   if (graphics_set_mode(0x115)) return 1;
@@ -32,7 +32,7 @@ int setup(){
   if (keyboard_interrupts_subscription(&bit_no)) return 1;
   if (mouse_interrupts_subscription(&bit_no)) return 1;
   if (rtc_interrupts_subscription(&bit_no)) return 1;
-  if (rtc_init()) return 1;
+  if (rtc_initialize()) return 1;
 
   // activate mouse stream-mode and data report
   if (mouse_write_command(ENABLE_STREAM_MODE)) return 1;
@@ -61,11 +61,9 @@ int proj_cleanup(){
 }
 
 int(proj_main_loop)(int argc, char* argv[]){
-  
-  
   if (setup()) return 1;
   
-  view_draw_new_frame();
+  design_draw_new_frame();
 
   int ipc_status;
   message msg;

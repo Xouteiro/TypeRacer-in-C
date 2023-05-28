@@ -11,7 +11,6 @@ void create_game(Game *game){
     game->misses_after_hit = 0;
     game->typo_overall_count = 0;
     game->wpm = 0;
-    return;
 }
 
 char get_letter_from_keyboard(int scancode){
@@ -43,27 +42,22 @@ char get_letter_from_keyboard(int scancode){
     if(scancode == Z_KEY) return 'z';
     if(scancode == SPACE_KEY) return ' ';
     if(scancode == BACKSPACE_KEY) return '\b';
-    else {
-      return '\0';
-    }
-
+    return '\0';
 }
 
 
 
 int game_controls(int scancode, Game* game){
     char letter = get_letter_from_keyboard(scancode);
-    if(letter == '\0') return 1;
     if(letter == sentence[game->pos_player] && game->misses_after_hit == 0){
         if(game->pos_player == 0){
             game->wpm = 0;
-            rtc_start_counter();
+            rtc_counter_start();
             game->pos_player++;
             return 1;
         }
-         
         else if(game->pos_player + 2  == game->phrase_size){
-            game->elapsed_time = rtc_get_time_elapsed();
+            game->elapsed_time = rtc_get_elapsed_time();
             return 0;
         }
         else{
@@ -83,12 +77,7 @@ int game_controls(int scancode, Game* game){
         }
         return 1;
     }
-    
-    else{
-        return 1;
-    }
-    
-return 1;
+    return 1;    
 }
 
 int get_random_phrase(){
@@ -109,8 +98,7 @@ int get_random_phrase(){
             strcpy(sentence, line);
             return 0;
         }
-        else
-            i++;
+        else i++;
     }
      
     fclose(textfile);

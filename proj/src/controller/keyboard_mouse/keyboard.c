@@ -18,26 +18,6 @@ int (keyboard_interrupts_unsubscription)() {
 }
 
 // interrupt handler
-void (KBC_interrupt_handler)() {
-    KBC_read_output(KBC_OUT_CMD, &scancode, 0);
-}
-/*
-// restore keyboard interrupts
-int (keyboard_restore)() {
-    uint8_t cmdByte;
-
-    if (KBC_write_command(KBC_IN_CMD, KBC_READ_CMD) != 0) return 1;          
-    if (KBC_read_output(KBC_OUT_CMD, &cmdByte, 0) != 0) return 1; 
-
-    cmdByte |= ENABLE_INT;  
-
-    if (KBC_write_command(KBC_IN_CMD, KBC_WRITE_CMD) != 0) return 1;    
-    if (KBC_write_command(KBC_WRITE_CMD, cmdByte) != 0) return 1;
-
-    return 0;
-}
-
-*/
 void (kbc_ih)() {
     KBC_read_output(KBC_OUT_CMD, &scancode, 0);
 }

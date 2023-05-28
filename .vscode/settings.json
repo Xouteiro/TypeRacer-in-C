@@ -21,7 +21,8 @@
         "type_traits": "c",
         "utility": "c",
         "vector": "c",
-        "__tuple": "c"
+        "__tuple": "c",
+        "states.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
