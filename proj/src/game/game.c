@@ -2,7 +2,9 @@
 
 char sentence[300];
 
-
+/**
+ * @brief Initializes the game's struct
+*/
 void create_game(Game *game){
     get_random_phrase();    
     game->phrase = sentence;
@@ -13,6 +15,11 @@ void create_game(Game *game){
     game->wpm = 0;
 }
 
+/**
+ * @brief Gets the letter from the keyboard
+ * @param scancode scancode of the key pressed
+ * @return letter
+*/
 char get_letter_from_keyboard(int scancode){
     if(scancode == A_KEY) return 'a';
     if(scancode == B_KEY) return 'b';
@@ -45,8 +52,12 @@ char get_letter_from_keyboard(int scancode){
     return '\0';
 }
 
-
-
+/**
+ * @brief Controls the game
+ * @param scancode scancode of the key pressed
+ * @param game game's struct
+ * @return 0 if the game has reached the end, 1 otherwise
+*/
 int game_controls(int scancode, Game* game){
     char letter = get_letter_from_keyboard(scancode);
     if(letter == sentence[game->pos_player] && game->misses_after_hit == 0){
@@ -80,6 +91,10 @@ int game_controls(int scancode, Game* game){
     return 1;    
 }
 
+/**
+ * @brief Gets a random phrase from a file
+ * @return 0 if successful, 1 otherwise
+*/
 int get_random_phrase(){
     FILE *textfile;
     char line[300];
@@ -89,9 +104,7 @@ int get_random_phrase(){
     random_line = rand() % 10;
      
     textfile = fopen("/home/lcom/labs/g3/proj/src/xpm/phrases.txt", "r");
-    if(textfile == NULL) {
-        return 1;
-    }
+    if(textfile == NULL) return 1;
      
     while(fgets(line, 300, textfile)){
         if(i == random_line){
@@ -104,5 +117,3 @@ int get_random_phrase(){
     fclose(textfile);
     return 0;
 }
-
-

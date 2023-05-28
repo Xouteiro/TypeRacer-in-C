@@ -14,6 +14,9 @@ Sprite *letters[LETTERS];
 Sprite *numbers[NUMBERS];
 
 
+/**
+ * @brief Creates all the sprites needed for the game
+*/
 void (sprites_setup)() {
     typo_racer = sprite_create_xpm((xpm_map_t) typo_racer_xpm);
     play_button = sprite_create_button(105, 40, DARKBLUE); 
@@ -64,6 +67,9 @@ void (sprites_setup)() {
     numbers[9] = sprite_create_xpm((xpm_map_t) xpm_9);
 }
 
+/**
+ * @brief Destroys all the sprites needed for the game
+*/
 void (sprites_destroy)() {
     sprite_destroy(typo_racer);
     sprite_destroy(play_button);
@@ -84,12 +90,18 @@ void (sprites_destroy)() {
     }
 }
 
+/**
+ * @brief Updates the game's state every timer interrupt
+*/
 void (timer_update_state)() {
     design_draw_new_frame();
     design_draw_mouse();
     design_swap_buffers();
 }
 
+/**
+ * @brief Updates the game's state every keyboard interrupt
+*/
 void (keyboard_update_state)() {
     kbc_ih();
     switch (menuState) {
@@ -107,6 +119,9 @@ void (keyboard_update_state)() {
     }
 }
 
+/**
+ * @brief Updates the game's state every mouse interrupt
+*/
 void (mouse_update_state)() {
     mouse_ih();
     mouse_get_bytes();
@@ -121,10 +136,17 @@ void (mouse_update_state)() {
         }
     }
 }
+
+/**
+ * @brief Updates the game's state every rtc interrupt
+*/
 void update_rtc_state() {
-     rtc_ih();
+    rtc_ih();
 }
 
+/**
+ * @brief Update the main menu buttons
+*/
 void (menu_buttons_update)() {
     if (mouse_info.x > mode_info.XResolution/2 - 65 && mouse_info.x < mode_info.XResolution/2 - 62 + 104 && mouse_info.y > mode_info.YResolution/2 && mouse_info.y < mode_info.YResolution/2 +40 ){
         play_button->pressed = 1;
@@ -143,6 +165,9 @@ void (menu_buttons_update)() {
     }
 }
 
+/**
+ * @brief Update the end menu buttons
+*/
 void (end_menu_buttons_update)() {
     if (mouse_info.x > mode_info.XResolution/2 - 140 && mouse_info.x < mode_info.XResolution/2 + 60 && mouse_info.y > mode_info.YResolution/2 && mouse_info.y < mode_info.YResolution/2 +40 ){
         play_again_button->pressed = 1;

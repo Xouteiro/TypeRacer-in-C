@@ -2,7 +2,11 @@
 #include "graphics.h"
 #include <math.h>
 
-// change minix to graphic mode
+/**
+ * @brief Changes minix to graphics mode
+ * @param submode submode to be set
+ * @return 0 if successful, 1 otherwise
+*/
 int (graphics_set_mode)(uint16_t submode) {
     reg86_t reg86;
     memset(&reg86, 0, sizeof(reg86)); 
@@ -17,7 +21,12 @@ int (graphics_set_mode)(uint16_t submode) {
     return 0;
 }
 
-// set the frame buffer
+/**
+ * @brief Sets the frame buffer
+ * @param mode graphics mode
+ * @param frame_buffer pointer to the frame buffer
+ * @return 0 if successful, 1 otherwise
+*/
 int (graphics_set_frame_buffer)(uint16_t mode, uint8_t** frame_buffer) {
   memset(&mode_info, 0, sizeof(mode_info));
   if(vbe_get_mode_info(mode, &mode_info)) return 1;
@@ -42,7 +51,14 @@ int (graphics_set_frame_buffer)(uint16_t mode, uint8_t** frame_buffer) {
   return 0;
 }
 
-// draw a pixel
+/**
+ * @brief Draws a pixel
+ * @param x x coordinate
+ * @param y y coordinate
+ * @param color color to be set
+ * @param frame_buffer pointer to the frame buffer
+ * @return 0 if successful, 1 otherwise
+*/
 int (graphics_draw_pixel)(uint16_t x, uint16_t y, uint32_t color, uint8_t* frame_buffer) {
   if(x >= mode_info.XResolution || y >= mode_info.YResolution) return 1;
   
@@ -55,18 +71,33 @@ int (graphics_draw_pixel)(uint16_t x, uint16_t y, uint32_t color, uint8_t* frame
   return 0;
 }
 
-// draw a line
+/**
+ * @brief Draws a line
+ * @param x x coordinate
+ * @param y y coordinate
+ * @param len length of the line
+ * @param color color to be set
+ * @param frame_buffer pointer to the frame buffer
+ * @return 0 if successful, 1 otherwise
+*/
 int (graphics_draw_line)(uint16_t x, uint16_t y, uint16_t len, uint32_t color, uint8_t* frame_buffer) {
   for (unsigned i = 0 ; i < len ; i++)   
     if (graphics_draw_pixel(x+i, y, color, frame_buffer)) return 1;
   return 0;
 }
 
-// draw a rectangle
+/**
+ * @brief Draws a rectangle
+ * @param x x coordinate
+ * @param y y coordinate
+ * @param width width of the rectangle
+ * @param height height of the rectangle
+ * @param color color to be set
+ * @param frame_buffer pointer to the frame buffer
+ * @return 0 if successful, 1 otherwise
+*/
 int (graphics_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color, uint8_t* frame_buffer) {
   for(unsigned i = 0; i < height ; i++)
-    if (graphics_draw_line(x, y+i, width, color, frame_buffer)) {
-      continue;
-    }
+    if (graphics_draw_line(x, y+i, width, color, frame_buffer)) return 1;
   return 0;
 }

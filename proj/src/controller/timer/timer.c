@@ -5,7 +5,12 @@
 int hook_id = 0;
 int counter = 0;
 
-// set frequency of timer
+/**
+ * @brief Set the timer's frequency
+ * @param timer timer to configure
+ * @param freq frequency to be set
+ * @return 0 if successful, 1 otherwise
+*/
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   if (freq > TIMER_FREQ || freq < 19) return 1;
 
@@ -44,19 +49,31 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   return 0;
 }
 
-// subscribe timer interrupts
+/**
+ * @brief Subscribes and enables timer interrupts
+ * @param bit_no address of memory to be initialized with the bit number to be set in the mask returned upon an interrupt
+ * @return 0 if successful, 1 otherwise
+*/
 int (timer_interrupts_subscription)(uint8_t *bit_no) {
   if(bit_no == NULL) return 1;
   (*bit_no) = BIT(hook_id);
   return sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id);
 }
 
-// unsubscribe timer interrupts
+/**
+ * @brief Unsubscribes timer interrupts
+ * @return 0 if successful, 1 otherwise
+*/
 int (timer_interrupts_unsubscription)() {
   return sys_irqrmpolicy(&hook_id);
 }
 
-// get timer configuration
+/**
+ * @brief Reads the timer configuration
+ * @param timer timer whose configuration is to be read
+ * @param st address of memory to be initialized with the timer config read
+ * @return 0 if successful, 1 otherwise
+*/
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   if (st == NULL || timer > 2 || timer < 0) return 1;
   uint8_t RBC = (TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer));

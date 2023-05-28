@@ -12,6 +12,11 @@ extern Sprite *letters[26];
 extern Sprite *numbers[10];
 
 
+/**
+ * @brief Sets the frame buffers to the given mode.
+ * @param mode the mode to set the frame buffers to
+ * @return 0 if successful, 1 otherwise
+*/
 int (design_set_frame_buffers)(uint16_t mode) {
     if (graphics_set_frame_buffer(mode, &main_frame_buffer)) return 1;
     frame_buffer_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
@@ -20,10 +25,16 @@ int (design_set_frame_buffers)(uint16_t mode) {
     return 0;
 }
 
+/**
+ * @brief Swaps the frame buffers
+*/
 void (design_swap_buffers)() {
     memcpy(main_frame_buffer, secondary_frame_buffer, frame_buffer_size);
 }
 
+/**
+ * @brief Draws a new frame according to the current menu state
+*/
 void (design_draw_new_frame)() {
     switch (menuState) {
         case START:
@@ -38,6 +49,9 @@ void (design_draw_new_frame)() {
     }
 }
 
+/**
+ * @brief Draws the initial menu of the game
+*/
 void (design_draw_initial_menu)() { 
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
     design_draw_sprite_xpm(typo_racer, mode_info.XResolution/4 + 18, mode_info.YResolution/4);
@@ -48,6 +62,9 @@ void (design_draw_initial_menu)() {
     return;
 }
 
+/**
+ * @brief Draws the menu of the game while a user is playing
+*/
 void (design_draw_game_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
     design_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
@@ -62,6 +79,9 @@ void (design_draw_game_menu)() {
     return;
 } 
 
+/**
+ * @brief Draws the menu of the game when a user has finished playing
+*/
 void (design_draw_finish_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
     design_draw_sprite_xpm(you_win, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
@@ -80,10 +100,20 @@ void (design_draw_finish_menu)() {
     return;
 }
 
+/**
+ * @brief Draws the mouse cursor
+*/
 void (design_draw_mouse)() {
     design_draw_sprite_xpm(cursor, mouse_info.x, mouse_info.y);
 }
 
+/**
+ * @brief Draws a sprite
+ * @param sprite sprite to be drawn
+ * @param x x coordinate
+ * @param y y coordinate
+ * @return 0 if successful, 1 otherwise
+*/
 int (design_draw_sprite_xpm)(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
@@ -98,6 +128,13 @@ int (design_draw_sprite_xpm)(Sprite *sprite, int x, int y) {
     return 0; 
 }
 
+/**
+ * @brief Draws a sprite in green
+ * @param sprite sprite to be drawn
+ * @param x x coordinate
+ * @param y y coordinate
+ * @return 0 if successful, 1 otherwise
+*/
 int (design_draw_sprite_xpm_green)(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
@@ -113,6 +150,13 @@ int (design_draw_sprite_xpm_green)(Sprite *sprite, int x, int y) {
     return 0; 
 }
 
+/**
+ * @brief Draws a sprite in red
+ * @param sprite sprite to be drawn
+ * @param x x coordinate
+ * @param y y coordinate
+ * @return 0 if successful, 1 otherwise
+*/
 int (design_draw_sprite_xpm_red)(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
@@ -128,6 +172,13 @@ int (design_draw_sprite_xpm_red)(Sprite *sprite, int x, int y) {
     return 0; 
 }
 
+/**
+ * @brief Draws a sprite button
+ * @param sprite sprite to be drawn
+ * @param x x coordinate
+ * @param y y coordinate
+ * @return 0 if successful, 1 otherwise
+*/
 int (design_draw_sprite_button)(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
@@ -140,6 +191,12 @@ int (design_draw_sprite_button)(Sprite *sprite, int x, int y) {
     return 0; 
 }
 
+/**
+ * @brief Function that controls the phrase writing
+ * @param word phrase to be written
+ * @param y_line y coordinate
+ * @return 0 if successful, 1 otherwise
+*/
 int (phrase_writer)(char* word, int y_line){
     int x_pos = 60;
     int safe_x = x_pos;
@@ -153,19 +210,37 @@ int (phrase_writer)(char* word, int y_line){
         }
         if(letter == '\0') break;
         else if(is_lower(letter)){
-            if(i < game.pos_player) design_draw_sprite_xpm_green(letters[letter - 'a'], x_pos, y_line);
-            else if( i < game.pos_player + game.misses_after_hit) design_draw_sprite_xpm_red(letters[letter - 'a'], x_pos, y_line);
-            else design_draw_sprite_xpm(letters[letter - 'a'], x_pos, y_line);
+            if(i < game.pos_player) {
+                if(design_draw_sprite_xpm_green(letters[letter - 'a'], x_pos, y_line)) return 1;
+            }
+            else if( i < game.pos_player + game.misses_after_hit) {
+                if(design_draw_sprite_xpm_red(letters[letter - 'a'], x_pos, y_line)) return 1;
+            }
+            else {
+                if(design_draw_sprite_xpm(letters[letter - 'a'], x_pos, y_line)) return 1;
+            }
         }
         else if(is_upper(letter)){
-            if(i <= game.pos_player) design_draw_sprite_xpm_green(letters[letter - 'A'], x_pos, y_line);
-            else if(i < game.pos_player + game.misses_after_hit) design_draw_sprite_xpm_red(letters[letter - 'A'], x_pos, y_line);
-            else design_draw_sprite_xpm(letters[letter - 'A'], x_pos, y_line);
+            if(i <= game.pos_player) {
+                if(design_draw_sprite_xpm_green(letters[letter - 'A'], x_pos, y_line)) return 1;
+            }
+            else if(i < game.pos_player + game.misses_after_hit) {
+                if(design_draw_sprite_xpm_red(letters[letter - 'A'], x_pos, y_line)) return 1;
+            }
+            else {
+                if(design_draw_sprite_xpm(letters[letter - 'A'], x_pos, y_line)) return 1;
+            }
         }
         else if(is_number(letter)){
-            if(i <= game.pos_player) design_draw_sprite_xpm_green(letters[letter - '0'], x_pos, y_line);
-            else if(i < game.pos_player + game.misses_after_hit) design_draw_sprite_xpm_red(letters[letter - '0'], x_pos, y_line);
-            else design_draw_sprite_xpm(letters[letter - '0'], x_pos, y_line);
+            if(i <= game.pos_player) {
+                if(design_draw_sprite_xpm_green(letters[letter - '0'], x_pos, y_line)) return 1;
+            }
+            else if(i < game.pos_player + game.misses_after_hit) {
+                if(design_draw_sprite_xpm_red(letters[letter - '0'], x_pos, y_line)) return 1;
+            }
+            else {
+                if(design_draw_sprite_xpm(letters[letter - '0'], x_pos, y_line)) return 1;
+            }
         }
         else if(letter == ' '){
             safe_x += 1;
@@ -179,21 +254,41 @@ int (phrase_writer)(char* word, int y_line){
 return 0;
 }
 
+/**
+ * @brief Checks if a letter is lower case
+ * @param letter letter to be checked
+ * @return 1 if the letter is lower case, 0 otherwise
+*/
 int (is_lower)(char letter){
     if(letter >= 'a' && letter <= 'z') return 1;
     return 0;
 }
 
+/**
+ * @brief Checks if a letter is upper case
+ * @param letter letter to be checked
+ * @return 1 if the letter is upper case, 0 otherwise
+*/
 int (is_upper)(char letter){
     if(letter >= 'A' && letter <= 'Z') return 1;
     return 0;
 }
 
+/**
+ * @brief Checks if a letter is a number
+ * @param letter letter to be checked
+ * @return 1 if the letter is a number, 0 otherwise
+*/
 int (is_number)(char letter){
     if(letter >= '0' && letter <= '9') return 1;
     return 0;
 }
 
+/**
+ * @brief Writes the wpm
+ * @param wpm wpm to be written
+ * @return 0 if successful, 1 otherwise
+*/
 int (wpm_writer)(int wpm){
     int digit1, digit2;
 
@@ -207,14 +302,19 @@ int (wpm_writer)(int wpm){
         digit2 = 0;
     }
 
-    design_draw_sprite_xpm(numbers[digit2], 60, 70);
-    design_draw_sprite_xpm(numbers[digit1], 75, 70);
-    design_draw_sprite_xpm(letters['w' -'a'], 100, 70);
-    design_draw_sprite_xpm(letters['p' -'a'], 120, 70);
-    design_draw_sprite_xpm(letters['m' -'a'], 135, 70);
+    if(design_draw_sprite_xpm(numbers[digit2], 60, 70)) return 1;
+    if(design_draw_sprite_xpm(numbers[digit1], 75, 70)) return 1;
+    if(design_draw_sprite_xpm(letters['w' -'a'], 100, 70)) return 1;
+    if(design_draw_sprite_xpm(letters['p' -'a'], 120, 70)) return 1;
+    if(design_draw_sprite_xpm(letters['m' -'a'], 135, 70)) return 1;
     return 0;
 }
 
+/**
+ * @brief Writes the accuracy
+ * @param acc accuracy to be written
+ * @return 0 if successful, 1 otherwise
+*/
 int (accuracy_writer)(int acc){
     int digit1, digit2;
 
@@ -228,8 +328,8 @@ int (accuracy_writer)(int acc){
         digit2 = 0;
     }
     
-    design_draw_sprite_xpm(numbers[digit2], 550, 70);
-    design_draw_sprite_xpm(numbers[digit1], 570, 70);
-    design_draw_sprite_xpm(accuracy, 600, 70);
+    if(design_draw_sprite_xpm(numbers[digit2], 550, 70)) return 1;
+    if(design_draw_sprite_xpm(numbers[digit1], 570, 70)) return 1;
+    if(design_draw_sprite_xpm(accuracy, 600, 70)) return 1;
     return 0;
 }

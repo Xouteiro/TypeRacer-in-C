@@ -14,6 +14,10 @@ int (main)(int argc, char *argv[]) {
   return 0;
 }
 
+/**
+ * @brief Initializes everything needed for the program.
+ * @return 0 if successful, 1 otherwise
+*/
 int setup(){ 
   uint8_t bit_no;
 
@@ -41,6 +45,11 @@ int setup(){
   return 0;
 }
 
+/**
+ * @brief Cleans up the program (goes back to text mode, unsubscribes interrupts and destroys all created sprites).
+ * This function **must** be called before exiting the program.
+ * @return 0 if successful, 1 otherwise
+*/
 int proj_cleanup(){  
   // back to text mode
   if (vg_exit()) return 1;
@@ -60,6 +69,12 @@ int proj_cleanup(){
   return 0;
 }
 
+/**
+ * @brief Main loop of the program.
+ * @param argc number of arguments
+ * @param argv array of arguments
+ * @return 0 if successful, 1 otherwise
+*/
 int(proj_main_loop)(int argc, char* argv[]){
   if (setup()) return 1;
   

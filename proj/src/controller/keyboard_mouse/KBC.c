@@ -1,15 +1,27 @@
 #include "KBC.h"
 
+/**
+ * @brief Reads the status of the KBC
+ * @param status Pointer to the variable where the status will be stored
+ * @return 0 if successful, 1 otherwise
+ */
 int (KBC_read_status)(uint8_t* status) {
     if(status == NULL) return 1;
     return util_sys_inb(KBC_STATUS_REG, status);
 }
 
+/**
+ * @brief Reads the output buffer of the KBC
+ * @param port Port to read from
+ * @param output Pointer to the variable where the output will be stored
+ * @param mouse 1 if the output is from the mouse, 0 if it's from the keyboard
+ * @return 0 if successful, 1 otherwise
+ */
 int (KBC_read_output)(uint8_t port, uint8_t *output, uint8_t mouse) {
     uint8_t status;
-    uint8_t attemps = 10;
+    uint8_t attempts = MAX_ATTEMPTS;
     
-    while (attemps) {
+    while (attempts) {
 
         if (KBC_read_status(&status)) {
             printf("Error: Status not available!\n");
@@ -39,17 +51,23 @@ int (KBC_read_output)(uint8_t port, uint8_t *output, uint8_t mouse) {
             } 
             return 0; 
         }
-        tickdelay(micros_to_ticks(20000));
-        attemps--;
+        tickdelay(micros_to_ticks(WAIT_KBC));
+        attempts--;
     }
     return 1;
 }
 
+/**
+ * @brief Writes a command to the KBC
+ * @param port Port to write to
+ * @param commandByte Command to be written
+ * @return 0 if successful, 1 otherwise
+ */
 int (KBC_write_command)(uint8_t port, uint8_t commandByte) {
     uint8_t status;
-    uint8_t attemps = MAX_ATTEMPS;
+    uint8_t attempts = MAX_ATTEMPTS;
 
-    while (attemps) {
+    while (attempts) {
 
         if (KBC_read_status(&status)){
             printf("Error: Status not available!\n");
@@ -66,7 +84,7 @@ int (KBC_write_command)(uint8_t port, uint8_t commandByte) {
             return 0;
         }
         tickdelay(micros_to_ticks(WAIT_KBC));
-        attemps--;
+        attempts--;
     }
     
     return 1;
