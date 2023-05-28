@@ -52,12 +52,12 @@ int game_controls(int scancode, Game* game){
     if(letter == sentence[game->pos_player] && game->misses_after_hit == 0){
         if(game->pos_player == 0){
             game->wpm = 0;
-            rtc_start_counter();
+            rtc_counter_start();
             game->pos_player++;
             return 1;
         }
         else if(game->pos_player + 2  == game->phrase_size){
-            game->elapsed_time = rtc_get_time_elapsed();
+            game->elapsed_time = rtc_get_elapsed_time();
             return 0;
         }
         else{

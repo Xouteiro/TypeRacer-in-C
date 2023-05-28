@@ -32,7 +32,7 @@ int setup(){
   if (keyboard_interrupts_subscription(&bit_no)) return 1;
   if (mouse_interrupts_subscription(&bit_no)) return 1;
   if (rtc_interrupts_subscription(&bit_no)) return 1;
-  if (rtc_init()) return 1;
+  if (rtc_initialize()) return 1;
 
   // activate mouse stream-mode and data report
   if (mouse_write_command(ENABLE_STREAM_MODE)) return 1;

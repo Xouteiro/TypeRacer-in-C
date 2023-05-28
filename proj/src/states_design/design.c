@@ -53,7 +53,7 @@ void (design_draw_game_menu)() {
     design_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
     phrase_writer( game.phrase , 170);
     if(game.pos_player >=1) {
-        game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(rtc_get_time_elapsed()) / 60));
+        game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(rtc_get_elapsed_time()) / 60));
         if(wpm_writer(game.wpm))return;
     } 
     else {

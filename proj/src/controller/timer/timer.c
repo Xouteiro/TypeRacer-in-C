@@ -53,8 +53,7 @@ int (timer_interrupts_subscription)(uint8_t *bit_no) {
 
 // unsubscribe timer interrupts
 int (timer_interrupts_unsubscription)() {
-  if (sys_irqrmpolicy(&hook_id)) return 1;
-  return 0;
+  return sys_irqrmpolicy(&hook_id);
 }
 
 // get timer configuration
