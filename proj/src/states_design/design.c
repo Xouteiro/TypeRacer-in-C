@@ -1,4 +1,4 @@
-#include "view.h"
+#include "design.h"
 
 uint8_t *main_frame_buffer, *secondary_frame_buffer, *drawing_frame_buffer;
 uint32_t frame_buffer_size;
@@ -12,7 +12,7 @@ extern Sprite *letters[26];
 extern Sprite *numbers[10];
 
 
-int (view_set_frame_buffers)(uint16_t mode) {
+int (design_set_frame_buffers)(uint16_t mode) {
     if (graphics_set_frame_buffer(mode, &main_frame_buffer)) return 1;
     frame_buffer_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
     secondary_frame_buffer = (uint8_t *) malloc(frame_buffer_size);
@@ -20,37 +20,37 @@ int (view_set_frame_buffers)(uint16_t mode) {
     return 0;
 }
 
-void (view_swap_buffers)() {
+void (design_swap_buffers)() {
     memcpy(main_frame_buffer, secondary_frame_buffer, frame_buffer_size);
 }
 
-void (view_draw_new_frame)() {
+void (design_draw_new_frame)() {
     switch (menuState) {
         case START:
-            view_draw_initial_menu();
+            design_draw_initial_menu();
             break;
         case GAME:
-            view_draw_game_menu();
+            design_draw_game_menu();
             break;
         case END:
-            view_draw_finish_menu();
+            design_draw_finish_menu();
             break;
     }
 }
 
-void (view_draw_initial_menu)() { 
+void (design_draw_initial_menu)() { 
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
-    view_draw_sprite_xpm(typo_racer, mode_info.XResolution/4 + 18, mode_info.YResolution/4);
-    view_draw_sprite_button(play_button, mode_info.XResolution/2 - 65, mode_info.YResolution/2);
-    view_draw_sprite_xpm(play, mode_info.XResolution/2 - 58 + 5, mode_info.YResolution/2 - 10);
-    view_draw_sprite_button(exit_button, mode_info.XResolution/2 - 65, mode_info.YResolution/2 + 70);
-    view_draw_sprite_xpm(quit, mode_info.XResolution/2 - 58 + 10, mode_info.YResolution/2 + 60);
+    design_draw_sprite_xpm(typo_racer, mode_info.XResolution/4 + 18, mode_info.YResolution/4);
+    design_draw_sprite_button(play_button, mode_info.XResolution/2 - 65, mode_info.YResolution/2);
+    design_draw_sprite_xpm(play, mode_info.XResolution/2 - 58 + 5, mode_info.YResolution/2 - 10);
+    design_draw_sprite_button(exit_button, mode_info.XResolution/2 - 65, mode_info.YResolution/2 + 70);
+    design_draw_sprite_xpm(quit, mode_info.XResolution/2 - 58 + 10, mode_info.YResolution/2 + 60);
     return;
 }
 
-void (view_draw_game_menu)() {
+void (design_draw_game_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
-    view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
+    design_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
     phrase_writer( game.phrase , 170);
     if(game.pos_player >=1) {
         game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(rtc_get_time_elapsed()) / 60));
@@ -62,12 +62,12 @@ void (view_draw_game_menu)() {
     return;
 } 
 
-void (view_draw_finish_menu)() {
+void (design_draw_finish_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
-    view_draw_sprite_xpm(you_win, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
-    view_draw_sprite_button(play_again_button, mode_info.XResolution/2 - 132, mode_info.YResolution/2);
-    view_draw_sprite_xpm(play_again, mode_info.XResolution/2 - 125 + 5, mode_info.YResolution/2 - 10);
-    view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
+    design_draw_sprite_xpm(you_win, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
+    design_draw_sprite_button(play_again_button, mode_info.XResolution/2 - 132, mode_info.YResolution/2);
+    design_draw_sprite_xpm(play_again, mode_info.XResolution/2 - 125 + 5, mode_info.YResolution/2 - 10);
+    design_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
     if (game.pos_player >=1) {
         game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(game.elapsed_time) / 60));
         if(wpm_writer(game.wpm)) return;
@@ -80,11 +80,11 @@ void (view_draw_finish_menu)() {
     return;
 }
 
-void (view_draw_mouse)() {
-    view_draw_sprite_xpm(cursor, mouse_info.x, mouse_info.y);
+void (design_draw_mouse)() {
+    design_draw_sprite_xpm(cursor, mouse_info.x, mouse_info.y);
 }
 
-int (view_draw_sprite_xpm)(Sprite *sprite, int x, int y) { 
+int (design_draw_sprite_xpm)(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
     uint32_t current_color;
@@ -98,7 +98,7 @@ int (view_draw_sprite_xpm)(Sprite *sprite, int x, int y) {
     return 0; 
 }
 
-int (view_draw_sprite_xpm_green)(Sprite *sprite, int x, int y) { 
+int (design_draw_sprite_xpm_green)(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
     uint32_t current_color;
@@ -113,7 +113,7 @@ int (view_draw_sprite_xpm_green)(Sprite *sprite, int x, int y) {
     return 0; 
 }
 
-int (view_draw_sprite_xpm_red)(Sprite *sprite, int x, int y) { 
+int (design_draw_sprite_xpm_red)(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
     uint32_t current_color;
@@ -128,7 +128,7 @@ int (view_draw_sprite_xpm_red)(Sprite *sprite, int x, int y) {
     return 0; 
 }
 
-int (view_draw_sprite_button)(Sprite *sprite, int x, int y) { 
+int (design_draw_sprite_button)(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
     uint32_t color = sprite->pressed ? PRESSED : sprite->color;
@@ -153,19 +153,19 @@ int (phrase_writer)(char* word, int y_line){
         }
         if(letter == '\0') break;
         else if(is_lower(letter)){
-            if(i < game.pos_player) view_draw_sprite_xpm_green(letters[letter - 'a'], x_pos, y_line);
-            else if( i < game.pos_player + game.misses_after_hit) view_draw_sprite_xpm_red(letters[letter - 'a'], x_pos, y_line);
-            else view_draw_sprite_xpm(letters[letter - 'a'], x_pos, y_line);
+            if(i < game.pos_player) design_draw_sprite_xpm_green(letters[letter - 'a'], x_pos, y_line);
+            else if( i < game.pos_player + game.misses_after_hit) design_draw_sprite_xpm_red(letters[letter - 'a'], x_pos, y_line);
+            else design_draw_sprite_xpm(letters[letter - 'a'], x_pos, y_line);
         }
         else if(is_upper(letter)){
-            if(i <= game.pos_player) view_draw_sprite_xpm_green(letters[letter - 'A'], x_pos, y_line);
-            else if(i < game.pos_player + game.misses_after_hit) view_draw_sprite_xpm_red(letters[letter - 'A'], x_pos, y_line);
-            else view_draw_sprite_xpm(letters[letter - 'A'], x_pos, y_line);
+            if(i <= game.pos_player) design_draw_sprite_xpm_green(letters[letter - 'A'], x_pos, y_line);
+            else if(i < game.pos_player + game.misses_after_hit) design_draw_sprite_xpm_red(letters[letter - 'A'], x_pos, y_line);
+            else design_draw_sprite_xpm(letters[letter - 'A'], x_pos, y_line);
         }
         else if(is_number(letter)){
-            if(i <= game.pos_player) view_draw_sprite_xpm_green(letters[letter - '0'], x_pos, y_line);
-            else if(i < game.pos_player + game.misses_after_hit) view_draw_sprite_xpm_red(letters[letter - '0'], x_pos, y_line);
-            else view_draw_sprite_xpm(letters[letter - '0'], x_pos, y_line);
+            if(i <= game.pos_player) design_draw_sprite_xpm_green(letters[letter - '0'], x_pos, y_line);
+            else if(i < game.pos_player + game.misses_after_hit) design_draw_sprite_xpm_red(letters[letter - '0'], x_pos, y_line);
+            else design_draw_sprite_xpm(letters[letter - '0'], x_pos, y_line);
         }
         else if(letter == ' '){
             safe_x += 1;
@@ -207,11 +207,11 @@ int (wpm_writer)(int wpm){
         digit2 = 0;
     }
 
-    view_draw_sprite_xpm(numbers[digit2], 60, 70);
-    view_draw_sprite_xpm(numbers[digit1], 75, 70);
-    view_draw_sprite_xpm(letters['w' -'a'], 100, 70);
-    view_draw_sprite_xpm(letters['p' -'a'], 120, 70);
-    view_draw_sprite_xpm(letters['m' -'a'], 135, 70);
+    design_draw_sprite_xpm(numbers[digit2], 60, 70);
+    design_draw_sprite_xpm(numbers[digit1], 75, 70);
+    design_draw_sprite_xpm(letters['w' -'a'], 100, 70);
+    design_draw_sprite_xpm(letters['p' -'a'], 120, 70);
+    design_draw_sprite_xpm(letters['m' -'a'], 135, 70);
     return 0;
 }
 
@@ -228,8 +228,8 @@ int (accuracy_writer)(int acc){
         digit2 = 0;
     }
     
-    view_draw_sprite_xpm(numbers[digit2], 550, 70);
-    view_draw_sprite_xpm(numbers[digit1], 570, 70);
-    view_draw_sprite_xpm(accuracy, 600, 70);
+    design_draw_sprite_xpm(numbers[digit2], 550, 70);
+    design_draw_sprite_xpm(numbers[digit1], 570, 70);
+    design_draw_sprite_xpm(accuracy, 600, 70);
     return 0;
 }

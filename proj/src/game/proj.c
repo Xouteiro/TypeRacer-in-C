@@ -22,7 +22,7 @@ int setup(){
   if (timer_set_frequency(TIMER, GAME_FREQ)) return 1;
 
   // video buffer initialization (double buffering)
-  if (view_set_frame_buffers(VIDEO_MODE)) return 1;
+  if (design_set_frame_buffers(VIDEO_MODE)) return 1;
 
   // graphics mode initialization
   if (graphics_set_mode(VIDEO_MODE)) return 1;
@@ -61,11 +61,9 @@ int proj_cleanup(){
 }
 
 int(proj_main_loop)(int argc, char* argv[]){
-  
-  
   if (setup()) return 1;
   
-  view_draw_new_frame();
+  design_draw_new_frame();
 
   int ipc_status;
   message msg;

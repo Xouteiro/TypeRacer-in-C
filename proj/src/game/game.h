@@ -1,8 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "view/view.h"
-#include "model/model.h"
+#include "states_design/design.h"
+#include "states_design/states.h"
 #include "controller/rtc/rtc.h"
 #include <stdio.h>
 #include <stdlib.h>

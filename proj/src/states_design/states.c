@@ -1,4 +1,4 @@
-#include "model.h"
+#include "states.h"
 
 extern uint8_t scancode;
 extern uint8_t byte_index;
@@ -86,9 +86,9 @@ void (sprites_destroy)() {
 }
 
 void (timer_update_state)() {
-    view_draw_new_frame();
-    view_draw_mouse();
-    view_swap_buffers();
+    design_draw_new_frame();
+    design_draw_mouse();
+    design_swap_buffers();
     timer_interrupts++;
 }
 
@@ -97,15 +97,10 @@ void (keyboard_update_state)() {
     switch (menuState) {
         case START:
             if(scancode == BREAK_ESC) systemState = OVER;
-            if(scancode == KEY_1){
-                menuState = GAME;
-                create_game(&game);
-            } 
             break;
         case GAME:
             if(scancode == BREAK_ESC) menuState = START;
             if(game_controls(scancode, &game) == 0)  menuState = END;
-            if(scancode == KEY_2) menuState = END;
             break;
         case END:
             if(scancode == BREAK_ESC) menuState = START;
