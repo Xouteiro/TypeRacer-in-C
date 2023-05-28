@@ -55,9 +55,9 @@ void (view_draw_game_menu)() {
     if(game.pos_player >=1){
     game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(rtc_get_time_elapsed()) / 60) );
     printf("wpm %d\n", game.wpm);
-    if(wpm_writer(game.wpm))return;
+    if(wpm_writer(game.wpm, 400))return;
     }else{
-        if(wpm_writer(0))return;
+        if(wpm_writer(0, 70))return;
     }
     return;
 } 
@@ -70,9 +70,9 @@ void (view_draw_finish_menu)() {
     view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
     if(game.pos_player >=1){
     game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(game.elapsed_time) / 60) );;
-    if(wpm_writer(game.wpm))return;
+    if(wpm_writer(game.wpm, 400 ))return;
     }else{
-        if(wpm_writer(0))return;
+        if(wpm_writer(0, 400))return;
     }
     return;
 }
@@ -191,7 +191,7 @@ int (is_number)(char letter){
     return 0;
 }
 
-int wpm_writer(int wpm){
+int wpm_writer(int wpm , int y){
     int digit1;
     int digit2;
 
@@ -205,10 +205,10 @@ int wpm_writer(int wpm){
         digit2 = 0;
     }
 
-    view_draw_sprite_xpm(numbers[digit2], 340, 70);
-    view_draw_sprite_xpm(numbers[digit1], 355, 70);
-    view_draw_sprite_xpm(letters['w' -'a'], 380, 70);
-    view_draw_sprite_xpm(letters['p' -'a'], 400, 70);
-    view_draw_sprite_xpm(letters['m' -'a'], 415, 70);
+    view_draw_sprite_xpm(numbers[digit2], 350, y);
+    view_draw_sprite_xpm(numbers[digit1], 375, y);
+    view_draw_sprite_xpm(letters['w' -'a'], 400, y);
+    view_draw_sprite_xpm(letters['p' -'a'], 420, y);
+    view_draw_sprite_xpm(letters['m' -'a'], 435, y);
     return 0;
 }
