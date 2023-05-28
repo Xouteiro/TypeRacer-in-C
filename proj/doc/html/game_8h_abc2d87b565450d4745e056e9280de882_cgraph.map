@@ -1,0 +1,9 @@
+<map id="game_controls" name="game_controls">
+<area shape="rect" id="node1" title="Controls the game." alt="" coords="5,55,112,80"/>
+<area shape="rect" id="node2" href="$game_8c.html#adbc80534e7d38cb4c9a32e57d4f2203a" title="Gets the letter from the keyboard." alt="" coords="160,5,328,31"/>
+<area shape="rect" id="node3" href="$rtc_8c.html#ab0fe0bc0db38324a33c73b6598e490fa" title="Starts RTC counter." alt="" coords="184,55,304,80"/>
+<area shape="rect" id="node7" href="$rtc_8c.html#a709d0ec18254365189d9d38cdfeeeb06" title="Gets elapsed time." alt="" coords="171,104,317,130"/>
+<area shape="rect" id="node4" href="$rtc_8c.html#a4ebd09baf3ebabb95fb10303cd4f7a62" title="Gets a RTC&#39;s register." alt="" coords="378,31,496,56"/>
+<area shape="rect" id="node6" href="$rtc_8c.html#ad424e653bae3c7f43f6f812c9593ae0d" title="Writes a RTC&#39;s register." alt="" coords="376,80,497,106"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="545,31,636,56"/>
+</map>

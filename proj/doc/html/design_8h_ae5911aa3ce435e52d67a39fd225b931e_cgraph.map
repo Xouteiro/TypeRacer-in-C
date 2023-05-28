@@ -1,0 +1,8 @@
+<map id="design_draw_initial_menu" name="design_draw_initial_menu">
+<area shape="rect" id="node1" title="Draws the initial menu of the game." alt="" coords="5,70,176,96"/>
+<area shape="rect" id="node2" href="$design_8c.html#a888c36f30953add0a9bc5d3622e9f294" title="Draws a sprite button." alt="" coords="437,5,570,46"/>
+<area shape="rect" id="node4" href="$design_8c.html#ae5cd20439db85aaede7f55fc73122094" title="Draws a sprite." alt="" coords="224,70,389,96"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#aa21799e1497374443619b5e192ffae81" title="Draws a rectangle." alt="" coords="224,120,389,145"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#ab5c6ccb96dfa2e30f6248ebc941164db" title="Draws a pixel." alt="" coords="618,70,758,96"/>
+<area shape="rect" id="node6" href="$graphics_8c.html#a574a0840f35c203908d17ecff3cb2b17" title="Draws a line." alt="" coords="438,121,570,147"/>
+</map>

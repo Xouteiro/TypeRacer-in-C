@@ -1,0 +1,5 @@
+<map id="rtc_update_date" name="rtc_update_date">
+<area shape="rect" id="node1" title="Reads RTC&#39;s registers to update date." alt="" coords="5,5,120,31"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#a4ebd09baf3ebabb95fb10303cd4f7a62" title="Gets a RTC&#39;s register." alt="" coords="168,5,286,31"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="334,5,424,31"/>
+</map>

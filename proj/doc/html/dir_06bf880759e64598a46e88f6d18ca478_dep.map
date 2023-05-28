@@ -1,0 +1,10 @@
+<map id="src/states_design" name="src/states_design">
+<area shape="rect" id="node1" href="dir_1699be727a800b1d059c6f7f2b91d2ee.html" title="game" alt="" coords="27,126,80,152"/>
+<area shape="rect" id="node2" href="dir_41ef5d8a90b9cc03a02949a5c062e6f0.html" title="controller" alt="" coords="104,126,179,152"/>
+<area shape="rect" id="node3" href="dir_8a81378dc8ad86878450ac6f7f0b0ad1.html" title="sprite" alt="" coords="203,126,256,152"/>
+<area shape="rect" id="node4" href="dir_06bf880759e64598a46e88f6d18ca478.html" title="states_design" alt="" coords="90,52,193,78"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000006_000001.html" title="2" alt="" coords="84,113,91,128"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000006_000000.html" title="6" alt="" coords="146,100,153,115"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000006_000004.html" title="1" alt="" coords="202,100,209,115"/>
+<area shape="rect" id="clust1" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" title="src" alt="" coords="16,16,267,162"/>
+</map>

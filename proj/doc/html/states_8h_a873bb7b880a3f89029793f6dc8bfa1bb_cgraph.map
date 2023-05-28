@@ -1,0 +1,13 @@
+<map id="mouse_update_state" name="mouse_update_state">
+<area shape="rect" id="node1" title="Updates the game&#39;s state every mouse interrupt." alt="" coords="5,104,148,130"/>
+<area shape="rect" id="node2" href="$states_8c.html#a22d0b930ebd42c1d8d20f8cd0e584425" title="Update the end menu buttons." alt="" coords="196,5,373,31"/>
+<area shape="rect" id="node5" href="$states_8c.html#afbf5d1389fb1c904f1dfbd8e70a403b4" title="Update the main menu buttons." alt="" coords="210,55,359,80"/>
+<area shape="rect" id="node6" href="$mouse_8c.html#a0def0a39701adb038761c1c05002c4fd" title="Evaluates the bytes disposition in the array @mouse_bytes." alt="" coords="222,104,347,130"/>
+<area shape="rect" id="node7" href="$mouse_8c.html#a3a311f858f3f39ed8a233ed642ed3d57" title="Transforms the array in a struct defined in order of the application&#39;s needs." alt="" coords="228,153,341,179"/>
+<area shape="rect" id="node8" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Mouse interrupt handler." alt="" coords="246,203,323,228"/>
+<area shape="rect" id="node3" href="$game_8c.html#a46568790d2e855ddbd6d2600a35083bd" title="Initializes the game&#39;s struct." alt="" coords="435,31,531,56"/>
+<area shape="rect" id="node4" href="$game_8c.html#ab7572ad0b6e77508778f4c0e15cb20f1" title="Gets a random phrase from a file." alt="" coords="593,31,729,56"/>
+<area shape="rect" id="node9" href="$_k_b_c_8c.html#ab0a89c12a0bab5bcbadb2ca61c7a18f0" title="Reads the output buffer of the KBC." alt="" coords="421,203,545,228"/>
+<area shape="rect" id="node10" href="$_k_b_c_8c.html#a00a10aefb468d98eb5da2f951617fe80" title="Reads the status of the KBC." alt="" coords="599,177,723,203"/>
+<area shape="rect" id="node11" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="777,203,867,228"/>
+</map>

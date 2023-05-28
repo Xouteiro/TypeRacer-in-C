@@ -1,0 +1,23 @@
+digraph "rtc_read_register"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="rtc_read_register",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Gets a RTC's register."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="rtc_counter_start",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__driver.html#gab0fe0bc0db38324a33c73b6598e490fa",tooltip="Starts RTC counter."];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="rtc_ih",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__driver.html#ga2f5c62ef4118ce8c03eaa21181ebee4d",tooltip="RTC interrupt handler."];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="rtc_initialize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__driver.html#ga762710438f825aaaaa77cb4ebbc7e969",tooltip="Initializes RTC."];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="rtc_update_date",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__driver.html#gad7093faf1cb0c2db2674a55d4ba6f7d0",tooltip="Reads RTC's registers to update date."];
+  Node5 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node5 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="rtc_update_hour",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__driver.html#gadd644eea069b3c4145ce2d3bf5aca38c",tooltip="Reads RTC's registers to update hour."];
+  Node6 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node6 -> Node4 [dir="back",color="steelblue1",style="solid"];
+}

@@ -1,0 +1,5 @@
+<map id="keyboard_interrupts_unsubscription" name="keyboard_interrupts_unsubscription">
+<area shape="rect" id="node1" title="Unsubscribes keyboard interrupts." alt="" coords="304,5,439,46"/>
+<area shape="rect" id="node2" href="$proj_8c.html#a836a41ca36892ac502d49fb6faa9db5d" title="Cleans up the program (goes back to text mode, unsubscribes interrupts and destroys all created sprit..." alt="" coords="162,13,256,39"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,13,114,39"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="keyboard_update_state" name="keyboard_update_state">
+<area shape="rect" id="node1" title="Updates the game&#39;s state every keyboard interrupt." alt="" coords="5,105,162,131"/>
+<area shape="rect" id="node2" href="$game_8c.html#abc2d87b565450d4745e056e9280de882" title="Controls the game." alt="" coords="210,68,316,94"/>
+<area shape="rect" id="node9" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="Keyboard interrupt handler." alt="" coords="233,129,293,155"/>
+<area shape="rect" id="node3" href="$game_8c.html#adbc80534e7d38cb4c9a32e57d4f2203a" title="Gets the letter from the keyboard." alt="" coords="364,5,532,31"/>
+<area shape="rect" id="node4" href="$rtc_8c.html#ab0fe0bc0db38324a33c73b6598e490fa" title="Starts RTC counter." alt="" coords="389,55,508,80"/>
+<area shape="rect" id="node8" href="$rtc_8c.html#a709d0ec18254365189d9d38cdfeeeb06" title="Gets elapsed time." alt="" coords="376,104,521,130"/>
+<area shape="rect" id="node5" href="$rtc_8c.html#a4ebd09baf3ebabb95fb10303cd4f7a62" title="Gets a RTC&#39;s register." alt="" coords="583,29,702,55"/>
+<area shape="rect" id="node7" href="$rtc_8c.html#ad424e653bae3c7f43f6f812c9593ae0d" title="Writes a RTC&#39;s register." alt="" coords="582,79,703,104"/>
+<area shape="rect" id="node6" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="753,129,843,155"/>
+<area shape="rect" id="node10" href="$_k_b_c_8c.html#ab0a89c12a0bab5bcbadb2ca61c7a18f0" title="Reads the output buffer of the KBC." alt="" coords="386,153,510,179"/>
+<area shape="rect" id="node11" href="$_k_b_c_8c.html#a00a10aefb468d98eb5da2f951617fe80" title="Reads the status of the KBC." alt="" coords="580,180,705,206"/>
+</map>

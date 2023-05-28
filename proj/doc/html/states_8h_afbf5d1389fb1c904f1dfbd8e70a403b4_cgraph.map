@@ -1,0 +1,5 @@
+<map id="menu_buttons_update" name="menu_buttons_update">
+<area shape="rect" id="node1" title="Update the main menu buttons." alt="" coords="5,5,155,31"/>
+<area shape="rect" id="node2" href="$game_8c.html#a46568790d2e855ddbd6d2600a35083bd" title="Initializes the game&#39;s struct." alt="" coords="203,5,299,31"/>
+<area shape="rect" id="node3" href="$game_8c.html#ab7572ad0b6e77508778f4c0e15cb20f1" title="Gets a random phrase from a file." alt="" coords="347,5,482,31"/>
+</map>

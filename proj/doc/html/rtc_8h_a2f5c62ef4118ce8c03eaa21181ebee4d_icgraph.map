@@ -1,0 +1,5 @@
+<map id="rtc_ih" name="rtc_ih">
+<area shape="rect" id="node1" title="RTC interrupt handler." alt="" coords="328,5,381,31"/>
+<area shape="rect" id="node2" href="$states_8c.html#a1a2176ba0e79afd72c7bc2bf91b978f3" title="Updates the game&#39;s state every rtc interrupt." alt="" coords="162,5,280,31"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,114,31"/>
+</map>

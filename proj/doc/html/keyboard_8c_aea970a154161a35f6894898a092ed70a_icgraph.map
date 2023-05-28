@@ -1,0 +1,5 @@
+<map id="kbc_ih" name="kbc_ih">
+<area shape="rect" id="node1" title="Keyboard interrupt handler." alt="" coords="366,5,425,31"/>
+<area shape="rect" id="node2" href="$states_8c.html#ae8799b64944b1a1259633224a403c717" title="Updates the game&#39;s state every keyboard interrupt." alt="" coords="162,5,318,31"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,114,31"/>
+</map>

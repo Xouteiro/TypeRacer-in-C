@@ -1,0 +1,10 @@
+<map id="design_draw_finish_menu" name="design_draw_finish_menu">
+<area shape="rect" id="node1" title="Draws the menu of the game when a user has finished playing." alt="" coords="5,107,177,132"/>
+<area shape="rect" id="node2" href="$design_8c.html#a4e3a9f941f80e22c51fe19ed73623f8d" title="Writes the accuracy." alt="" coords="251,5,364,31"/>
+<area shape="rect" id="node3" href="$design_8c.html#ae5cd20439db85aaede7f55fc73122094" title="Draws a sprite." alt="" coords="438,75,603,100"/>
+<area shape="rect" id="node5" href="$design_8c.html#a888c36f30953add0a9bc5d3622e9f294" title="Draws a sprite button." alt="" coords="454,143,587,184"/>
+<area shape="rect" id="node6" href="$graphics_8c.html#aa21799e1497374443619b5e192ffae81" title="Draws a rectangle." alt="" coords="225,208,390,234"/>
+<area shape="rect" id="node8" href="$design_8c.html#a35519d4ac2e772394f4bfcf221c139e1" title="Writes the wpm." alt="" coords="263,107,352,132"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#ab5c6ccb96dfa2e30f6248ebc941164db" title="Draws a pixel." alt="" coords="651,151,791,176"/>
+<area shape="rect" id="node7" href="$graphics_8c.html#a574a0840f35c203908d17ecff3cb2b17" title="Draws a line." alt="" coords="455,208,587,234"/>
+</map>

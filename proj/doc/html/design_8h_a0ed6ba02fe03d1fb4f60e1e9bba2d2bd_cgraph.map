@@ -1,0 +1,15 @@
+<map id="design_draw_game_menu" name="design_draw_game_menu">
+<area shape="rect" id="node1" title="Draws the menu of the game while a user is playing." alt="" coords="5,112,178,138"/>
+<area shape="rect" id="node2" href="$design_8c.html#ae5cd20439db85aaede7f55fc73122094" title="Draws a sprite." alt="" coords="439,5,604,31"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#aa21799e1497374443619b5e192ffae81" title="Draws a rectangle." alt="" coords="226,272,391,298"/>
+<area shape="rect" id="node6" href="$design_8c.html#ab0974b8ec6b02d6cbad4005a42cad4cf" title="Function that controls the phrase writing." alt="" coords="259,112,358,138"/>
+<area shape="rect" id="node12" href="$rtc_8c.html#a709d0ec18254365189d9d38cdfeeeb06" title="Gets elapsed time." alt="" coords="236,161,381,187"/>
+<area shape="rect" id="node13" href="$design_8c.html#a35519d4ac2e772394f4bfcf221c139e1" title="Writes the wpm." alt="" coords="264,7,353,32"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#ab5c6ccb96dfa2e30f6248ebc941164db" title="Draws a pixel." alt="" coords="652,145,792,171"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a574a0840f35c203908d17ecff3cb2b17" title="Draws a line." alt="" coords="456,333,588,359"/>
+<area shape="rect" id="node7" href="$design_8c.html#afb5a38b665a8a7d526a9445cdb60de07" title="Draws a sprite in green." alt="" coords="455,105,588,145"/>
+<area shape="rect" id="node8" href="$design_8c.html#a971fdf41514abed6693ab063ba3eed38" title="Draws a sprite in red." alt="" coords="455,170,588,211"/>
+<area shape="rect" id="node9" href="$design_8c.html#ad93a0fac98407e90cc317eab5949a357" title="Checks if a letter is lower case." alt="" coords="487,235,556,260"/>
+<area shape="rect" id="node10" href="$design_8c.html#a814003c17339e98ca24089887951e292" title="Checks if a letter is a number." alt="" coords="481,284,562,310"/>
+<area shape="rect" id="node11" href="$design_8c.html#ad466c0217227c3513e8522626737f124" title="Checks if a letter is upper case." alt="" coords="487,55,557,80"/>
+</map>

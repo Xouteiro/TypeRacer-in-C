@@ -1,0 +1,9 @@
+<map id="rtc_write_register" name="rtc_write_register">
+<area shape="rect" id="node1" title="Writes a RTC&#39;s register." alt="" coords="688,32,809,58"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#ab0fe0bc0db38324a33c73b6598e490fa" title="Starts RTC counter." alt="" coords="520,7,640,32"/>
+<area shape="rect" id="node6" href="$rtc_8c.html#a476ff1af1137bddc2b58bdd6c059fe45" title="Initializes RTC." alt="" coords="535,56,625,82"/>
+<area shape="rect" id="node3" href="$game_8c.html#abc2d87b565450d4745e056e9280de882" title="Controls the game." alt="" coords="366,5,472,31"/>
+<area shape="rect" id="node4" href="$states_8c.html#ae8799b64944b1a1259633224a403c717" title="Updates the game&#39;s state every keyboard interrupt." alt="" coords="162,7,318,32"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,32,114,58"/>
+<area shape="rect" id="node7" href="$proj_8c.html#a099d48038e444c2f3e69904477527798" title="Initializes everything needed for the program." alt="" coords="213,56,267,82"/>
+</map>

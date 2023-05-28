@@ -1,0 +1,6 @@
+<map id="design_draw_initial_menu" name="design_draw_initial_menu">
+<area shape="rect" id="node1" title="Draws the initial menu of the game." alt="" coords="555,5,726,31"/>
+<area shape="rect" id="node2" href="$design_8c.html#a30e434434bde857434a49a430ae49c20" title="Draws a new frame according to the current menu state." alt="" coords="342,5,507,31"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,114,31"/>
+<area shape="rect" id="node4" href="$states_8c.html#a1ae711b8cbf9f564fe9cdd75056e52e4" title="Updates the game&#39;s state every timer interrupt." alt="" coords="162,31,294,56"/>
+</map>

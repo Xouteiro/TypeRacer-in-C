@@ -1,0 +1,10 @@
+<map id="phrase_writer" name="phrase_writer">
+<area shape="rect" id="node1" title="Function that controls the phrase writing." alt="" coords="5,157,105,183"/>
+<area shape="rect" id="node2" href="$design_8c.html#ae5cd20439db85aaede7f55fc73122094" title="Draws a sprite." alt="" coords="153,5,318,31"/>
+<area shape="rect" id="node4" href="$design_8c.html#afb5a38b665a8a7d526a9445cdb60de07" title="Draws a sprite in green." alt="" coords="169,55,302,96"/>
+<area shape="rect" id="node5" href="$design_8c.html#a971fdf41514abed6693ab063ba3eed38" title="Draws a sprite in red." alt="" coords="169,121,302,161"/>
+<area shape="rect" id="node6" href="$design_8c.html#ad93a0fac98407e90cc317eab5949a357" title="Checks if a letter is lower case." alt="" coords="201,185,270,211"/>
+<area shape="rect" id="node7" href="$design_8c.html#a814003c17339e98ca24089887951e292" title="Checks if a letter is a number." alt="" coords="195,235,276,260"/>
+<area shape="rect" id="node8" href="$design_8c.html#ad466c0217227c3513e8522626737f124" title="Checks if a letter is upper case." alt="" coords="200,284,271,310"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#ab5c6ccb96dfa2e30f6248ebc941164db" title="Draws a pixel." alt="" coords="366,63,505,88"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="create_game" name="create_game">
+<area shape="rect" id="node1" title="Initializes the game&#39;s struct." alt="" coords="5,5,102,31"/>
+<area shape="rect" id="node2" href="$game_8c.html#ab7572ad0b6e77508778f4c0e15cb20f1" title="Gets a random phrase from a file." alt="" coords="150,5,285,31"/>
+</map>

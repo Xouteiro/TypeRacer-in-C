@@ -1,0 +1,13 @@
+<map id="KBC_read_status" name="KBC_read_status">
+<area shape="rect" id="node1" title="Reads the status of the KBC." alt="" coords="770,80,894,106"/>
+<area shape="rect" id="node2" href="$_k_b_c_8c.html#ab0a89c12a0bab5bcbadb2ca61c7a18f0" title="Reads the output buffer of the KBC." alt="" coords="585,55,710,80"/>
+<area shape="rect" id="node8" href="$_k_b_c_8c.html#a89cbda1d561c8ed3240b73af4063f991" title="Writes a command to the KBC." alt="" coords="573,104,722,130"/>
+<area shape="rect" id="node3" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="Keyboard interrupt handler." alt="" coords="416,5,475,31"/>
+<area shape="rect" id="node6" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Mouse interrupt handler." alt="" coords="407,55,484,80"/>
+<area shape="rect" id="node4" href="$states_8c.html#ae8799b64944b1a1259633224a403c717" title="Updates the game&#39;s state every keyboard interrupt." alt="" coords="162,5,318,31"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,80,114,106"/>
+<area shape="rect" id="node7" href="$states_8c.html#a873bb7b880a3f89029793f6dc8bfa1bb" title="Updates the game&#39;s state every mouse interrupt." alt="" coords="169,55,311,80"/>
+<area shape="rect" id="node9" href="$mouse_8c.html#a38d52a9770ba9b635e98e4968ae7c330" title="Writes a command to the mouse." alt="" coords="366,104,525,130"/>
+<area shape="rect" id="node10" href="$proj_8c.html#a836a41ca36892ac502d49fb6faa9db5d" title="Cleans up the program (goes back to text mode, unsubscribes interrupts and destroys all created sprit..." alt="" coords="193,104,287,130"/>
+<area shape="rect" id="node11" href="$proj_8c.html#a099d48038e444c2f3e69904477527798" title="Initializes everything needed for the program." alt="" coords="213,153,267,179"/>
+</map>

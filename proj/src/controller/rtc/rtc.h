@@ -3,12 +3,6 @@
 
 #include <lcom/lcf.h>
 
-/** @defgroup driver rtc
- * @{
- *
- * Functions related to the real time clock.
- */
-
 #define RTC_MASK 5
 #define RTC_IRQ 8
 #define RTC_ADDR_REG 0x70

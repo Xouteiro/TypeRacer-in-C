@@ -1,0 +1,5 @@
+<map id="wpm_writer" name="wpm_writer">
+<area shape="rect" id="node1" title="Writes the wpm." alt="" coords="5,5,94,31"/>
+<area shape="rect" id="node2" href="$design_8c.html#ae5cd20439db85aaede7f55fc73122094" title="Draws a sprite." alt="" coords="142,5,307,31"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#ab5c6ccb96dfa2e30f6248ebc941164db" title="Draws a pixel." alt="" coords="355,5,494,31"/>
+</map>

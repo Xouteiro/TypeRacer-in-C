@@ -1,0 +1,20 @@
+<map id="design_draw_new_frame" name="design_draw_new_frame">
+<area shape="rect" id="node1" title="Draws a new frame according to the current menu state." alt="" coords="5,170,171,196"/>
+<area shape="rect" id="node2" href="$design_8c.html#a945895f82ef9e04084bbd318ab1d256e" title="Draws the menu of the game when a user has finished playing." alt="" coords="219,170,391,196"/>
+<area shape="rect" id="node10" href="$design_8c.html#a0ed6ba02fe03d1fb4f60e1e9bba2d2bd" title="Draws the menu of the game while a user is playing." alt="" coords="219,297,391,323"/>
+<area shape="rect" id="node18" href="$design_8c.html#ae5911aa3ce435e52d67a39fd225b931e" title="Draws the initial menu of the game." alt="" coords="220,96,390,121"/>
+<area shape="rect" id="node3" href="$design_8c.html#a4e3a9f941f80e22c51fe19ed73623f8d" title="Writes the accuracy." alt="" coords="465,170,578,196"/>
+<area shape="rect" id="node4" href="$design_8c.html#ae5cd20439db85aaede7f55fc73122094" title="Draws a sprite." alt="" coords="652,221,818,247"/>
+<area shape="rect" id="node6" href="$design_8c.html#a888c36f30953add0a9bc5d3622e9f294" title="Draws a sprite button." alt="" coords="455,5,588,46"/>
+<area shape="rect" id="node7" href="$graphics_8c.html#aa21799e1497374443619b5e192ffae81" title="Draws a rectangle." alt="" coords="439,121,604,147"/>
+<area shape="rect" id="node9" href="$design_8c.html#a35519d4ac2e772394f4bfcf221c139e1" title="Writes the wpm." alt="" coords="478,272,566,297"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#ab5c6ccb96dfa2e30f6248ebc941164db" title="Draws a pixel." alt="" coords="866,221,1005,247"/>
+<area shape="rect" id="node8" href="$graphics_8c.html#a574a0840f35c203908d17ecff3cb2b17" title="Draws a line." alt="" coords="669,146,801,172"/>
+<area shape="rect" id="node11" href="$design_8c.html#ab0974b8ec6b02d6cbad4005a42cad4cf" title="Function that controls the phrase writing." alt="" coords="472,422,571,448"/>
+<area shape="rect" id="node17" href="$rtc_8c.html#a709d0ec18254365189d9d38cdfeeeb06" title="Gets elapsed time." alt="" coords="449,373,594,399"/>
+<area shape="rect" id="node12" href="$design_8c.html#afb5a38b665a8a7d526a9445cdb60de07" title="Draws a sprite in green." alt="" coords="668,484,802,525"/>
+<area shape="rect" id="node13" href="$design_8c.html#a971fdf41514abed6693ab063ba3eed38" title="Draws a sprite in red." alt="" coords="668,271,802,311"/>
+<area shape="rect" id="node14" href="$design_8c.html#ad93a0fac98407e90cc317eab5949a357" title="Checks if a letter is lower case." alt="" coords="700,336,770,361"/>
+<area shape="rect" id="node15" href="$design_8c.html#a814003c17339e98ca24089887951e292" title="Checks if a letter is a number." alt="" coords="694,385,776,411"/>
+<area shape="rect" id="node16" href="$design_8c.html#ad466c0217227c3513e8522626737f124" title="Checks if a letter is upper case." alt="" coords="700,434,770,460"/>
+</map>

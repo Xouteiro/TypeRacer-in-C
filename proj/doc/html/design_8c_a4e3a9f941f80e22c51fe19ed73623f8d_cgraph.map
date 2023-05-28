@@ -1,0 +1,5 @@
+<map id="accuracy_writer" name="accuracy_writer">
+<area shape="rect" id="node1" title="Writes the accuracy." alt="" coords="5,5,119,31"/>
+<area shape="rect" id="node2" href="$design_8c.html#ae5cd20439db85aaede7f55fc73122094" title="Draws a sprite." alt="" coords="167,5,332,31"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#ab5c6ccb96dfa2e30f6248ebc941164db" title="Draws a pixel." alt="" coords="380,5,519,31"/>
+</map>

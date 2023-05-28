@@ -1,0 +1,16 @@
+<map id="src/controller/keyboard_mouse/KBC.h" name="src/controller/keyboard_mouse/KBC.h">
+<area shape="rect" id="node1" title=" " alt="" coords="271,5,424,46"/>
+<area shape="rect" id="node2" href="$_k_b_c_8c.html" title=" " alt="" coords="5,94,159,135"/>
+<area shape="rect" id="node3" href="$keyboard_8h.html" title=" " alt="" coords="183,94,336,135"/>
+<area shape="rect" id="node7" href="$mouse_8h.html" title=" " alt="" coords="360,94,513,135"/>
+<area shape="rect" id="node12" href="$states_8h.html" title=" " alt="" coords="596,345,771,371"/>
+<area shape="rect" id="node4" href="$keyboard_8c.html" title=" " alt="" coords="68,183,221,223"/>
+<area shape="rect" id="node5" href="$proj_8h.html" title=" " alt="" coords="305,419,416,444"/>
+<area shape="rect" id="node6" href="$proj_8c.html" title=" " alt="" coords="305,492,416,518"/>
+<area shape="rect" id="node8" href="$mouse_8c.html" title=" " alt="" coords="348,183,501,223"/>
+<area shape="rect" id="node9" href="$design_8h.html" title=" " alt="" coords="525,190,703,216"/>
+<area shape="rect" id="node10" href="$game_8h.html" title=" " alt="" coords="442,271,565,297"/>
+<area shape="rect" id="node14" href="$design_8c.html" title=" " alt="" coords="664,271,841,297"/>
+<area shape="rect" id="node11" href="$game_8c.html" title=" " alt="" coords="449,345,571,371"/>
+<area shape="rect" id="node13" href="$states_8c.html" title=" " alt="" coords="596,419,771,444"/>
+</map>

@@ -1,0 +1,24 @@
+<map id="util_sys_inb" name="util_sys_inb">
+<area shape="rect" id="node1" title=" " alt="" coords="942,155,1032,180"/>
+<area shape="rect" id="node2" href="$_k_b_c_8c.html#ab0a89c12a0bab5bcbadb2ca61c7a18f0" title="Reads the output buffer of the KBC." alt="" coords="585,5,710,31"/>
+<area shape="rect" id="node8" href="$_k_b_c_8c.html#a00a10aefb468d98eb5da2f951617fe80" title="Reads the status of the KBC." alt="" coords="770,56,894,82"/>
+<area shape="rect" id="node10" href="$mouse_8c.html#a38d52a9770ba9b635e98e4968ae7c330" title="Writes a command to the mouse." alt="" coords="366,155,525,180"/>
+<area shape="rect" id="node13" href="$rtc_8c.html#a4ebd09baf3ebabb95fb10303cd4f7a62" title="Gets a RTC&#39;s register." alt="" coords="773,281,891,307"/>
+<area shape="rect" id="node21" href="$timer_8c.html#a703c60b40c8c49607d6ecb6fef82d27a" title="Reads the timer configuration." alt="" coords="778,205,886,231"/>
+<area shape="rect" id="node3" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="Keyboard interrupt handler." alt="" coords="416,55,475,80"/>
+<area shape="rect" id="node6" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Mouse interrupt handler." alt="" coords="407,5,484,31"/>
+<area shape="rect" id="node4" href="$states_8c.html#ae8799b64944b1a1259633224a403c717" title="Updates the game&#39;s state every keyboard interrupt." alt="" coords="162,104,318,130"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,155,114,180"/>
+<area shape="rect" id="node7" href="$states_8c.html#a873bb7b880a3f89029793f6dc8bfa1bb" title="Updates the game&#39;s state every mouse interrupt." alt="" coords="169,31,311,56"/>
+<area shape="rect" id="node9" href="$_k_b_c_8c.html#a89cbda1d561c8ed3240b73af4063f991" title="Writes a command to the KBC." alt="" coords="573,55,722,80"/>
+<area shape="rect" id="node11" href="$proj_8c.html#a836a41ca36892ac502d49fb6faa9db5d" title="Cleans up the program (goes back to text mode, unsubscribes interrupts and destroys all created sprit..." alt="" coords="193,155,287,180"/>
+<area shape="rect" id="node12" href="$proj_8c.html#a099d48038e444c2f3e69904477527798" title="Initializes everything needed for the program." alt="" coords="213,204,267,230"/>
+<area shape="rect" id="node14" href="$rtc_8c.html#ab0fe0bc0db38324a33c73b6598e490fa" title="Starts RTC counter." alt="" coords="588,104,707,130"/>
+<area shape="rect" id="node16" href="$rtc_8c.html#a0b9ae809cf571f61e54712a23c65348e" title="RTC interrupt handler." alt="" coords="419,332,472,358"/>
+<area shape="rect" id="node18" href="$rtc_8c.html#a476ff1af1137bddc2b58bdd6c059fe45" title="Initializes RTC." alt="" coords="401,283,491,308"/>
+<area shape="rect" id="node19" href="$rtc_8c.html#ad7093faf1cb0c2db2674a55d4ba6f7d0" title="Reads RTC&#39;s registers to update date." alt="" coords="590,356,705,382"/>
+<area shape="rect" id="node20" href="$rtc_8c.html#add644eea069b3c4145ce2d3bf5aca38c" title="Reads RTC&#39;s registers to update hour." alt="" coords="590,307,705,332"/>
+<area shape="rect" id="node15" href="$game_8c.html#abc2d87b565450d4745e056e9280de882" title="Controls the game." alt="" coords="393,104,499,130"/>
+<area shape="rect" id="node17" href="$states_8c.html#a1a2176ba0e79afd72c7bc2bf91b978f3" title="Updates the game&#39;s state every rtc interrupt." alt="" coords="181,304,299,330"/>
+<area shape="rect" id="node22" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title="Set the timer&#39;s frequency." alt="" coords="578,205,717,231"/>
+</map>

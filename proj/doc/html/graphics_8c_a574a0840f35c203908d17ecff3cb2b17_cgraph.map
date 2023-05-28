@@ -1,0 +1,4 @@
+<map id="graphics_draw_line" name="graphics_draw_line">
+<area shape="rect" id="node1" title="Draws a line." alt="" coords="5,5,138,31"/>
+<area shape="rect" id="node2" href="$graphics_8c.html#ab5c6ccb96dfa2e30f6248ebc941164db" title="Draws a pixel." alt="" coords="186,5,325,31"/>
+</map>

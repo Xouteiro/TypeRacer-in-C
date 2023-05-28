@@ -1,0 +1,13 @@
+<map id="proj_cleanup" name="proj_cleanup">
+<area shape="rect" id="node1" title="Cleans up the program (goes back to text mode, unsubscribes interrupts and destroys all created sprit..." alt="" coords="5,145,100,171"/>
+<area shape="rect" id="node2" href="$keyboard_8c.html#a35329553c362f1766f6f79adb1da7a92" title="Unsubscribes keyboard interrupts." alt="" coords="186,5,322,46"/>
+<area shape="rect" id="node3" href="$mouse_8c.html#acc611cd234d7c10dfa749b6f37b56c8c" title="Unsubscribes mouse interrupts." alt="" coords="148,70,360,96"/>
+<area shape="rect" id="node4" href="$mouse_8c.html#a38d52a9770ba9b635e98e4968ae7c330" title="Writes a command to the mouse." alt="" coords="174,120,334,145"/>
+<area shape="rect" id="node8" href="$rtc_8c.html#a164ecab96edd138268b7667509b372b7" title="Unsubscribes RTC interrupts." alt="" coords="160,169,348,195"/>
+<area shape="rect" id="node9" href="$states_8c.html#ab6c517d96ac6d68d855d7bb2ffcb0595" title="Destroys all the sprites needed for the game." alt="" coords="199,218,309,244"/>
+<area shape="rect" id="node11" href="$timer_8c.html#ae7b4995fad3bcf95b2d3d807e684cb31" title="Unsubscribes timer interrupts." alt="" coords="153,268,355,293"/>
+<area shape="rect" id="node5" href="$_k_b_c_8c.html#a89cbda1d561c8ed3240b73af4063f991" title="Writes a command to the KBC." alt="" coords="408,93,556,119"/>
+<area shape="rect" id="node7" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="777,118,867,144"/>
+<area shape="rect" id="node6" href="$_k_b_c_8c.html#a00a10aefb468d98eb5da2f951617fe80" title="Reads the status of the KBC." alt="" coords="604,93,729,119"/>
+<area shape="rect" id="node10" href="$sprite_8c.html#ac45cc975a568ed6d9dba3e70c50a04e1" title="Destroys a sprite object." alt="" coords="431,218,534,244"/>
+</map>

@@ -1,0 +1,12 @@
+digraph "LCOM/MINIX-LCOM/shared/g3/proj/src/controller/video"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_0962673034de5b4e73e8e9eb7ea19c93 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="controller", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_0962673034de5b4e73e8e9eb7ea19c93.html",tooltip=""]
+  dir_a13d0abc5e73fdaf48fa475416272458 [label="video", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_a13d0abc5e73fdaf48fa475416272458.html",tooltip=""];
+  }
+}

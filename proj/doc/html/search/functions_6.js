@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['kbc_5fih_0',['kbc_ih',['../keyboard_8c.html#aea970a154161a35f6894898a092ed70a',1,'kbc_ih():&#160;keyboard.c'],['../keyboard_8h.html#aea970a154161a35f6894898a092ed70a',1,'kbc_ih():&#160;keyboard.c']]],
+  ['kbc_5fread_5foutput_1',['KBC_read_output',['../_k_b_c_8c.html#ab0a89c12a0bab5bcbadb2ca61c7a18f0',1,'KBC_read_output(uint8_t port, uint8_t *output, uint8_t mouse):&#160;KBC.c'],['../_k_b_c_8h.html#ab0a89c12a0bab5bcbadb2ca61c7a18f0',1,'KBC_read_output(uint8_t port, uint8_t *output, uint8_t mouse):&#160;KBC.c']]],
+  ['kbc_5fread_5fstatus_2',['KBC_read_status',['../_k_b_c_8c.html#a00a10aefb468d98eb5da2f951617fe80',1,'KBC_read_status(uint8_t *status):&#160;KBC.c'],['../_k_b_c_8h.html#a00a10aefb468d98eb5da2f951617fe80',1,'KBC_read_status(uint8_t *status):&#160;KBC.c']]],
+  ['kbc_5fwrite_5fcommand_3',['KBC_write_command',['../_k_b_c_8c.html#a89cbda1d561c8ed3240b73af4063f991',1,'KBC_write_command(uint8_t port, uint8_t commandByte):&#160;KBC.c'],['../_k_b_c_8h.html#a89cbda1d561c8ed3240b73af4063f991',1,'KBC_write_command(uint8_t port, uint8_t commandByte):&#160;KBC.c']]],
+  ['keyboard_5finterrupts_5fsubscription_4',['keyboard_interrupts_subscription',['../keyboard_8c.html#a59f08cd43e594c43e9223df8b122709c',1,'keyboard_interrupts_subscription(uint8_t *bit_no):&#160;keyboard.c'],['../keyboard_8h.html#a59f08cd43e594c43e9223df8b122709c',1,'keyboard_interrupts_subscription(uint8_t *bit_no):&#160;keyboard.c']]],
+  ['keyboard_5finterrupts_5funsubscription_5',['keyboard_interrupts_unsubscription',['../keyboard_8c.html#a35329553c362f1766f6f79adb1da7a92',1,'keyboard_interrupts_unsubscription():&#160;keyboard.c'],['../keyboard_8h.html#a35329553c362f1766f6f79adb1da7a92',1,'keyboard_interrupts_unsubscription():&#160;keyboard.c']]],
+  ['keyboard_5fupdate_5fstate_6',['keyboard_update_state',['../states_8c.html#ae8799b64944b1a1259633224a403c717',1,'keyboard_update_state():&#160;states.c'],['../states_8h.html#ae8799b64944b1a1259633224a403c717',1,'keyboard_update_state():&#160;states.c']]]
+];

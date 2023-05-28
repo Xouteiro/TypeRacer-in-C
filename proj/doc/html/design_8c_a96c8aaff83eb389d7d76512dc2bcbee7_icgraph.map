@@ -1,0 +1,5 @@
+<map id="design_draw_mouse" name="design_draw_mouse">
+<area shape="rect" id="node1" title="Draws the mouse cursor." alt="" coords="342,5,482,31"/>
+<area shape="rect" id="node2" href="$states_8c.html#a1ae711b8cbf9f564fe9cdd75056e52e4" title="Updates the game&#39;s state every timer interrupt." alt="" coords="162,5,294,31"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,114,31"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="design_draw_sprite_button" name="design_draw_sprite_button">
+<area shape="rect" id="node1" title="Draws a sprite button." alt="" coords="775,23,908,64"/>
+<area shape="rect" id="node2" href="$design_8c.html#a945895f82ef9e04084bbd318ab1d256e" title="Draws the menu of the game when a user has finished playing." alt="" coords="555,5,727,31"/>
+<area shape="rect" id="node6" href="$design_8c.html#ae5911aa3ce435e52d67a39fd225b931e" title="Draws the initial menu of the game." alt="" coords="556,55,726,80"/>
+<area shape="rect" id="node3" href="$design_8c.html#a30e434434bde857434a49a430ae49c20" title="Draws a new frame according to the current menu state." alt="" coords="342,31,507,56"/>
+<area shape="rect" id="node4" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,31,114,56"/>
+<area shape="rect" id="node5" href="$states_8c.html#a1ae711b8cbf9f564fe9cdd75056e52e4" title="Updates the game&#39;s state every timer interrupt." alt="" coords="162,56,294,82"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="kbc_ih" name="kbc_ih">
+<area shape="rect" id="node1" title="Keyboard interrupt handler." alt="" coords="5,31,65,56"/>
+<area shape="rect" id="node2" href="$_k_b_c_8c.html#ab0a89c12a0bab5bcbadb2ca61c7a18f0" title="Reads the output buffer of the KBC." alt="" coords="113,31,237,56"/>
+<area shape="rect" id="node3" href="$_k_b_c_8c.html#a00a10aefb468d98eb5da2f951617fe80" title="Reads the status of the KBC." alt="" coords="285,5,409,31"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="457,31,548,56"/>
+</map>

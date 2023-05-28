@@ -1,0 +1,4 @@
+<map id="proj_cleanup" name="proj_cleanup">
+<area shape="rect" id="node1" title="Cleans up the program. This function must be called before exiting the program." alt="" coords="162,5,256,31"/>
+<area shape="rect" id="node2" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,114,31"/>
+</map>

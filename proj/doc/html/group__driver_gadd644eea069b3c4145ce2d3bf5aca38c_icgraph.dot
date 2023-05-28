@@ -1,0 +1,13 @@
+digraph "rtc_update_hour"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="rtc_update_hour",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Reads RTC's registers to update hour."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="rtc_ih",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__driver.html#ga2f5c62ef4118ce8c03eaa21181ebee4d",tooltip="RTC interrupt handler."];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="rtc_initialize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__driver.html#ga762710438f825aaaaa77cb4ebbc7e969",tooltip="Initializes RTC."];
+}

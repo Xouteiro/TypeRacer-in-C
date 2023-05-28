@@ -1,0 +1,16 @@
+digraph "LCOM/MINIX-LCOM/shared/g3"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_5c921cb6a3d2079d71d0f3f1688e2d9c {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="shared", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_5c921cb6a3d2079d71d0f3f1688e2d9c.html",tooltip=""]
+  subgraph clusterdir_15e0302a0f1904cc55d72e6f41b488fd {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_15e0302a0f1904cc55d72e6f41b488fd.html",tooltip=""]
+    dir_15e0302a0f1904cc55d72e6f41b488fd [shape=plaintext, label="g3"];
+  dir_7cddfdf00a296168636a1baba5c21c03 [label="proj", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_7cddfdf00a296168636a1baba5c21c03.html",tooltip=""];
+  }
+  }
+}

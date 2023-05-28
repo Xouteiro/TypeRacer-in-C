@@ -1,0 +1,6 @@
+<map id="rtc_counter_start" name="rtc_counter_start">
+<area shape="rect" id="node1" title="Starts RTC counter." alt="" coords="5,31,125,56"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#a4ebd09baf3ebabb95fb10303cd4f7a62" title="Gets a RTC&#39;s register." alt="" coords="174,5,293,31"/>
+<area shape="rect" id="node4" href="$rtc_8c.html#ad424e653bae3c7f43f6f812c9593ae0d" title="Writes a RTC&#39;s register." alt="" coords="173,55,294,80"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="342,5,432,31"/>
+</map>

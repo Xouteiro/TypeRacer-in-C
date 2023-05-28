@@ -1,0 +1,5 @@
+<map id="rtc_interrupts_unsubscription" name="rtc_interrupts_unsubscription">
+<area shape="rect" id="node1" title="Unsubscribes RTC interrupts." alt="" coords="304,5,492,31"/>
+<area shape="rect" id="node2" href="$proj_8c.html#a836a41ca36892ac502d49fb6faa9db5d" title="Cleans up the program (goes back to text mode, unsubscribes interrupts and destroys all created sprit..." alt="" coords="162,5,256,31"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,114,31"/>
+</map>

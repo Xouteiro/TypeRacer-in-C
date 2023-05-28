@@ -1,0 +1,8 @@
+<map id="rtc_ih" name="rtc_ih">
+<area shape="rect" id="node1" title="RTC interrupt handler." alt="" coords="5,81,59,107"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#a2f31103430a865d35a9972cba68577d1" title="Counts RTC interrupts." alt="" coords="107,5,247,31"/>
+<area shape="rect" id="node3" href="$rtc_8c.html#a4ebd09baf3ebabb95fb10303cd4f7a62" title="Gets a RTC&#39;s register." alt="" coords="295,107,413,132"/>
+<area shape="rect" id="node5" href="$rtc_8c.html#ad7093faf1cb0c2db2674a55d4ba6f7d0" title="Reads RTC&#39;s registers to update date." alt="" coords="120,107,234,132"/>
+<area shape="rect" id="node6" href="$rtc_8c.html#add644eea069b3c4145ce2d3bf5aca38c" title="Reads RTC&#39;s registers to update hour." alt="" coords="120,156,234,182"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="461,107,552,132"/>
+</map>

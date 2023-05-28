@@ -1,0 +1,13 @@
+<map id="rtc_read_register" name="rtc_read_register">
+<area shape="rect" id="node1" title="Gets a RTC&#39;s register." alt="" coords="688,107,806,132"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#ab0fe0bc0db38324a33c73b6598e490fa" title="Starts RTC counter." alt="" coords="520,5,640,31"/>
+<area shape="rect" id="node6" href="$rtc_8c.html#a0b9ae809cf571f61e54712a23c65348e" title="RTC interrupt handler." alt="" coords="393,107,446,132"/>
+<area shape="rect" id="node8" href="$rtc_8c.html#a476ff1af1137bddc2b58bdd6c059fe45" title="Initializes RTC." alt="" coords="374,156,464,182"/>
+<area shape="rect" id="node10" href="$rtc_8c.html#ad7093faf1cb0c2db2674a55d4ba6f7d0" title="Reads RTC&#39;s registers to update date." alt="" coords="523,156,637,182"/>
+<area shape="rect" id="node11" href="$rtc_8c.html#add644eea069b3c4145ce2d3bf5aca38c" title="Reads RTC&#39;s registers to update hour." alt="" coords="523,107,637,132"/>
+<area shape="rect" id="node3" href="$game_8c.html#abc2d87b565450d4745e056e9280de882" title="Controls the game." alt="" coords="366,32,472,58"/>
+<area shape="rect" id="node4" href="$states_8c.html#ae8799b64944b1a1259633224a403c717" title="Updates the game&#39;s state every keyboard interrupt." alt="" coords="162,44,318,70"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,107,114,132"/>
+<area shape="rect" id="node7" href="$states_8c.html#a1a2176ba0e79afd72c7bc2bf91b978f3" title="Updates the game&#39;s state every rtc interrupt." alt="" coords="181,107,299,132"/>
+<area shape="rect" id="node9" href="$proj_8c.html#a099d48038e444c2f3e69904477527798" title="Initializes everything needed for the program." alt="" coords="213,156,267,182"/>
+</map>

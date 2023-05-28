@@ -1,0 +1,5 @@
+<map id="design_set_frame_buffers" name="design_set_frame_buffers">
+<area shape="rect" id="node1" title="Sets the frame buffers to the given mode." alt="" coords="263,5,434,31"/>
+<area shape="rect" id="node2" href="$proj_8c.html#a099d48038e444c2f3e69904477527798" title="Initializes everything needed for the program." alt="" coords="162,5,215,31"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,114,31"/>
+</map>

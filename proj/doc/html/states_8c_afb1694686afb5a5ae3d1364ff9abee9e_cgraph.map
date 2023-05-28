@@ -1,0 +1,5 @@
+<map id="sprites_setup" name="sprites_setup">
+<area shape="rect" id="node1" title="Creates all the sprites needed for the game." alt="" coords="5,31,105,56"/>
+<area shape="rect" id="node2" href="$sprite_8c.html#a22579068236939099dc2e33cf8006557" title="Creates a sprite object to be used as a button." alt="" coords="153,5,292,31"/>
+<area shape="rect" id="node3" href="$sprite_8c.html#a843ec84880eb80b40642eefdf66ecaef" title="Creates a sprite object with the given xpm." alt="" coords="158,55,287,80"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="design_draw_sprite_xpm" name="design_draw_sprite_xpm">
+<area shape="rect" id="node1" title="Draws a sprite." alt="" coords="937,157,1102,183"/>
+<area shape="rect" id="node2" href="$design_8c.html#a4e3a9f941f80e22c51fe19ed73623f8d" title="Writes the accuracy." alt="" coords="776,5,889,31"/>
+<area shape="rect" id="node3" href="$design_8c.html#a945895f82ef9e04084bbd318ab1d256e" title="Draws the menu of the game when a user has finished playing." alt="" coords="556,81,727,107"/>
+<area shape="rect" id="node7" href="$design_8c.html#a0ed6ba02fe03d1fb4f60e1e9bba2d2bd" title="Draws the menu of the game while a user is playing." alt="" coords="555,183,728,208"/>
+<area shape="rect" id="node8" href="$design_8c.html#ae5911aa3ce435e52d67a39fd225b931e" title="Draws the initial menu of the game." alt="" coords="556,245,727,271"/>
+<area shape="rect" id="node9" href="$design_8c.html#a96c8aaff83eb389d7d76512dc2bcbee7" title="Draws the mouse cursor." alt="" coords="355,271,495,296"/>
+<area shape="rect" id="node10" href="$design_8c.html#ab0974b8ec6b02d6cbad4005a42cad4cf" title="Function that controls the phrase writing." alt="" coords="783,208,882,234"/>
+<area shape="rect" id="node11" href="$design_8c.html#a35519d4ac2e772394f4bfcf221c139e1" title="Writes the wpm." alt="" coords="788,107,877,132"/>
+<area shape="rect" id="node4" href="$design_8c.html#a30e434434bde857434a49a430ae49c20" title="Draws a new frame according to the current menu state." alt="" coords="342,220,507,246"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,245,114,271"/>
+<area shape="rect" id="node6" href="$states_8c.html#a1ae711b8cbf9f564fe9cdd75056e52e4" title="Updates the game&#39;s state every timer interrupt." alt="" coords="162,271,294,296"/>
+</map>

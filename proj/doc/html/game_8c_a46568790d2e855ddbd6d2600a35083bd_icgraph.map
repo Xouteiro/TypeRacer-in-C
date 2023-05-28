@@ -1,0 +1,7 @@
+<map id="create_game" name="create_game">
+<area shape="rect" id="node1" title="Initializes the game&#39;s struct." alt="" coords="577,31,674,56"/>
+<area shape="rect" id="node2" href="$states_8c.html#a22d0b930ebd42c1d8d20f8cd0e584425" title="Update the end menu buttons." alt="" coords="352,5,529,31"/>
+<area shape="rect" id="node5" href="$states_8c.html#afbf5d1389fb1c904f1dfbd8e70a403b4" title="Update the main menu buttons." alt="" coords="366,55,515,80"/>
+<area shape="rect" id="node3" href="$states_8c.html#a873bb7b880a3f89029793f6dc8bfa1bb" title="Updates the game&#39;s state every mouse interrupt." alt="" coords="162,31,304,56"/>
+<area shape="rect" id="node4" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,31,114,56"/>
+</map>

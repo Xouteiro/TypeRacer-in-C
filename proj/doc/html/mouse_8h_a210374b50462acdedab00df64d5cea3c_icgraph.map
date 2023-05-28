@@ -1,0 +1,5 @@
+<map id="mouse_ih" name="mouse_ih">
+<area shape="rect" id="node1" title="Mouse interrupt handler." alt="" coords="352,5,429,31"/>
+<area shape="rect" id="node2" href="$states_8c.html#a873bb7b880a3f89029793f6dc8bfa1bb" title="Updates the game&#39;s state every mouse interrupt." alt="" coords="162,5,304,31"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,114,31"/>
+</map>

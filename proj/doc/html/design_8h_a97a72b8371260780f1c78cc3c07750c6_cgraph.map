@@ -1,0 +1,4 @@
+<map id="design_set_frame_buffers" name="design_set_frame_buffers">
+<area shape="rect" id="node1" title="Sets the frame buffers to the given mode." alt="" coords="5,13,177,39"/>
+<area shape="rect" id="node2" href="$graphics_8c.html#a0543b1776d5b9d7a5c2ada8a154c6838" title="Sets the frame buffer." alt="" coords="225,5,360,46"/>
+</map>
