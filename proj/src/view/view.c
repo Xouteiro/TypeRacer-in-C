@@ -7,7 +7,7 @@ extern MouseInfo mouse_info;
 extern MenuState menuState;
 extern Game game;
 
-extern Sprite *typo_racer, *play_button, *play, *cursor, *quit, *exit_button, *esc, *you_win, *play_again, *play_again_button;
+extern Sprite *typo_racer, *play_button, *play, *cursor, *quit, *exit_button, *esc, *you_win, *play_again, *play_again_button, *accuracy;
 extern Sprite *letters[26];
 extern Sprite *numbers[10];
 
@@ -52,12 +52,12 @@ void (view_draw_game_menu)() {
     graphics_draw_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
     view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
     phrase_writer( game.phrase , 170);
-    if(game.pos_player >=1){
-    game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(rtc_get_time_elapsed()) / 60) );
-    printf("wpm %d\n", game.wpm);
-    if(wpm_writer(game.wpm, 400))return;
-    }else{
-        if(wpm_writer(0, 70))return;
+    if(game.pos_player >=1) {
+        game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(rtc_get_time_elapsed()) / 60));
+        if(wpm_writer(game.wpm))return;
+    } 
+    else {
+        if(wpm_writer(0))return;
     }
     return;
 } 
@@ -68,12 +68,15 @@ void (view_draw_finish_menu)() {
     view_draw_sprite_button(play_again_button, mode_info.XResolution/2 - 112, mode_info.YResolution/2);
     view_draw_sprite_xpm(play_again, mode_info.XResolution/2 - 105 + 5, mode_info.YResolution/2 - 10);
     view_draw_sprite_xpm(esc, mode_info.XResolution - 365, mode_info.YResolution - 45);
-    if(game.pos_player >=1){
-    game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(game.elapsed_time) / 60) );;
-    if(wpm_writer(game.wpm, 400 ))return;
-    }else{
-        if(wpm_writer(0, 400))return;
+    if (game.pos_player >=1) {
+        game.wpm = (int)(((double)(game.pos_player) / 5) / ((double)(game.elapsed_time) / 60));
+        if(wpm_writer(game.wpm)) return;
+        if(accuracy_writer((int)(((double)(game.phrase_size) * 100) / ((double)(game.phrase_size + game.typo_overall_count)))))return;
     }
+    else {
+        if(wpm_writer(0))return;
+    }
+
     return;
 }
 
@@ -191,24 +194,42 @@ int (is_number)(char letter){
     return 0;
 }
 
-int wpm_writer(int wpm , int y){
-    int digit1;
-    int digit2;
+int (wpm_writer)(int wpm){
+    int digit1, digit2;
 
-    if(wpm >= 10){
+    if(wpm >= 10) {
         digit1 = wpm % 10;  // Extract the rightmost digit
         wpm /= 10;         // Remove the rightmost digit
         digit2 = wpm % 10;
     }
-    else{
+    else {
         digit1 = wpm;
         digit2 = 0;
     }
 
-    view_draw_sprite_xpm(numbers[digit2], 350, y);
-    view_draw_sprite_xpm(numbers[digit1], 375, y);
-    view_draw_sprite_xpm(letters['w' -'a'], 400, y);
-    view_draw_sprite_xpm(letters['p' -'a'], 420, y);
-    view_draw_sprite_xpm(letters['m' -'a'], 435, y);
+    view_draw_sprite_xpm(numbers[digit2], 100, 70);
+    view_draw_sprite_xpm(numbers[digit1], 115, 70);
+    view_draw_sprite_xpm(letters['w' -'a'], 150, 70);
+    view_draw_sprite_xpm(letters['p' -'a'], 170, 70);
+    view_draw_sprite_xpm(letters['m' -'a'], 185, 70);
+    return 0;
+}
+
+int (accuracy_writer)(int acc){
+    int digit1, digit2;
+
+    if(acc >= 10) {
+        digit1 = acc % 10;  // Extract the rightmost digit
+        acc /= 10;         // Remove the rightmost digit
+        digit2 = acc % 10;
+    }
+    else {
+        digit1 = acc;
+        digit2 = 0;
+    }
+    
+    view_draw_sprite_xpm(numbers[digit2], 550, 70);
+    view_draw_sprite_xpm(numbers[digit1], 570, 70);
+    view_draw_sprite_xpm(accuracy, 600, 70);
     return 0;
 }

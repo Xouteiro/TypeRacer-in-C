@@ -15,15 +15,11 @@ typedef struct Game {
   int phrase_size;
   int elapsed_time;
   char* phrase;
-  
 } Game;
 
 
-
 void create_game(Game *game);
-
 int game_controls(int scancode, Game* game);
-
 int get_random_phrase();
 
 
